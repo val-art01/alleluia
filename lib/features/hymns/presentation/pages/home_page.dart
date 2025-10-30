@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:alleluia_tome_1/features/hymns/presentation/pages/numbers_page.dart';
 import 'package:alleluia_tome_1/features/hymns/presentation/pages/playlist_page.dart';
+import 'package:alleluia_tome_1/features/hymns/presentation/pages/category_page.dart';
 import 'package:alleluia_tome_1/features/hymns/presentation/pages/settings_page.dart';
+import 'package:alleluia_tome_1/features/hymns/presentation/pages/battements_page.dart';
 import 'package:alleluia_tome_1/features/hymns/presentation/widgets/custom_bottom_navbar.dart';
 
 
@@ -26,8 +28,8 @@ class _HomeState extends State<Home> {
   final List<Widget> _screens = const [
     PlayList(),
     Numbers(),
-    // Category(),
-    // Battements(),
+    Category(),
+    Battements(),
     Settings(),
   ];
 
@@ -50,3 +52,6 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+
+// enchaîne vers la page SettingsPage (menu général : Favoris, Quoi de neuf, Partager, Avis, Don…).

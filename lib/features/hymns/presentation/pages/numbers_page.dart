@@ -1,56 +1,96 @@
 import 'package:flutter/material.dart';
-import 'package:alleluia_tome_1/features/hymns/data/models/alleluia.dart';
+import 'package:alleluia_tome_1/core/services/hymn_db_scope.dart';
+import 'package:alleluia_tome_1/features/hymns/data/models/hymn.dart';
+import 'package:alleluia_tome_1/features/hymns/data/repositories/hymns_repository.dart';
 import 'package:alleluia_tome_1/features/hymns/presentation/widgets/custom_appbar.dart';
+import 'package:alleluia_tome_1/features/hymns/presentation/pages/play_details_page.dart';
 
 /// Page: Numbers
 ///
-/// Rôle:
-/// - Affiche les chants triés par numéro dans une grille responsive.
-/// - Navigation vers la page de détails au clic.
-class Numbers extends StatelessWidget {
+/// Lit les chants depuis Isar, les trie par numéro, et les affiche en grille responsive.
+/// Clic -> ouvre PlayDetails avec le Hymn sélectionné.
+
+class Numbers extends StatefulWidget {
   const Numbers({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    // Tri par numéro croissant
-    final List<Alleluia> sortedChants = List<Alleluia>.from(chants)
-      ..sort((a, b) => a.numberChants.compareTo(b.numberChants));
+  State<Numbers> createState() => _NumbersState();
+}
 
-    final theme = Theme.of(context);
-    final cs = theme.colorScheme;
+class _NumbersState extends State<Numbers> {
+  late HymnsRepository _repo;
+  late Future<List<Hymn>> _future;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final db = HymnDbScope.of(context);
+    _repo = HymnsRepository(db);
+    _future = _load();
+  }
+
+  Future<List<Hymn>> _load() async {
+    final list = await _repo.getAll();
+    list.sort((a, b) => a.number.compareTo(b.number));
+    return list;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
 
     return Scaffold(
       appBar: const CustomAppBar(),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          // Grille responsive en fonction de la largeur
-          final w = constraints.maxWidth;
-          int crossAxisCount = 4;
-          if (w >= 1200) {
-            crossAxisCount = 6;
-          } else if (w >= 900) {
-            crossAxisCount = 5;
-          } else if (w >= 700) {
-            crossAxisCount = 4;
-          } else if (w >= 500) {
-            crossAxisCount = 3;
+      body: FutureBuilder<List<Hymn>>(
+        future: _future,
+        builder: (context, snap) {
+          if (snap.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          if (snap.hasError) {
+            return Center(
+              child: Text('Erreur de chargement', style: TextStyle(color: cs.error)),
+            );
           }
 
-          return Padding(
-            padding: const EdgeInsets.all(10),
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: crossAxisCount,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
-                childAspectRatio: 1.5,
-              ),
-              itemCount: sortedChants.length,
-              itemBuilder: (context, index) {
-                final chant = sortedChants[index];
-                return _NumberTile(chant: chant, cs: cs);
-              },
-            ),
+          final hymns = snap.data ?? const <Hymn>[];
+          if (hymns.isEmpty) {
+            return const Center(child: Text('Aucun chant disponible.'));
+          }
+
+          return LayoutBuilder(
+            builder: (context, constraints) {
+              final w = constraints.maxWidth;
+              int crossAxisCount = 4;
+              if (w >= 1200) {
+                crossAxisCount = 7;
+              } else if (w >= 900) {
+                crossAxisCount = 6;
+              } else if (w >= 700) {
+                crossAxisCount = 5;
+              } else if (w >= 500) {
+                crossAxisCount = 5;
+              } else {
+                crossAxisCount = 4;
+              }
+
+              return Padding(
+                padding: const EdgeInsets.all(10),
+                child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: crossAxisCount,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    childAspectRatio: 1.5,
+                  ),
+                  itemCount: hymns.length,
+                  itemBuilder: (context, i) {
+                    final hymn = hymns[i];
+                    return _NumberTile(hymn: hymn, cs: cs);
+                  },
+                ),
+              );
+            },
           );
         },
       ),
@@ -59,18 +99,18 @@ class Numbers extends StatelessWidget {
 }
 
 class _NumberTile extends StatelessWidget {
-  const _NumberTile({required this.chant, required this.cs});
+  const _NumberTile({required this.hymn, required this.cs});
 
-  final Alleluia chant;
+  final Hymn hymn;
   final ColorScheme cs;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // Navigator.of(context).push(
-        //   MaterialPageRoute(builder: (_) => PlayDetails(chant)),
-        // );
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (_) => PlayDetails(hymn)),
+        );
       },
       borderRadius: BorderRadius.circular(12),
       child: Container(
@@ -88,8 +128,8 @@ class _NumberTile extends StatelessWidget {
         ),
         alignment: Alignment.center,
         child: Text(
-          chant.numberChants.toString(),
-          semanticsLabel: 'Chant numéro ${chant.numberChants}',
+          hymn.number.toString(),
+          semanticsLabel: 'Chant numéro ${hymn.number}',
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w700,
@@ -100,5 +140,3 @@ class _NumberTile extends StatelessWidget {
     );
   }
 }
-
-

@@ -1,7 +1,6 @@
 # 📖 Alleluia Tome 1
 
-**Alleluia Tome 1** est une application Flutter dédiée à la consultation, à l’écoute et à la gestion de chants religieux du Culte d'enfants de l'Eglise Evangélique du Cameroun.  
-Elle permet de naviguer dans un recueil de **220 chants** via plusieurs modes : **Titre**, **Numéro**, **Catégorie**, **Battement**, et **Menu général**.
+**Alleluia Tome 1** est une application Flutter dédiée à la consultation, à l’écoute et à la gestion de chants religieux du Culte d'enfants de l'Eglise Evangélique du Cameroun. Elle permet de naviguer dans un recueil de **220 chants** via plusieurs modes : **Titre**, **Numéro**, **Catégorie**, **Battement**, et **Menu général**.
 
 ---
 ## 🏷️ Version & Aperçu
