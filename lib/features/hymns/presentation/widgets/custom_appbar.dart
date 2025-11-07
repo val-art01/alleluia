@@ -1,4 +1,5 @@
 import 'package:alleluia_tome_1/app/themes/app_theme.dart';
+import 'package:alleluia_tome_1/features/hymns/presentation/search/hymn_search_delegate.dart';
 import 'package:flutter/material.dart';
 
 /// AppBar personnalisée partagée dans la feature Hymns.
@@ -32,8 +33,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           icon: const Icon(Icons.search),
+          tooltip: 'Rechercher un chant',
           onPressed: () {
-            // brancher la recherche plus tard
+            showSearch(
+              context: context,
+              delegate: HymnSearchDelegate(),
+            );
           },
         ),
       ],

@@ -1,7 +1,7 @@
+import 'package:isar/isar.dart';
 import 'package:alleluia_tome_1/core/services/hymn_db_service.dart';
 import 'package:alleluia_tome_1/features/hymns/data/models/hymn.dart';
-import 'package:isar/isar.dart';
-
+import 'package:alleluia_tome_1/features/hymns/data/repositories/search_repositories.dart';
 
 /// HymnsRepository
 ///
@@ -103,7 +103,6 @@ class HymnsRepository {
 
   /// Seed initial de la base.
   /// On insère une liste complète de chants si la DB est vide.
-  ///
   /// Utilisé au démarrage dans main.dart.
   Future<void> seedIfEmpty(List<Hymn> initialData) async {
     final existingCount = await _db.isar.hymns.count();
@@ -114,5 +113,84 @@ class HymnsRepository {
     await _db.isar.writeTxn(() async {
       await _db.isar.hymns.putAll(initialData);
     });
+  }
+
+  /// Recherche multi-critères dans Isar.
+  ///
+  /// - `query` : texte saisi par l'utilisateur (peut être un numéro).
+  ///   *Si numérique*, on filtre `number == query`.
+  ///   *Sinon*, on cherche dans:
+  ///     - title (contains, insensible à la casse)
+  ///     - titleNorm (contains, insensible)
+  ///     - sections.lines.textLine (contains, insensible)
+  ///     - sections.lines.textNormLine (contains, insensible)
+  /// Résultat trié par numéro.
+  Future<List<SearchResult>> search({String? query, int limit = 15, int minChars = 1, }) async {
+    if (query == null || query.trim().length < minChars) return [];
+
+    final raw = query.trim();
+    final n = int.tryParse(raw);
+    final searchTerm = raw.toLowerCase();
+
+    final allHymns = await getAll();
+    final results = <SearchResult>[];
+
+    for (final hymn in allHymns) {
+      int score = 0;
+      String? matchedLine;
+
+      // Si la recherche est numérique
+      if (n != null) {
+        if (hymn.number == n) {
+          results.add(SearchResult(hymn: hymn, score: 1000));
+        }
+        continue;
+      }
+
+      // Titre exact (priorité maximale)
+      if (hymn.title.toLowerCase().startsWith(searchTerm)) {
+        score = 200;
+        matchedLine = hymn.title;
+      } else if (hymn.title.toLowerCase().contains(searchTerm)) {
+        score = 150;
+        matchedLine = hymn.title;
+      }
+
+      // Variante normalisée du titre
+      if (score == 0 && hymn.titleNorm.toLowerCase().contains(searchTerm) == true) {
+        score = 120;
+        matchedLine = hymn.title;
+      }
+
+      // Texte (sections/lignse)
+      if (score == 0) {
+        for (final section in hymn.sections) {
+          for (final line in section.lines) {
+            if (line.textLine.toLowerCase().contains(searchTerm)) {
+              score = 50;
+              matchedLine = line.textLine;
+              break;
+            } else if (line.textNormLine.toLowerCase().contains(searchTerm) == true) {
+              score = 40;
+              matchedLine = line.textLine;
+              break;
+            }
+          }
+          if (score > 0) break;
+        }
+      }
+
+      if (score > 0) {
+        results.add(SearchResult(hymn: hymn, score: score, matchedLine: matchedLine));
+      }
+    }
+
+    // Tri final : par score desc, puis par numéro
+    results.sort((a, b) {
+      if (a.score != b.score) return b.score.compareTo(a.score);
+      return a.hymn.number.compareTo(b.hymn.number);
+    });
+
+    return results;
   }
 }

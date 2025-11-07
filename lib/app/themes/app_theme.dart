@@ -5,7 +5,6 @@ class AppTheme {
   static const Color primaryBlue = Color(0xFF007BFF); // Bleu principal
   static const Color secondaryYellow = Color(0xFFFFC107); // Jaune
   static const Color backgroundWhite = Color(0xFFFFFFFF); // Blanc
-    static const seed = Color(0xFF3B5998);
   static const Color darkBackground = Color(0xFF121212);
 
    // 🌞 Thème clair
