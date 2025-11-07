@@ -1,5 +1,5 @@
 import 'package:alleluia_tome_1/app/themes/app_theme.dart';
-import 'package:alleluia_tome_1/features/hymns/presentation/search/hymn_search_delegate.dart';
+import 'package:alleluia_tome_1/features/hymns/presentation/pages/hymn_search_delegate.dart';
 import 'package:flutter/material.dart';
 
 /// AppBar personnalisée partagée dans la feature Hymns.

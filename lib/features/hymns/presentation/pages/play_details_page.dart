@@ -4,7 +4,7 @@ import 'package:alleluia_tome_1/features/hymns/data/models/hymn.dart';
 import 'package:alleluia_tome_1/core/services/audio_service_scope.dart';
 import 'package:alleluia_tome_1/core/services/audio_player_service.dart';
 import 'package:alleluia_tome_1/features/hymns/data/repositories/hymns_repository.dart';
-// import 'package:alleluia_tome_1/features/hymns/data/models/alleluia.dart';
+import 'package:alleluia_tome_1/features/hymns/data/repositories/favorites_repository.dart';
 
 
 /// Page: PlayDetails
@@ -20,8 +20,6 @@ import 'package:alleluia_tome_1/features/hymns/data/repositories/hymns_repositor
 // class PlayDetails extends StatefulWidget {
 //   const PlayDetails(this.chantsDetails, {super.key});
 //   final Alleluia chantsDetails;
-
-
 class PlayDetails extends StatefulWidget {
   const PlayDetails(this.hymn, {super.key});
   final Hymn hymn;
@@ -31,30 +29,29 @@ class PlayDetails extends StatefulWidget {
 }
 
 class _PlayDetailsState extends State<PlayDetails> {
-  static const Color _blue = Color(0xFF3B5998);
 
+  static const Color _blue = Color(0xFF3B5998);
   late final AudioPlayerService _audio;
   late final HymnsRepository _repo;
+  late FavoritesRepository _favRepo;
+  bool _isFav = false;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-
     // On récupère les services injectés en haut de l'app
     _audio = AudioServiceScope.of(context);
     final db = HymnDbScope.of(context);
     _repo = HymnsRepository(db);
-
-    // dire au service audio : "le chant courant, c'est celui-ci"
-    _audio.setCurrentHymn(widget.hymn);
-
-    // on s'assure que rien ne joue tant qu'on n'a pas appuyé sur play
-    _audio.stop();
+    _favRepo = FavoritesRepository(db);
+    _audio.setCurrentHymn(widget.hymn); // dire au service audio : "le chant courant, c'est celui-ci"
+    _audio.stop(); // on s'assure que rien ne joue tant qu'on n'a pas appuyé sur play
+    _loadFav();
   }
 
+  /// Politique choisie : on stop la lecture en quittant l'écran
   @override
   void dispose() {
-    // Politique choisie : on stop la lecture en quittant l'écran
     _audio.stop();
     super.dispose();
   }
@@ -66,7 +63,7 @@ class _PlayDetailsState extends State<PlayDetails> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: _blue,
+        backgroundColor: cs.secondary,
         foregroundColor: Colors.white,
         centerTitle: true,
         toolbarHeight: 80,
@@ -78,11 +75,12 @@ class _PlayDetailsState extends State<PlayDetails> {
         ),
         actions: [
           IconButton(
-            tooltip: 'Ajouter aux favoris',
-            icon: const Icon(Icons.favorite_border),
-            onPressed: () {
-              _toast('Favoris — à venir');
-            },
+            tooltip: _isFav ? 'Retirer des favoris' : 'Ajouter aux favoris',
+            icon: Icon(
+              _isFav ? Icons.favorite : Icons.favorite_border,
+              color: Colors.white,
+            ),
+            onPressed: _toggleFav,
           ),
         ],
       ),
@@ -232,6 +230,16 @@ class _PlayDetailsState extends State<PlayDetails> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(msg)),
     );
+  }
+
+  Future<void> _loadFav() async {
+    final f = await _favRepo.isFavorite(widget.hymn.number);
+    if (mounted) setState(() => _isFav = f);
+  }
+
+  Future<void> _toggleFav() async {
+    await _favRepo.toggleFavorite(widget.hymn.number);
+    await _loadFav();
   }
 }
 

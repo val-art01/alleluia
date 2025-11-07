@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:alleluia_tome_1/features/hymns/presentation/pages/favorites_page.dart';
 import 'package:alleluia_tome_1/features/hymns/presentation/widgets/custom_appbar.dart';
 
 /// Page: Settings / Menu de l'application
@@ -30,8 +31,9 @@ class Settings extends StatelessWidget {
             subtitle: const Text('Retrouvez vos chants préférés'),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
-              // Naviguer vers la page Favoris quand elle existera
-              _toast(context, 'Favoris — à venir');
+               Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const FavoritesPage()),
+              );
             },
           ),
           ListTile(
@@ -119,7 +121,3 @@ class _SectionHeader extends StatelessWidget {
     );
   }
 }
-
-
-
-

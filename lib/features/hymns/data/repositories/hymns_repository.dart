@@ -131,7 +131,6 @@ class HymnsRepository {
     final raw = query.trim();
     final n = int.tryParse(raw);
     final searchTerm = raw.toLowerCase();
-
     final allHymns = await getAll();
     final results = <SearchResult>[];
 
@@ -193,4 +192,17 @@ class HymnsRepository {
 
     return results;
   }
+
+  Future<List<Hymn>> getByNumbers(List<int> numbers) async {
+    if (numbers.isEmpty) return [];
+    final isar = _db.isar;
+    final res = await isar.hymns
+      .filter()
+      .anyOf(numbers, (q, n) => q.numberEqualTo(n))
+      .findAll();
+    // On peut trier par l’ordre des favoris s’il faut, pour l’instant par numéro
+    res.sort((a, b) => a.number.compareTo(b.number));
+    return res;
+  }
+
 }
