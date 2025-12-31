@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   // 🎨 Définition des couleurs principales
-  static const Color primaryBlue = Color(0xFF007BFF); // Bleu principal
-  static const Color secondaryYellow = Color(0xFFFFC107); // Jaune
+  static const Color primaryBlue = Color(0xFF42A5F5); // Bleu principal
+  static const Color secondaryYellow = Color.fromARGB(242, 253, 197, 28); // Jaune
   static const Color backgroundWhite = Color(0xFFFFFFFF); // Blanc
   static const Color darkBackground = Color(0xFF121212);
+  static const Color ongrey = Color.fromARGB(255, 100, 100, 100);
 
-   // 🌞 Thème clair
+  // Thème clair
   static ThemeData get light => ThemeData(
     useMaterial3: true,
     colorScheme: ColorScheme(
@@ -43,10 +44,30 @@ class AppTheme {
         ),
       ),
     ),
+    navigationBarTheme: NavigationBarThemeData(
+      backgroundColor: AppTheme.backgroundWhite,
+      elevation: 0,
+      indicatorColor: AppTheme.primaryBlue.withOpacity(0.15),
+      labelTextStyle: WidgetStateProperty.resolveWith((states) {
+        final selected = states.contains(WidgetState.selected);
+        return TextStyle(
+          fontWeight: FontWeight.w600,
+          color: selected ? AppTheme.primaryBlue : AppTheme.ongrey,
+        );
+      }),
+      iconTheme: WidgetStateProperty.resolveWith((states) {
+        final selected = states.contains(WidgetState.selected);
+        return IconThemeData(
+          size: 26,
+          color: selected ? AppTheme.primaryBlue : AppTheme.ongrey,
+        );
+      }),
+    ),
+
   );
 
-  // 🌚 Thème sombre
-   static ThemeData get dark => ThemeData(
+  // Thème sombre
+  static ThemeData get dark => ThemeData(
     useMaterial3: true,
     colorScheme: const ColorScheme(
       brightness: Brightness.dark,
@@ -65,5 +86,12 @@ class AppTheme {
       backgroundColor: primaryBlue,
       foregroundColor: Colors.white,
     ),
+    navigationBarTheme: NavigationBarThemeData(
+      backgroundColor: AppTheme.darkBackground,
+      elevation: 0,
+      indicatorColor: Colors.white.withOpacity(0.10),
+    ),
+
   );
+  
 }

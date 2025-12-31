@@ -1,3 +1,4 @@
+import 'package:alleluia_tome_1/app/themes/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:alleluia_tome_1/core/services/hymn_db_scope.dart';
 import 'package:alleluia_tome_1/features/hymns/data/models/hymn.dart';
@@ -49,7 +50,10 @@ class _NumbersState extends State<Numbers> {
           }
           if (snap.hasError) {
             return Center(
-              child: Text('Erreur de chargement', style: TextStyle(color: cs.error)),
+              child: Text(
+                'Erreur de chargement',
+                style: TextStyle(color: cs.error),
+              ),
             );
           }
 
@@ -61,79 +65,122 @@ class _NumbersState extends State<Numbers> {
           return LayoutBuilder(
             builder: (context, constraints) {
               final w = constraints.maxWidth;
+
+              // Grille responsive (simple et efficace)
               int crossAxisCount = 4;
               if (w >= 1200) {
-                crossAxisCount = 7;
+                crossAxisCount = 8;
               } else if (w >= 900) {
-                crossAxisCount = 6;
+                crossAxisCount = 7;
               } else if (w >= 700) {
-                crossAxisCount = 5;
+                crossAxisCount = 6;
               } else if (w >= 500) {
                 crossAxisCount = 5;
               } else {
                 crossAxisCount = 4;
               }
 
-              return Padding(
-                padding: const EdgeInsets.all(10),
-                child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: crossAxisCount,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 1.5,
+              return Column(
+                children: [
+                  // Petit header (optionnel mais joli)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+                    child: Row(
+                      children: [
+                        Text(
+                          "Tous les chants",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w800,
+                            color: cs.onSurface,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Container(
+                          padding:
+                              const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: AppTheme.primaryBlue.withOpacity(0.12),
+                            borderRadius: BorderRadius.circular(999),
+                          ),
+                          child: Text(
+                            "${hymns.length}",
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w800,
+                              color: AppTheme.primaryBlue,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                  itemCount: hymns.length,
-                  itemBuilder: (context, i) {
-                    final hymn = hymns[i];
-                    return _NumberTile(hymn: hymn, cs: cs);
-                  },
-                ),
+
+                  Expanded(
+                    child: GridView.builder(
+                      padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: crossAxisCount,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
+                        // plus “tuile” moderne
+                        childAspectRatio: 1.28,
+                      ),
+                      itemCount: hymns.length,
+                      itemBuilder: (context, i) {
+                        final hymn = hymns[i];
+                        return _NumberTileModern(hymn: hymn);
+                      },
+                    ),
+                  ),
+                ],
               );
             },
           );
         },
       ),
+
     );
   }
 }
 
-class _NumberTile extends StatelessWidget {
-  const _NumberTile({required this.hymn, required this.cs});
+class _NumberTileModern extends StatelessWidget {
+  const _NumberTileModern({required this.hymn});
 
   final Hymn hymn;
-  final ColorScheme cs;
 
   @override
   Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+
     return InkWell(
+      borderRadius: BorderRadius.circular(18),
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(builder: (_) => PlayDetails(hymn)),
         );
       },
-      borderRadius: BorderRadius.circular(12),
-      child: Container(
+      child: Ink(
         decoration: BoxDecoration(
-          color: cs.surface,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: cs.outlineVariant, width: 1),
+          color: AppTheme.primaryBlue.withOpacity(0.08),
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(color: Colors.black12),
           boxShadow: const [
             BoxShadow(
-              color: Colors.black26,
-              blurRadius: 3,
-              offset: Offset(1, 1),
+              blurRadius: 10,
+              offset: Offset(0, 4),
+              color: Color(0x12000000),
             ),
           ],
         ),
-        alignment: Alignment.center,
-        child: Text(
-          hymn.number.toString(),
-          semanticsLabel: 'Chant numéro ${hymn.number}',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w700,
-            color: cs.onSurface,
+        child: Center(
+          child: Text(
+            hymn.number.toString(),
+            semanticsLabel: 'Chant numéro ${hymn.number}',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w900,
+              color: cs.onSurface,
+            ),
           ),
         ),
       ),

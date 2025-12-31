@@ -1,0 +1,2392 @@
+[
+  {
+    "number": 1,
+    "title": "RENDONS, RENDONS Gloire",
+    "titleNorm": "rendons rendons gloire",
+    "actor": "A. NKWINDJI",
+    "audioPath": "sound/Alleluia 1.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Rendons, rendons tous à Dieu sa gloire", "textNormLine": "rendons, rendons tous a dieu sa gloire", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Rendons à Jésus-Christ sa gloire", "textNormLine": "rendons a jesus christ sa gloire", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Rendons au Saint-Esprit sa gloire", "textNormLine": "rendons au saint esprit sa gloire", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Tous trois son un, un, un seul vrai Dieu.", "textNormLine": "tous trois son un un un seul vrai Dieu", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Louons Dieu nous tous ses armées", "textNormLine": "louons Dieu nous tous ses armees", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Soumettons-nous à l'esprit", "textNormLine": "soumettons nous a l'esprit", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ass",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [ { "textLine": "Annonçons-le ressuscité", "textNormLine": "annoncons le ressuscite", "orderLine": 1, "repeatCountLine": 1 }] 
+      },
+      {
+        "type": "Solo",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [ { "textLine": "Rendons ...", "textNormLine": "rendons ...", "orderLine": 1, "repeatCountLine": 1 }] 
+      },
+      {
+        "type": "Ref",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Viens, Esprit Saint, oui vient dans nos cœurs,", "textNormLine": "viens esprit Saint oui vient dans nos coeurs", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Viens brûler tout péché tout en nous,", "textNormLine": "viens bruler tout péché tout en nous", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Viens faire de nous des hommes nouveaux,", "textNormLine": "viens faire de nous des hommes nouveaux", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Des témoins ardents de ton amour.", "textNormLine": "des temoins ardents de ton amour", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Tout ce que Dieu a promis", "textNormLine": "tout ce que dieu a promis", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Accomplire en Jésus-Christ", "textNormLine": "accomplire en jesus christ", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ass",
+        "orderSection": 7,
+        "repeatCountSection": 1,
+        "lines": [ { "textLine": "Nous atteint par le Saint-Esprit.", "textNormLine": "nous atteint par le saint esprit.", "orderLine": 1, "repeatCountLine": 1 }] 
+      }       
+    ]
+  },
+  {
+    "number": 2,
+    "title": "POUR CET IMMENSE BONHEUR",
+    "titleNorm": "pour cet immense bonheur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 2.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": [
+      {
+        "type": "",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Pour cet immense bonheur (Alléluia)", "textNormLine": "pour cet immense bonheur (alleluia)", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Que tu as mis dans mon coeur (All...)", "textNormLine": "que tu as mis dans mon coeur (alleluia)", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Je veux te chanter Seigneur (All...)", "textNormLine": "je veux te chanter seigneur (alleluia)", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Oui Jésus est mon Sauveur (All...)", "textNormLine": "oui jesus est mon sauveur (alleluia)", "orderLine": 4, "repeatCountLine":1},
+          { "textLine": "Je le redirai encore (All...)", "textNormLine": "je le redirai encore (alleluia)", "orderLine": 5, "repeatCountLine":1},
+          { "textLine": "Que pour moi Jésus est nort (All...)", "textNormLine": "que pour moi jesus est nort (alleluia)", "orderLine": 6, "repeatCountLine":1},
+          { "textLine": "Voila pourquoi je l'adore (All...)", "textNormLine": "voila pourquoi je l'adore (alleluia)", "orderLine": 7, "repeatCountLine":1},
+          { "textLine": "Lui seul est tout mon trésor (All...)", "textNormLine": "lui seul est tout mon tresor (alleluia)", "orderLine": 8, "repeatCountLine":1},
+          { "textLine": "Que chaque jour à chaque heure (All...)", "textNormLine": "que chaque jour a chaque heure (alleluia)", "orderLine": 9, "repeatCountLine":1},
+          { "textLine": "En moi tu aies ta demeure (All...)", "textNormLine": "en moi tu aies ta demeure (alleluia)", "orderLine": 10, "repeatCountLine":1},
+          { "textLine": "Que ma vie soit une fleur (All...)", "textNormLine": "que ma vie soit une fleur (alleluia)", "orderLine": 11, "repeatCountLine":1},
+          { "textLine": "Un parfum pour Toi Seigneur (All...)", "textNormLine": "un parfum pour Toi seigneur (alleluia)", "orderLine": 12, "repeatCountLine":1}
+        ]
+      }
+    ]
+  },
+  {
+    "number": 3,
+    "title": "Hymne du renouveau",
+    "titleNorm": "hymne du renouveau",
+    "actor": "Pasteur SOPGUI Tékù saac",
+    "audioPath": "sound/Alleluia 3.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps"],
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "C'est pour ta gloire", "textNormLine": "C est pour ta gloire", "orderLine": 1, "repeatCountLine":2},
+          { "textLine": "que nous voulons un renouveau", "textNormLine": "que nous voulons un renouveau", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Aide-nous Seigneur", "textNormLine": "aide nous seigneur", "orderLine": 3, "repeatCountLine": 2 },
+          { "textLine": "Pour atteindre le but.", "textNormLine": "pour atteindre le but", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Au départ O Dieu", "textNormLine": "qu depart o dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "   tu confias à Adam.", "textNormLine": "tu confias a adam", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "   Le rôle du maintien", "textNormLine": "le role du maintien", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "   de la nature en ton Nom.", "textNormLine": "de la nature en ton nom", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Et par le péché le rôle", "textNormLine": "et par le peche le role", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "   devient pesant.", "textNormLine": "devient pesant", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "   A la sueur du front", "textNormLine": "a la sueur du front", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "   l'homme trouvera son pain.", "textNormLine": "l'homme trouvera son pain", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. La houe sur l'épaule", "textNormLine": "La houe sur l'epaule", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "   la machette à la main.", "textNormLine": "la machette a la main", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "   C'est l'heure du travail", "textNormLine": "c'est l'heure du travail", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "   pensons à nos devoirs..", "textNormLine": "pensons a nos devoirs.", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "4. A qui donc l'honneur?", "textNormLine": "a qui donc l'honneur?", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "   A qui la bénédiction?", "textNormLine": "a qui la benediction?", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "   C'est aux travailleurs,", "textNormLine": "c'est aux travailleurs,", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "   ce n'est pas aux paresseux.", "textNormLine": "ce n'est pas aux paresseux", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "5. Voici donc le temps", "textNormLine": "voici donc le temps", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "   de confesser Jésus-Chris.", "textNormLine": "de confesser Jésus-Christ", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "   Voici donc le temps.", "textNormLine": "voici donc le temps", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "   Joignons l'acte à la parole.", "textNormLine": "joignons l acte a la parole.", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 7,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "6. Esprit qui nourrit", "textNormLine": "esprit qui nourrit", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "   et Esprit qui vivifie.", "textNormLine": " et esprit qui vivifie", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "   Soit donc cette sève qui", "textNormLine": "soit donc cette sève qui", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "   nourrit les sarments.", "textNormLine": "nourrit les sarments.", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 4,
+    "title": "ICI NOUS NOUS SOMMES RENCONTRÉS",
+    "titleNorm": "ici nous nous sommes rencontres",
+    "actor": "",
+    "audioPath": "sound/Alleluia 4.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation"],
+    "beats": ["1 temps"],
+    "sections": [
+      {
+        "type": "SoloAss",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Ici nous nous sommes,", "textNormLine": "ici nous nous sommes", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "rencontrés Pour nous engager,", "textNormLine": "rencontres pour nous engager", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Afin de servir dans le Seigneur", "textNormLine": "afin de servir dans le seigneur", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Les enfants de notre pays.", "textNormLine": "les enfants de notre pays", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ref",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Et oui, pour vous,", "textNormLine": "et oui, pour vous", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Pour le Seigneur,", "textNormLine": "pour le seigneur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Pour le prochain", "textNormLine": "pour le prochain", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Nous voulons être les instruments.", "textNormLine": "nous voulons etre les instruments", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "SoloAss",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Nous te prions Seigneur", "textNormLine": "Nous te prions seigneur", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Jésus-Christ Pour notre promesse", "textNormLine": "jesus christ pour notre promesse", "orderLine": 2, "repeatCountLine": 1},
+          { "textLine": "Protège-nous, bénis-nous toujours", "textNormLine": "protege nous, benis nous toujours", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Et conduis-nous par ton Esprit", "textNormLine": "et conduis nous par ton esprit", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "SoloAss",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Le monde avec tous ses beaux appâts", "textNormLine": "le monde avec tous ses beaux appats", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Ne nous détruira, nous résisterons", "textNormLine": "ne nous detruira, nous resisterons", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Sans défaillance notre victoire", "textNormLine": "sans defaillance notre victoire", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "C'est l'espérance", "textNormLine": "c'est l'esperance", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "SoloAss",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "4. Nous voulons aider les plus petits", "textNormLine": "nous voulons aider les plus petits", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "A te rencontrer, Afin qu'un jour", "textNormLine": "a te rencontrer afin qu'un jour", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Et tout comme nous", "textNormLine": "et tout comme nous", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Ils décident aussi de servir", "textNormLine": "ils decident aussi de servir", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 5,
+    "title": "JÉSUS T'APPELLE",
+    "titleNorm": "jesus t'appelle",
+    "actor": "LEOUE NJOMEN B",
+    "audioPath": "sound/Alleluia 5.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": [
+       {
+        "type": "Solo",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Aujourd'hui Jésus t'appelle", "textNormLine": "1. aujourd'hui jesus t'appelle", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Oui céderas-tu ton cœur ?", "textNormLine": "oui cederas tu ton coeur", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ref",
+        "orderSection": 2,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Il veut entrer dans ta vie,", "textNormLine": "il veut entrer dans ta vie", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Ne l'empêche pas,", "textNormLine": "ne l'empeche pas", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. N'hésite pas trop longtemps", "textNormLine": "n'hésite pas trop longtemps", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Jésus frappe à ta porte.", "textNormLine": "jesus frappe a ta porte.", "orderLine": 2, "repeatCountLine": 1}
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Satan rôde autour de toi", "textNormLine": "satan rode autour de toi", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Veux-tu venir vers Jésus ?", "textNormLine": "veux tu venir vers jesus", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "4. Le monde et ses délices", "textNormLine": "Le monde et ses delices", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "T'attire toujours loin de Lui.", "textNormLine": "t'attire toujours loin de Lui.", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "5. A qui céderas-tu donc?", "textNormLine": "a qui cederas tu donc", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Viens à Jésus à jamais.", "textNormLine": "viens a jesus à jamais.", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "6. Il est le consolateur", "textNormLine": "il est le consolateur", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Bien la lumière de ta vie.", "textNormLine": "bien la lumiere de ta vie.", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 7,
+    "title": "Dieu dit à Abraham",
+    "titleNorm": "dieu dit a abraham",
+    "actor": "",
+    "audioPath": "sound/Alleluia 7.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 8,
+    "title": "Où seras-tu quand Jésus reviendra ?",
+    "titleNorm": "ou seras tu quand jesus reviendra",
+    "actor": "",
+    "audioPath": "sound/Alleluia 8.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Sortie"],
+    "periods": ["Réformation"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 9,
+    "title": "Je servirai l’Eternel",
+    "titleNorm": "je servirai l eternel",
+    "actor": "",
+    "audioPath": "sound/Alleluia 9.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 10,
+    "title": "Louons Yahvé ! car il est bon",
+    "titleNorm": "louons yahve car il est bon",
+    "actor": "",
+    "audioPath": "sound/Alleluia 10.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 11,
+    "title": "Ecoutez la voix du prophète",
+    "titleNorm": "ecoutez la voix du prophete",
+    "actor": "",
+    "audioPath": "sound/Alleluia 11.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance", "Sortie"],
+    "periods": ["Réformation", "Noël"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 12,
+    "title": "Vie assombrie",
+    "titleNorm": "vie assombrie",
+    "actor": "",
+    "audioPath": "sound/Alleluia 12.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire"],
+    "beats": [  "1 temps", "1+3 temps"],
+    "sections": []
+  },
+  {
+    "number": 14,
+    "title": "Ah yé ! Ah yé Alléluia",
+    "titleNorm": "ah ye ah ye alleluia",
+    "actor": "",
+    "audioPath": "sound/Alleluia 14.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 15,
+    "title": "Nous marchons vers ta maison",
+    "titleNorm": "nous marchons vers ta maison",
+    "actor": "",
+    "audioPath": "sound/Alleluia 15.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Réformation", "Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 16,
+    "title": "Nous voulons un Roi",
+    "titleNorm": "nous voulons un roi",
+    "actor": "",
+    "audioPath": "sound/Alleluia 16.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Avent", "Noël"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 17,
+    "title": "Les vingt-sept livre du nouveau.T",
+    "titleNorm": "les vingt sept livre du nouveau t",
+    "actor": "",
+    "audioPath": "sound/Alleluia 17.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Sortie"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 18,
+    "title": "Somebody’s knoking at your door",
+    "titleNorm": "somebody s knoking at your door",
+    "actor": "",
+    "audioPath": "sound/Alleluia 18.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Réformation"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 19,
+    "title": "Si Dieu ne nous aimait pas",
+    "titleNorm": "si dieu ne nous aimait pas",
+    "actor": "",
+    "audioPath": "sound/Alleluia 19.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Avent"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 20,
+    "title": "Voici la loi de Yahvé",
+    "titleNorm": "voici la loi de yahve",
+    "actor": "",
+    "audioPath": "sound/Alleluia 20.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance", "Loi"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 21,
+    "title": "Témoin de Jésus en Afrique",
+    "titleNorm": "temoin de jesus en afrique",
+    "actor": "",
+    "audioPath": "sound/Alleluia 21.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Réformation"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 22,
+    "title": "Garde-toi d’oublier le seigneur…",
+    "titleNorm": "garde toi d oublier le seigneur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 22.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance", "Loi"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps", "3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 23,
+    "title": "En lui nous avons la vie",
+    "titleNorm": "en lui nous avons la vie",
+    "actor": "",
+    "audioPath": "sound/Alleluia 23.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Avent"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 24,
+    "title": "Ta parole est vivante",
+    "titleNorm": "ta parole est vivante",
+    "actor": "",
+    "audioPath": "sound/Alleluia 24.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Leçon"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 25,
+    "title": "Louons Yahvé bénissons son nom",
+    "titleNorm": "louons yahve benissons son nom",
+    "actor": "",
+    "audioPath": "sound/Alleluia 25.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 27,
+    "title": "Do Lord",
+    "titleNorm": "do lord",
+    "actor": "",
+    "audioPath": "sound/Alleluia 27.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 28,
+    "title": "La Sainte Bible",
+    "titleNorm": "la sainte bible",
+    "actor": "",
+    "audioPath": "sound/Alleluia 28.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Leçon"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 29,
+    "title": "WE SHALL OVER COME",
+    "titleNorm": "we shall over come",
+    "actor": "",
+    "audioPath": "sound/Alleluia 29.mp3",
+    "language": "en",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation"],
+    "beats": ["1+3 temps"],
+    "sections": []
+  },
+  {
+    "number": 30,
+    "title": "Que fera le jeune homme",
+    "titleNorm": "que fera le jeune homme",
+    "actor": "",
+    "audioPath": "sound/Alleluia 30.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Après la leçon"],
+    "periods": ["Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 31,
+    "title": "L’ENFANT DE NUIT",
+    "titleNorm": "l enfant de nuit",
+    "actor": "",
+    "audioPath": "sound/Alleluia 31.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Noël"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 32,
+    "title": "ÉCOUTE MON AMI",
+    "titleNorm": "ecoute mon ami",
+    "actor": "",
+    "audioPath": "sound/Alleluia 32.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Après la leçon", "Louanges"],
+    "periods": ["Pâques", "Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 33,
+    "title": "ÉLIE AU CARMEL",
+    "titleNorm": "elie au carmel",
+    "actor": "",
+    "audioPath": "sound/Alleluia 33.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Ordinaire", "Nouvel an"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 34,
+    "title": "LES SEPT MIRACLES",
+    "titleNorm": "les sept miracles",
+    "actor": "",
+    "audioPath": "sound/Alleluia 34.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 35,
+    "title": "L’ENTRETIEN DE L’ENFANT",
+    "titleNorm": "l entretien de l enfant",
+    "actor": "",
+    "audioPath": "sound/Alleluia 35.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Sortie"],
+    "periods": ["Ordinaire"],
+    "beats": ["1+3 temps"],
+    "sections": []
+  },
+  {
+    "number": 36,
+    "title": "MARDOCHÉE",
+    "titleNorm": "mardochee",
+    "actor": "",
+    "audioPath": "sound/Alleluia 36.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 37,
+    "title": "POURQUOI CE TUMULTE",
+    "titleNorm": "pourquoi ce tumulte",
+    "actor": "",
+    "audioPath": "sound/Alleluia 37.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Réformation"],
+    "beats": ["1+3 temps"],
+    "sections": []
+  },
+  {
+    "number": 38,
+    "title": "VENEZ ADORONS LE SEIGNEUR",
+    "titleNorm": "venez adorons le seigneur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 38.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Avent"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 39,
+    "title": "ZACHÉE",
+    "titleNorm": "zachee",
+    "actor": "",
+    "audioPath": "sound/Alleluia 39.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Ordinaire", "Réformation"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 40,
+    "title": "DE MA VOIX JE CRIE À DIEU",
+    "titleNorm": "de ma voix je crie a dieu",
+    "actor": "",
+    "audioPath": "sound/Alleluia 40.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire"],
+    "beats": ["1+3 temps"],
+    "sections": []
+  },
+  {
+    "number": 41,
+    "title": "L'ETERNEL A VU LES SOUFFANCES",
+    "titleNorm": "l eternel a vu les souffances",
+    "actor": "",
+    "audioPath": "sound/Alleluia 41.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Avent"],
+    "beats": ["3 temps lent"],
+    "sections": []
+  },
+  {
+    "number": 42,
+    "title": "SAMARITAINE",
+    "titleNorm": "samaritaine",
+    "actor": "",
+    "audioPath": "sound/Alleluia 42.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Noël"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 43,
+    "title": "SAMARITAINE",
+    "titleNorm": "samaritaine",
+    "actor": "",
+    "audioPath": "sound/Alleluia 43.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Noël"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 44,
+    "title": "SAMARITAINE",
+    "titleNorm": "samaritaine",
+    "actor": "",
+    "audioPath": "sound/Alleluia 44.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Noël"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 46,
+    "title": "EYA EYA EYA EYA",
+    "titleNorm": "eya eya eya eya",
+    "actor": "",
+    "audioPath": "sound/Alleluia 46.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Noël"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 49,
+    "title": "JÉSUS CHRIST EST NÉ",
+    "titleNorm": "jesus christ est ne",
+    "actor": "",
+    "audioPath": "sound/Alleluia 49.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Noël"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 50,
+    "title": "UN SAUVEUR NOUS EST NÉ",
+    "titleNorm": "un sauveur nous est ne",
+    "actor": "",
+    "audioPath": "sound/Alleluia 50.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Noël"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 51,
+    "title": "LES ANGES DANS NOS CAMPAGNES",
+    "titleNorm": "les anges dans nos campagnes",
+    "actor": "",
+    "audioPath": "sound/Alleluia 51.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Leçon", "Sortie"],
+    "periods": ["Noël"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 53,
+    "title": "LA CLOCHE A SONNÉ MES FRÈRES",
+    "titleNorm": "la cloche a sonne mes freres",
+    "actor": "",
+    "audioPath": "sound/Alleluia 53.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Avent"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 54,
+    "title": "VOICI NOËL ALLÉLUIA",
+    "titleNorm": "voici noel alleluia",
+    "actor": "",
+    "audioPath": "sound/Alleluia 54.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Noël"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 57,
+    "title": "UN FILS NOUS EST DONNÉ",
+    "titleNorm": "un fils nous est donne",
+    "actor": "",
+    "audioPath": "sound/Alleluia 57.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Noël"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 59,
+    "title": "L’ENFANT EST VENU",
+    "titleNorm": "l enfant est venu",
+    "actor": "",
+    "audioPath": "sound/Alleluia 59.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Noël"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 60,
+    "title": "NOËL",
+    "titleNorm": "noel",
+    "actor": "",
+    "audioPath": "sound/Alleluia 60.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Après la leçon"],
+    "periods": ["Noël"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 61,
+    "title": "CETTE NUIT LÀ",
+    "titleNorm": "cette nuit la",
+    "actor": "",
+    "audioPath": "sound/Alleluia 61.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges","Sortie"],
+    "periods": ["Noël"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 62,
+    "title": "LE MESSIE PROMIS",
+    "titleNorm": "le messie promis",
+    "actor": "",
+    "audioPath": "sound/Alleluia 62.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Sortie"],
+    "periods": ["Noël"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 63,
+    "title": "FRÈRES JÉSUS VIENT DE NAITRE",
+    "titleNorm": "freres jesus vient de naitre",
+    "actor": "",
+    "audioPath": "sound/Alleluia 63.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Leçon","Sortie"],
+    "periods": ["Noël"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 64,
+    "title": "JÉSUS ARTISAN DE LA PAIX",
+    "titleNorm": "jesus artisan de la paix",
+    "actor": "",
+    "audioPath": "sound/Alleluia 64.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 66,
+    "title": "L’HUMANITÉ VIT DANS LES TÉNÈBRES",
+    "titleNorm": "l humanite vit dans les tenebres",
+    "actor": "",
+    "audioPath": "sound/Alleluia 66.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Noël"],
+    "beats": ["1+3 temps"],
+    "sections": []
+  },
+  {
+    "number": 67,
+    "title": "ALLÉLUIA IL EST LE ROI",
+    "titleNorm": "alleluia il est le roi",
+    "actor": "",
+    "audioPath": "sound/Alleluia 67.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Noël"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 68,
+    "title": "LOUONS LE ROI DE GLOIRE",
+    "titleNorm": "louons le roi de gloire",
+    "actor": "",
+    "audioPath": "sound/Alleluia 68.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 69,
+    "title": "ELOI ! ELOI !",
+    "titleNorm": "eloi eloi",
+    "actor": "",
+    "audioPath": "sound/Alleluia 69.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Vendredi Saint"],
+    "beats": ["1+3 temps"],
+    "sections": []
+  },
+  {
+    "number": 70,
+    "title": "JÉSUS DOIS MOURIR",
+    "titleNorm": "jesus dois mourir",
+    "actor": "",
+    "audioPath": "sound/Alleluia 70.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Vendredi saint"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 73,
+    "title": "JÉSUS A SOUFFERT",
+    "titleNorm": "jesus a souffert",
+    "actor": "",
+    "audioPath": "sound/Alleluia 73.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Pâques"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 74,
+    "title": "LE SEIGNEUR AUX BOIS",
+    "titleNorm": "le seigneur aux bois",
+    "actor": "",
+    "audioPath": "sound/Alleluia 74.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi", "Répentance"],
+    "periods": ["Pâques"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 75,
+    "title": "L’HEURE DE LA MORT DE JÉSUS…",
+    "titleNorm": "l heure de la mort de jesus",
+    "actor": "",
+    "audioPath": "sound/Alleluia 75.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Vendredi saint"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 76,
+    "title": "JÉSUS EST RESSUSCITÉ",
+    "titleNorm": "jesus est ressuscite",
+    "actor": "",
+    "audioPath": "sound/Alleluia 76.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Résurrection"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 77,
+    "title": "JÉSUS EST VIVANT",
+    "titleNorm": "jesus est vivant",
+    "actor": "",
+    "audioPath": "sound/Alleluia 77.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Après la leçon", "Sortie"],
+    "periods": ["Pâques"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 79,
+    "title": "QUI N’A PAS VU LE CHRIST",
+    "titleNorm": "qui n a pas vu le christ",
+    "actor": "",
+    "audioPath": "sound/Alleluia 79.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges", "Sortie"],
+    "periods": ["Pâques"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 80,
+    "title": "JÉSUS MON ROI EST RESSUSCITÉ",
+    "titleNorm": "jesus mon roi est ressuscite",
+    "actor": "",
+    "audioPath": "sound/Alleluia 80.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce", "Sortie"],
+    "periods": ["Ascension", "Pâques"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 82,
+    "title": "C’EST UN NOUVEAU TEMPS",
+    "titleNorm": "c est un nouveau temps",
+    "actor": "",
+    "audioPath": "sound/Alleluia 82.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Pâques", "Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 84,
+    "title": "ALLONS EN GALLILÉE",
+    "titleNorm": "allons en gallile",
+    "actor": "",
+    "audioPath": "sound/Alleluia 84.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Pâques"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 86,
+    "title": "ALLÉLUIA ! BALAFON TAM-TAM",
+    "titleNorm": "alluia balafon tamtam",
+    "actor": "",
+    "audioPath": "sound/Alleluia 86.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Après la leçon"],
+    "periods": ["Pâques"],
+    "beats": ["1 temps"],
+    "sections": [
+      {
+        "type": "SoloAss",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Alléluia", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine": 4 },
+          { "textLine": "Venez tous, chantons en choeur.", "textNormLine": "venez tous chantons en choeur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Alléluia", "textNormLine": "alleluia", "orderLine": 3, "repeatCountLine": 4 },
+          { "textLine": "Jésus-Chist est ressucité", "textNormLine": "jesus-christ est ressucite", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Amen, Amen, Alléluia !", "textNormLine": "amen amen alleluia", "orderLine": 5, "repeatCountLine": 2 }
+        ]
+      },
+      {
+        "type": "SoloAss",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Alléluia !", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine": 4 },
+          { "textLine": "Balafons, tam-tam, sonnez", "textNormLine": "balafons tam-tam sonnez", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Alléluia !", "textNormLine": "alleluia", "orderLine": 3, "repeatCountLine": 4 },
+          { "textLine": "Annoncez le ressuscité.", "textNormLine": "annoncez le ressuscite", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Amen, Amen, Alléluia !", "textNormLine": "amen amen alleluia", "orderLine": 5, "repeatCountLine": 2 }
+        ]
+      },
+      {
+        "type": "SoloAss",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Alléluia !", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine": 4 },
+          { "textLine": "Oh mort où est ton pouvoir ?.", "textNormLine": "oh mort ou est ton pouvoir", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Alléluia !", "textNormLine": "alleluia", "orderLine": 3, "repeatCountLine": 4 },
+          { "textLine": "Jésus est note victoire", "textNormLine": "jesus est note victoire", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Amen, Amen, Alléluia !", "textNormLine": "amen amen alleluia", "orderLine": 5, "repeatCountLine": 2 }
+        ]
+      },
+      {
+        "type": "SoloAss",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Alléluia !", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine": 4 },
+          { "textLine": "C'est la joie, c'est notre vie.", "textNormLine": "c est la joie c est notre vie", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Alléluia !", "textNormLine": "alleluia", "orderLine": 3, "repeatCountLine": 4 },
+          { "textLine": "Sur la croix nous avons la vie.", "textNormLine": "sur la croix nous avons la vie.", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Amen, Amen, Alléluia !", "textNormLine": "amen amen alleluia", "orderLine": 5, "repeatCountLine": 2 }
+        ]
+      }     
+    ]
+  },
+  {
+    "number": 87,
+    "title": "LA VÉRITÉ",
+    "titleNorm": "la verite",
+    "actor": "",
+    "audioPath": "sound/Alleluia 87.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Réformation"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 89,
+    "title": "LA CONVERSION DE PAUL",
+    "titleNorm": "la conversion de paul",
+    "actor": "",
+    "audioPath": "sound/Alleluia 89.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Pentecôte"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 90,
+    "title": "O SEIGNEUR JÉSUS ME VOICI",
+    "titleNorm": "o seigneur jesus me voici",
+    "actor": "",
+    "audioPath": "sound/Alleluia 90.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 91,
+    "title": "SAUL EST CONVERTI",
+    "titleNorm": "saul est converti",
+    "actor": "",
+    "audioPath": "sound/Alleluia 91.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Pentecôte"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 94,
+    "title": "JÉSUS-CHRIST EST MA VIE",
+    "titleNorm": "jesus christ est la vie",
+    "actor": "",
+    "audioPath": "sound/Alleluia 94.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de grâces"],
+    "periods": ["Nouvel an"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 95,
+    "title": "AH ! SEIGNEUR QUI ES-TU ?",
+    "titleNorm": "ah seigneur qui es tu",
+    "actor": "",
+    "audioPath": "sound/Alleluia 95.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 97,
+    "title": "JÉSUS AIME",
+    "titleNorm": "jesus aime",
+    "actor": "",
+    "audioPath": "sound/Alleluia 97.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 98,
+    "title": "JÉSUS CHRIST LIBÈRE ET UNIT",
+    "titleNorm": "jesus christ libere et unit",
+    "actor": "",
+    "audioPath": "sound/Alleluia 98.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce", "Sortie", "Loi"],
+    "periods": ["Réformation"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 99,
+    "title": "DANS MON CŒUR",
+    "titleNorm": "dans mon coeur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 99.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps lent"],
+    "sections": []
+  },
+  {
+    "number": 100,
+    "title": "RENDEZ GRÂCE À YAHVÉ",
+    "titleNorm": "rendez grace a yahve",
+    "actor": "",
+    "audioPath": "sound/Alleluia 100.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Nouvel an", "Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 101,
+    "title": "QUE FERAI-JE POUR TOI",
+    "titleNorm": "que ferai je pour toi",
+    "actor": "",
+    "audioPath": "sound/Alleluia 101.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Nouvel an", "Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 102,
+    "title": "CONNAISSEZ-VOUS JÉSUS-CHRIST",
+    "titleNorm": "connaissez vous jesus christ",
+    "actor": "",
+    "audioPath": "sound/Alleluia 102.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce", "Loi"],
+    "periods": ["Avent", "Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+   {
+    "number": 103,
+    "title": "JE LE DIS EN VÉRITÉ",
+    "titleNorm": "je le dis en verite",
+    "actor": "",
+    "audioPath": "sound/Alleluia 103.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Vendredi saint"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 104,
+    "title": "VENEZ AMIS",
+    "titleNorm": "venez amis",
+    "actor": "",
+    "audioPath": "sound/Alleluia 104.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Ascension"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 105,
+    "title": "IL REVIENT BIENTÔT",
+    "titleNorm": "il revient bientot",
+    "actor": "",
+    "audioPath": "sound/Alleluia 105.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Ascension"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 106,
+    "title": "SEIGNEUR, À QUI D’AUTRE IRONS-NOUS",
+    "titleNorm": "seigneur a qui d autre irons nous",
+    "actor": "",
+    "audioPath": "sound/Alleluia 106.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Après la leçon"],
+    "periods": ["Nouvel an"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 107,
+    "title": "JÉSUS ROI DES ROIS",
+    "titleNorm": "jesus roi des rois",
+    "actor": "",
+    "audioPath": "sound/Alleluia 107.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louange", "Adoration", "Repentance"],
+    "periods": ["Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 108,
+    "title": "LE RESSUSCITÉ AGIT",
+    "titleNorm": "le ressuscite agit",
+    "actor": "",
+    "audioPath": "sound/Alleluia 108.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Résurrection"],
+    "beats": ["3 temps lent"],
+    "sections": []
+  },
+  {
+    "number": 109,
+    "title": "L’AMOUR DE DIEU",
+    "titleNorm": "l amour de dieu",
+    "actor": "",
+    "audioPath": "sound/Alleluia 109.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 110,
+    "title": "JÉSUS EST MON SAUVEUR",
+    "titleNorm": "jesus est mon sauveur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 110.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 111,
+    "title": "AMOUR DE CHRIST",
+    "titleNorm": "amour de christ",
+    "actor": "",
+    "audioPath": "sound/Alleluia 111.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Rameaux"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 113,
+    "title": "JÉSUS LE PAIN DE VIE",
+    "titleNorm": "jesus le pain de vie",
+    "actor": "",
+    "audioPath": "sound/Alleluia 113.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Loi"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 114,
+    "title": "MERCI MON DIEU",
+    "titleNorm": "merci mon dieu",
+    "actor": "",
+    "audioPath": "sound/Alleluia 114.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Offrandes"],
+    "periods": ["Ordinaire", "Pâques"],
+    "beats": ["3 temps lent"],
+    "sections": []
+  },
+  {
+    "number": 115,
+    "title": "J’IRAI LOUER L’ÉTERNEL",
+    "titleNorm": "j irai louer l eternel",
+    "actor": "",
+    "audioPath": "sound/Alleluia 115.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 118,
+    "title": "ENFANTS DONNONS",
+    "titleNorm": "enfants donnons",
+    "actor": "",
+    "audioPath": "sound/Alleluia 118.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Offrandes"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 119,
+    "title": "C’EST MON JOYEUX SERVICE",
+    "titleNorm": "c est mon joyeux service",
+    "actor": "",
+    "audioPath": "sound/Alleluia 119.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Offrandes"],
+    "periods": ["Ordinaire", "Pâques"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 120,
+    "title": "TOUT CE QUE NOUS AVONS",
+    "titleNorm": "tout ce que nous avons",
+    "actor": "",
+    "audioPath": "sound/Alleluia 120.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Offrandes"],
+    "periods": ["Ordinaire", "Avent", "Noël", "Nouvel an", "Rameaux", "Vendredi saint", "Pâques", "Ascension", "Pentecôte", "Réformation", "Résurrection"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 121,
+    "title": "J’APPORTE AU SEIGNEUR MON OFFRANDE",
+    "titleNorm": "j apporte au seigneur mon offrande",
+    "actor": "",
+    "audioPath": "sound/Alleluia 121.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Offrandes"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps lent"],
+    "sections": []
+  },
+  {
+    "number": 122,
+    "title": "VOICI MON DON",
+    "titleNorm": "voici mon don",
+    "actor": "",
+    "audioPath": "sound/Alleluia 122.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Offrandes"],
+    "periods": ["Ordinaire", "Avent", "Noël", "Nouvel an", "Rameaux", "Vendredi saint", "Pâques", "Ascension", "Pentecôte", "Réformation", "Résurrection"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 124,
+    "title": "LIS TA BIBLE",
+    "titleNorm": "lis ta bible",
+    "actor": "",
+    "audioPath": "sound/Alleluia 124.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Leçon"],
+    "periods": ["Ordinaire"],
+    "beats": ["1+3 temps"],
+    "sections": []
+  },
+  {
+    "number": 126,
+    "title": "LÈVE -TOI ET MARCHE",
+    "titleNorm": "leve toi et marche",
+    "actor": "",
+    "audioPath": "sound/Alleluia 126.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 129,
+    "title": "O CROIRE EN JÉSUS",
+    "titleNorm": "o croire en jesus",
+    "actor": "",
+    "audioPath": "sound/Alleluia 129.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps", "3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 130,
+    "title": "PITIÉ MON DIEU",
+    "titleNorm": "pitie mon dieu",
+    "actor": "",
+    "audioPath": "sound/Alleluia 130.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Rameaux"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 131,
+    "title": "L’ETERNEL EST MON BERGER",
+    "titleNorm": "l eternel est mon berger",
+    "actor": "",
+    "audioPath": "sound/Alleluia 131.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 133,
+    "title": "VENEZ LOUEZ L’ETERNEL",
+    "titleNorm": "venez louez l eternel",
+    "actor": "",
+    "audioPath": "sound/Alleluia 133.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Noël"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 134,
+    "title": "NOUS NE SOMMES PAS TRISTES",
+    "titleNorm": "nous ne sommes pas tristes",
+    "actor": "",
+    "audioPath": "sound/Alleluia 134.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 136,
+    "title": "JÉSUS JE T’AIME",
+    "titleNorm": "jesus je t aime",
+    "actor": "",
+    "audioPath": "sound/Alleluia 136.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce", "Sortie"],
+    "periods": ["Ordinaire", "Pâques", "Vendredi saint"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 137,
+    "title": "DEVANT TOI SEIGNEUR",
+    "titleNorm": "devant toi seigneur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 137.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 139,
+    "title": "ENGAGEONS-NOUS",
+    "titleNorm": "engageons nous",
+    "actor": "",
+    "audioPath": "sound/Alleluia 139.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Nouvel an", "Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 140,
+    "title": "JE VEUX SERVIR LE SEIGNEUR",
+    "titleNorm": "je veux servir le seigneur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 140.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Réformation"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 141,
+    "title": "ME VOICI AIE PITIÉ DE MOI",
+    "titleNorm": "me voici aie pitie de moi",
+    "actor": "",
+    "audioPath": "sound/Alleluia 141.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire", "Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 142,
+    "title": "SEIGNEUR AIE PITIÉ",
+    "titleNorm": "seigneur aie pitie",
+    "actor": "",
+    "audioPath": "sound/Alleluia 142.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 143,
+    "title": "VIENS ET ASSISTE-NOUS",
+    "titleNorm": "viens et assiste nous",
+    "actor": "",
+    "audioPath": "sound/Alleluia 143.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Noël"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 144,
+    "title": "VIENS NOUS DIRRIGER",
+    "titleNorm": "viens nous dirriger",
+    "actor": "",
+    "audioPath": "sound/Alleluia 144.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Leçon"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 145,
+    "title": "SEIGNEUR DONNE-NOUS TON ESPRIT",
+    "titleNorm": "seigneur donne nous ton esprit",
+    "actor": "",
+    "audioPath": "sound/Alleluia 145.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Pâques"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 146,
+    "title": "PRIONS DIEU NOTRE PÈRE",
+    "titleNorm": "prions dieu notre pere",
+    "actor": "",
+    "audioPath": "sound/Alleluia 146.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Rameaux"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 147,
+    "title": "TENTATION DE JÉSUS",
+    "titleNorm": "tentation de jesus",
+    "actor": "",
+    "audioPath": "sound/Alleluia 147.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Loi"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 148,
+    "title": "LAISSEZ TOUS LES ENFANTS VENIR À MOI",
+    "titleNorm": "laissez tous les enfants venir a moi",
+    "actor": "",
+    "audioPath": "sound/Alleluia 148.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Loi"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 149,
+    "title": "HOMME SORT DE TA FAIBLESSE",
+    "titleNorm": "homme sort de ta faiblesse",
+    "actor": "",
+    "audioPath": "sound/Alleluia 149.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Vendredi saint"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 150,
+    "title": "GENÈSE, EXODE",
+    "titleNorm": "genese exode",
+    "actor": "",
+    "audioPath": "sound/Alleluia 150.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Leçon"],
+    "periods": ["Avent"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 151,
+    "title": "CONFIE-TOI À DIEU",
+    "titleNorm": "confietoi dieu",
+    "actor": "",
+    "audioPath": "sound/Alleluia 151.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Avent", "Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 152,
+    "title": "ENFANT DE BANDJA",
+    "titleNorm": "enfant de bandja",
+    "actor": "",
+    "audioPath": "sound/Alleluia 152.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Nouvel an"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 153,
+    "title": "LA PAIX DANS L’ÂME",
+    "titleNorm": "la paix dans l ame",
+    "actor": "",
+    "audioPath": "sound/Alleluia 153.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Ordinaire", "Avent", "Noël", "Nouvel an", "Rameaux", "Vendredi saint", "Pâques", "Ascension", "Pentecôte", "Réformation", "Résurrection"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 154,
+    "title": "J’AI LA FOI",
+    "titleNorm": "j ai la foi",
+    "actor": "",
+    "audioPath": "sound/Alleluia 154.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Ordinaire", "Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 155,
+    "title": "UN ENFANT NOUS EST NÉ ALLÉLUIA",
+    "titleNorm": "un enfant nous est ne alleluia",
+    "actor": "",
+    "audioPath": "sound/Alleluia 155.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Noël"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 158,
+    "title": "JÉSUS A VAINCU LA MORT",
+    "titleNorm": "jsus a vaincu la mort",
+    "actor": "",
+    "audioPath": "sound/Alleluia 158.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Pâques"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 159,
+    "title": "O DIEU TU ES PUISSANT",
+    "titleNorm": "o dieu tu es puissant",
+    "actor": "",
+    "audioPath": "sound/Alleluia 159.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Ordinaire"],
+    "beats": ["1+3 temps"],
+    "sections": []
+  },
+  {
+    "number": 161,
+    "title": "JE PASSERAI MA VIE",
+    "titleNorm": "je passerai ma vie",
+    "actor": "",
+    "audioPath": "sound/Alleluia 161.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce", "Sortie"],
+    "periods": ["Nouvel an"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+   {
+    "number": 162,
+    "title": "NE ME LAISSE PAS PÉRIR",
+    "titleNorm": "ne me laisse pas perir",
+    "actor": "",
+    "audioPath": "sound/Alleluia 162.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Nouvel an"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 163,
+    "title": "AU COMMENCEMENT ÉTAIT LA PAROLE",
+    "titleNorm": "au commencement etait la parole",
+    "actor": "",
+    "audioPath": "sound/Alleluia 163.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Leçon"],
+    "periods": ["Avent"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 164,
+    "title": "RIEN NE PEUT M’ARRACHER",
+    "titleNorm": "rien ne peut m arracher",
+    "actor": "",
+    "audioPath": "sound/Alleluia 164.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps lent"],
+    "sections": []
+  },
+  {
+    "number": 165,
+    "title": "OH VOUS QUI ÊTES EN CHRIST",
+    "titleNorm": "oh vous qui etes en christ",
+    "actor": "",
+    "audioPath": "sound/Alleluia 165.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 167,
+    "title": "SEIGNEUR NOUS T’OFFRONS TOUT NOTRE DON",
+    "titleNorm": "seigneur nous t offrons tout notre don",
+    "actor": "",
+    "audioPath": "sound/Alleluia 167.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Offrandes"],
+    "periods": ["Ordinaire /Spécial"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 168,
+    "title": "IL VIT, IL VIT",
+    "titleNorm": "il vit il vit",
+    "actor": "",
+    "audioPath": "sound/Alleluia 168.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Sortie"],
+    "periods": ["Pâques"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 170,
+    "title": "VENEZ VENEZ VENEZ",
+    "titleNorm": "venez venez venez",
+    "actor": "",
+    "audioPath": "sound/Alleluia 170.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Rameaux"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 171,
+    "title": "JE SUIS LE CHEMIN",
+    "titleNorm": "je suis le chemin",
+    "actor": "",
+    "audioPath": "sound/Alleluia 171.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 172,
+    "title": "MOI ET MA MAISON NOUS SERVIRONS L'ÉTERNEL",
+    "titleNorm": "moi et ma maison",
+    "actor": "",
+    "audioPath": "sound/Alleluia 172.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 173,
+    "title": "DIEU EST AMOUR",
+    "titleNorm": "dieu est amour",
+    "actor": "",
+    "audioPath": "sound/Alleluia 173.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 174,
+    "title": "ACCLAMONS LE CHRIST",
+    "titleNorm": "acclamons le christ",
+    "actor": "",
+    "audioPath": "sound/Alleluia 174.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Résurrection"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 176,
+    "title": "TOUT POUR LE SEIGNEUR",
+    "titleNorm": "tout pour le seigneur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 176.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance /L/Leçon"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 177,
+    "title": "SOYONS SAINTS MES FRÈRES",
+    "titleNorm": "soyons saints mes freres",
+    "actor": "",
+    "audioPath": "sound/Alleluia 177.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Avent"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 178,
+    "title": "LES MURS DE JÉRICHO SONT TOMBÉS",
+    "titleNorm": "les murs de jericho sont tombes",
+    "actor": "",
+    "audioPath": "sound/Alleluia 178.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges", "Paroles de grâce", "Sortie"],
+    "periods": ["Réformation"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 179,
+    "title": "C’EST VRAI JÉSUS DONNE LA PAIX",
+    "titleNorm": "c est vrai jesus donne la paix",
+    "actor": "",
+    "audioPath": "sound/Alleluia 179.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Noël"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 180,
+    "title": "MONITEUR TRAVAILLONS",
+    "titleNorm": "moniteur travaillons",
+    "actor": "",
+    "audioPath": "sound/Alleluia 180.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Ordinaire /Réformation"],
+    "beats": ["3 temps lent"],
+    "sections": []
+  },
+  {
+    "number": 182,
+    "title": "RECHERCHE LA PAIX",
+    "titleNorm": "recherche la paix",
+    "actor": "",
+    "audioPath": "sound/Alleluia 182.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 183,
+    "title": "LEVONS-NOUS SUIVONS TOUS JÉSUS",
+    "titleNorm": "levons nous suivons tous jesus",
+    "actor": "",
+    "audioPath": "sound/Alleluia 183.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges", "Sortie"],
+    "periods": ["Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 184,
+    "title": "JÉSUS LE PACIFICATEUR",
+    "titleNorm": "jesus le pacificateur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 184.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire", "Avent"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 185,
+    "title": "TOUTE MA VIE JE CHANTERAI TON NOM",
+    "titleNorm": "toute ma vie je chanterai ton nom",
+    "actor": "",
+    "audioPath": "sound/Alleluia 185.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 187,
+    "title": "DONNE-NOUS SEIGNEUR",
+    "titleNorm": "donne nous seigneur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 187.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire", "Pâques"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 188,
+    "title": "TU M’AS VOULU COMME PARTENAIRE",
+    "titleNorm": "tu m as voulu comme partenaire",
+    "actor": "",
+    "audioPath": "sound/Alleluia 188.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Réformation"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 189,
+    "title": "JÉSUS-CHRIST EST LE SEIGNEUR",
+    "titleNorm": "jesus christ est le seigneur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 189.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Pâques"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 190,
+    "title": "LE SEIGNEUR NOUS APPELLE",
+    "titleNorm": "le seigneur nous appelle",
+    "actor": "",
+    "audioPath": "sound/Alleluia 190.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges", "Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 191,
+    "title": "ENSEIGNE-NOUS À PRIER",
+    "titleNorm": "enseigne nous a prier",
+    "actor": "",
+    "audioPath": "sound/Alleluia 191.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 192,
+    "title": "C’EST BON DE LOUER DIEU",
+    "titleNorm": "cest bon de louer dieu",
+    "actor": "",
+    "audioPath": "sound/Alleluia 192.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 196,
+    "title": "SAINT DES SAINTS EST L’ÉTERNEL",
+    "titleNorm": "saint des saints est leternel",
+    "actor": "",
+    "audioPath": "sound/Alleluia 196.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Ordinaire"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 198,
+    "title": "JE VEUX ALLER AU CIEL",
+    "titleNorm": "je veux aller au ciel",
+    "actor": "",
+    "audioPath": "sound/Alleluia 198.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges", "Sortie"],
+    "periods": ["Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 200,
+    "title": "COME TO JESUS",
+    "titleNorm": "come to jesus",
+    "actor": "",
+    "audioPath": "sound/Alleluia 200.mp3",
+    "language": "en",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 201,
+    "title": "QUI ÊTES-VOUS ?",
+    "titleNorm": "qui etes vous",
+    "actor": "",
+    "audioPath": "sound/Alleluia 201.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 202,
+    "title": "VIENS À NOUS",
+    "titleNorm": "viens a nous",
+    "actor": "",
+    "audioPath": "sound/Alleluia 202.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 203,
+    "title": "EST-CE QUE TU CROIS ?",
+    "titleNorm": "est ce que tu crois",
+    "actor": "",
+    "audioPath": "sound/Alleluia 203.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges", "Sortie"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 204,
+    "title": "SEIGNEUR JE VIENS VERS TOI",
+    "titleNorm": "seigneur je viens vers toi",
+    "actor": "",
+    "audioPath": "sound/Alleluia 204.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Pâques"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 205,
+    "title": "IL EST BON DE TE CÉLÉBRER",
+    "titleNorm": "il est bon de te clbrer",
+    "actor": "",
+    "audioPath": "sound/Alleluia 205.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Pâques"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 206,
+    "title": "LE DOCTEUR DE MON CŒUR",
+    "titleNorm": "le docteur de mon coeur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 206.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 208,
+    "title": "REBÂTISSONS",
+    "titleNorm": "rebatissons",
+    "actor": "",
+    "audioPath": "sound/Alleluia 208.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 209,
+    "title": "LEVONS-NOUS (NEH 2:18)",
+    "titleNorm": "levons nous neh 2 18",
+    "actor": "",
+    "audioPath": "sound/Alleluia 209.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 210,
+    "title": "NE RÉSISTE PAS (NEH 3:12-19)",
+    "titleNorm": "ne resiste pas",
+    "actor": "",
+    "audioPath": "sound/Alleluia 210.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Loi"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 211,
+    "title": "LEVONS-NOUS BÂTISSONS (NEH 2:18)",
+    "titleNorm": "levons nous batissons",
+    "actor": "",
+    "audioPath": "sound/Alleluia 211.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 212,
+    "title": "SOYONS LE SEL ET LA LUMIÈRE (MT 5:13-16)",
+    "titleNorm": "soyons le sel et la lumiere",
+    "actor": "",
+    "audioPath": "sound/Alleluia 212.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation"],
+    "beats": ["2 temps"],
+    "sections": []
+  },
+  {
+    "number": 213,
+    "title": "LEVONS-NOUS ET BÂTISSONS",
+    "titleNorm": "levons nous et batissons",
+    "actor": "",
+    "audioPath": "sound/Alleluia 213.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 214,
+    "title": "LEVONS-NOUS",
+    "titleNorm": "levons nous et batissons ensemble",
+    "actor": "",
+    "audioPath": "sound/Alleluia 214.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 215,
+    "title": "ALLONS EN GALILÉE (MT 28:1-10)",
+    "titleNorm": "allons en galilee",
+    "actor": "",
+    "audioPath": "sound/Alleluia 215.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Ascension"],
+    "beats": ["3 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 216,
+    "title": "JE CONNAIS LE BON CHEMIN",
+    "titleNorm": "je connais le bon chemin",
+    "actor": "",
+    "audioPath": "sound/Alleluia 216.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 220,
+    "title": "ENCHAÎNÉ DANS LA MISÈRE",
+    "titleNorm": "enchan dans la misre",
+    "actor": "",
+    "audioPath": "sound/Alleluia 220.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Réformation"],
+    "beats": ["1 temps"],
+    "sections": []
+  }
+]

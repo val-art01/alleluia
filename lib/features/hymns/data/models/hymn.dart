@@ -31,7 +31,7 @@ class Line {
   });
 }
 
-/// Représente un bloc du chant (couplet, refrain, pont...).
+/// Représente un bloc du chant (Solo, Ass, refrain...).
 ///
 /// - type: Solo / Ass / Ref / SoloAss
 /// - orderSection: ordre dans le chant (1, 2, 3...)
@@ -41,17 +41,20 @@ class Line {
 class Section {
   @enumerated
   SectionType type;
-
   int orderSection;
   int repeatCountSection;
-  List<Line> lines;
+  List<Line> lines = <Line>[];
 
   Section({
     this.type = SectionType.SoloAss,
     this.orderSection = 0,
     this.repeatCountSection = 1,
-    this.lines = const <Line>[],
-  });
+    List<Line>? linesParam,
+  }){
+    if (linesParam != null) {
+      lines = linesParam;
+    }
+  }
 }
 
 /// Modèle principal d'un chant stocké dans Isar.
@@ -63,11 +66,10 @@ class Section {
 /// - `beats` = sert à construire la page "Battements"
 @collection
 class Hymn {
-  /// id interne Isar (auto-incrémenté). Pas affiché à l'utilisateur.
+  /// id interne Isar (auto-incrémenté).
   Id id = Isar.autoIncrement;
 
-  /// Numéro du chant (ex: 45)
-  /// On le considère unique dans le recueil.
+  /// Numéro du chant
   @Index(unique: true, replace: true)
   late int number;
 
@@ -78,7 +80,6 @@ class Hymn {
   /// - sans accents,
   /// - en minuscules,
   /// - sans ponctuation spéciale.
-  ///
   /// Ça sert pour les recherches rapides.
   @Index(type: IndexType.hash, caseSensitive: false)
   late String titleNorm;
@@ -87,25 +88,25 @@ class Hymn {
   String? actor;
 
   /// Chemin du fichier audio (asset local) lié à ce chant.
-  /// Exemple: "assets/sound/045.mp3"
   String? audioPath;
 
   /// Code langue ("fr", "en", etc.).
   @Index(type: IndexType.hash, caseSensitive: false)
   String? language;
 
-  /// Catégories liturgiques.
-  /// Exemple: ["Louange", "Adoration", "Offrande"]
-  ///
-  /// Sert à construire la page "Catégories".
+  /// Temps liturgiques :
+  /// Exemple: ["Louanges", "Adorations", "Offrande", "Sortie"]
   @Index(type: IndexType.hash, caseSensitive: false)
-  List<String> categories;
+  List<String> liturgicalTimes = <String>[];
+
+  /// Périodes de l'année liturgique :
+  /// Exemple: ["Ordinaire", "Avent", "Noël", "Pâques"]
+  @Index(type: IndexType.hash, caseSensitive: false)
+  List<String> periods = <String>[];
 
   /// Battements / rythme.
-  /// Exemple: ["3 temps rapide", "BOBO"]
-  ///
   /// Sert à construire la page "Battements".
-  List<String> beats;
+  List<String> beats = <String>[];
 
   /// Structure détaillée du chant (couplets, refrains).
   /// Affichage texte, répétitions, etc.
@@ -118,15 +119,30 @@ class Hymn {
     this.actor,
     this.audioPath,
     this.language,
-    this.categories = const <String>[],
-    this.beats = const <String>[],
-    this.sections = const <Section>[],
-  });
+    List<String>? liturgicalTimesParam,
+    List<String>? periodsParam,
+    List<String>? beatsParam,
+    List<Section>? sectionsParam,
+  }){
+    if (liturgicalTimesParam != null) {
+      liturgicalTimes = liturgicalTimesParam;
+    }
+    if (periodsParam != null) {
+      periods = periodsParam;
+    }
+    if (beatsParam != null) {
+      beats = beatsParam;
+    }
+    if (sectionsParam != null) {
+      sections = sectionsParam;
+    }
+  }
 
   /// Petit helper pratique pour l'UI.
-  /// Exemple: "45 — Je louerai l'Éternel"
   String get displayTitle => '$number — $title';
 }
 
 // Compat temporaire pour le reste du code tant que tout n'est pas migré.
 typedef AlleluiaDB = Hymn;
+
+

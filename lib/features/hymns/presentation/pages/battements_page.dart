@@ -1,9 +1,10 @@
+import 'package:alleluia_tome_1/app/themes/app_theme.dart';
+import 'package:alleluia_tome_1/features/hymns/presentation/widgets/hymn_mini_card.dart';
 import 'package:flutter/material.dart';
 import 'package:alleluia_tome_1/core/services/hymn_db_scope.dart';
 import 'package:alleluia_tome_1/features/hymns/data/models/hymn.dart';
 import 'package:alleluia_tome_1/features/hymns/presentation/widgets/custom_appbar.dart';
 import 'package:alleluia_tome_1/features/hymns/data/repositories/hymns_repository.dart';
-import 'package:alleluia_tome_1/features/hymns/presentation/pages/play_details_page.dart';
 
 /// Page: Battements (Rythmes)
 ///
@@ -18,63 +19,27 @@ class Battements extends StatefulWidget {
 }
 
 class _BattementsState extends State<Battements> {
-  late HymnsRepository _repo;
-  late Future<Map<String, List<Hymn>>> _future;
+  HymnsRepository? _repo;
+  Future<Map<String, List<Hymn>>>? _future;
 
-  // Ordre imposé par le produit (clé affichée -> liste de mots-clés de matching)
-  // On normalise tout en minuscules pour comparer proprement.
-  static const List<_BeatBucket> _order = [
-    _BeatBucket('1 temps', ['1 temps']),
-    _BeatBucket('2 temps', ['2 temps']),
-    _BeatBucket('3 temps lent', ['3 temps lent']),
-    _BeatBucket('3 temps rapide / BOBO', ['3 temps rapide', 'bobo', '3 temps bobo']),
-    _BeatBucket('4 temps rapide', ['4 temps rapide']),
-    _BeatBucket('1 temps lent', ['1 temps lent']),
+  /// Ordre canonique des beats (priorité de classement)
+  static const List<String> _beatOrder = [
+    '1 temps',
+    '2 temps',
+    '3 temps lent',
+    '3 temps rapide',
+    '4 temps rapide',
+    '1+3 temps',
   ];
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final db = HymnDbScope.of(context);
-    _repo = HymnsRepository(db);
-    _future = _loadAndGroup();
-  }
-
-  Future<Map<String, List<Hymn>>> _loadAndGroup() async {
-    final list = await _repo.getAll();
-
-    // Prépare les groupes dans l'ordre voulu + "Autres"
-    final Map<String, List<Hymn>> groups = {
-      for (final b in _order) b.label: <Hymn>[],
-      'Autres': <Hymn>[],
-    };
-
-    String norm(String s) => s.trim().toLowerCase();
-
-    for (final h in list) {
-      // Normaliser tous les beats du chant
-      final beats = h.beats.map(norm).toList();
-
-      // Trouver le premier bucket correspondant
-      String? matchedLabel;
-      for (final bucket in _order) {
-        final anyMatch = beats.any((b) =>
-            bucket.keywords.any((kw) => b.contains(kw))); // "contains" = matching souple
-        if (anyMatch) {
-          matchedLabel = bucket.label;
-          break;
-        }
-      }
-
-      groups[matchedLabel ?? 'Autres']!.add(h);
+    if (_repo == null) {
+      final db = HymnDbScope.of(context);
+      _repo = HymnsRepository(db);
+      _future = _loadAndGroup();
     }
-
-    // Trier les hymnes par numéro dans chaque groupe
-    for (final e in groups.entries) {
-      e.value.sort((a, b) => a.number.compareTo(b.number));
-    }
-
-    return groups;
   }
 
   @override
@@ -91,46 +56,28 @@ class _BattementsState extends State<Battements> {
           }
           if (snap.hasError) {
             return Center(
-              child: Text('Erreur de chargement', style: TextStyle(color: cs.error)),
+              child: Text(
+                'Erreur de chargement',
+                style: TextStyle(color: cs.error),
+              ),
             );
           }
 
-          final groups = snap.data!;
-          // Construire une liste ordonnée de sections suivant _order
-          final orderedKeys = [
-            ..._order.map((b) => b.label),
-            'Autres',
-          ];
+          final groups = snap.data ?? const <String, List<Hymn>>{};
+          if (groups.isEmpty) {
+            return const Center(child: Text('Aucun chant classé par battement.'));
+          }
 
+          // Cards accordéon, style moderne
           final tiles = <Widget>[];
-          for (final key in orderedKeys) {
-            final list = groups[key] ?? const <Hymn>[];
-            if (list.isEmpty) continue; // n’affiche pas les sections vides
+          for (final label in _beatOrder) {
+            final list = groups[label] ?? const <Hymn>[];
+            if (list.isEmpty) continue;
 
             tiles.add(
-              Card(
-                elevation: 3,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                child: Theme(
-                  data: Theme.of(context).copyWith(
-                    dividerColor: Colors.transparent,
-                    listTileTheme: ListTileThemeData(
-                      iconColor: cs.primary,
-                      textColor: cs.onSurface,
-                    ),
-                  ),
-                  child: ExpansionTile(
-                    tilePadding: const EdgeInsets.symmetric(horizontal: 16),
-                    title: Text(
-                      key,
-                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    ),
-                    childrenPadding: const EdgeInsets.only(bottom: 8),
-                    children: list
-                        .map((h) => _HymnRow(hymn: h))
-                        .toList(),
-                  ),
-                ),
+              _BeatAccordionCard(
+                title: label,
+                hymns: list,
               ),
             );
           }
@@ -139,43 +86,116 @@ class _BattementsState extends State<Battements> {
             return const Center(child: Text('Aucun chant classé par battement.'));
           }
 
-          return ListView.separated(
-            padding: const EdgeInsets.all(10),
-            itemCount: tiles.length,
-            separatorBuilder: (_, __) => const SizedBox(height: 10),
-            itemBuilder: (_, i) => tiles[i],
+          return ListView(
+            padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
+            children: tiles,
           );
         },
       ),
     );
   }
+
+  Future<Map<String, List<Hymn>>> _loadAndGroup() async {
+    final list = await _repo!.getAll();
+    list.sort((a, b) => a.number.compareTo(b.number));
+
+    final Map<String, List<Hymn>> groups = {
+      for (final label in _beatOrder) label: <Hymn>[],
+    };
+
+    String norm(String s) => s.trim().toLowerCase();
+
+    for (final h in list) {
+      final beats = h.beats
+          .map(norm)               // normalise vraiment
+          .where((b) => b.isNotEmpty)
+          .toSet();                // évite doublons
+
+      if (beats.isEmpty) continue;
+
+      // Un chant peut apparaître dans plusieurs battements
+      for (final canonical in _beatOrder) {
+        if (beats.contains(norm(canonical))) {
+          groups[canonical]!.add(h);
+        }
+      }
+    }
+
+    for (final e in groups.entries) {
+      e.value.sort((a, b) => a.number.compareTo(b.number));
+    }
+
+    return groups;
+  }
 }
 
-class _HymnRow extends StatelessWidget {
-  const _HymnRow({required this.hymn});
 
-  final Hymn hymn;
+class _BeatAccordionCard extends StatelessWidget {
+  const _BeatAccordionCard({
+    required this.title,
+    required this.hymns,
+  });
+
+  final String title;
+  final List<Hymn> hymns;
 
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
+    final theme = Theme.of(context);
 
-    return ListTile(
-      dense: true,
-      title: Text('${hymn.number} — ${hymn.title.toLowerCase()}'),
-      trailing: Icon(Icons.chevron_right, color: cs.primary, size: 20),
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (_) => PlayDetails(hymn)),
-        );
-      },
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      decoration: BoxDecoration(
+        color: cs.surface,
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: Colors.black12),
+        boxShadow: const [
+          BoxShadow(
+            blurRadius: 10,
+            offset: Offset(0, 4),
+            color: Color(0x12000000),
+          ),
+        ],
+      ),
+      child: Theme(
+        data: theme.copyWith(dividerColor: Colors.transparent),
+        child: ExpansionTile(
+          tilePadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+          childrenPadding: const EdgeInsets.fromLTRB(8, 0, 8, 10),
+          collapsedIconColor: cs.onSurfaceVariant,
+          iconColor: cs.primary,
+          title: Row(
+            children: [
+              Expanded(
+                child: Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                decoration: BoxDecoration(
+                  color: AppTheme.primaryBlue.withOpacity(0.10),
+                  borderRadius: BorderRadius.circular(999),
+                ),
+                child: Text(
+                  "${hymns.length}",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w900,
+                    color: AppTheme.primaryBlue,
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          children: hymns.map((h) => HymnMiniCard(hymn: h)).toList(),
+        ),
+      ),
     );
   }
-}
-
-/// Petit helper pour définir un "bucket" de battements
-class _BeatBucket {
-  const _BeatBucket(this.label, this.keywords);
-  final String label;
-  final List<String> keywords; // en minuscules
 }

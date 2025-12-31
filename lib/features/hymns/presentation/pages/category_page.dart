@@ -1,16 +1,24 @@
+import 'package:alleluia_tome_1/app/themes/app_theme.dart';
+import 'package:alleluia_tome_1/features/hymns/presentation/pages/category_group_page.dart';
 import 'package:flutter/material.dart';
 import 'package:alleluia_tome_1/core/services/hymn_db_scope.dart';
 import 'package:alleluia_tome_1/features/hymns/data/models/hymn.dart';
-import 'package:alleluia_tome_1/features/hymns/presentation/widgets/custom_appbar.dart';
 import 'package:alleluia_tome_1/features/hymns/data/repositories/hymns_repository.dart';
-import 'package:alleluia_tome_1/features/hymns/presentation/pages/play_details_page.dart';
+import 'package:alleluia_tome_1/features/hymns/presentation/widgets/custom_appbar.dart';
 
 /// Page: Catégories
-/// - Affiche deux grands groupes fixes:
-///   1) Alléluia par ordre liturgique (8 sous-catégories)
-///   2) Alléluia par période (10 sous-catégories)
-/// - Regroupe les chants selon leurs catégories (case-insensitive).
-/// - Les catégories non reconnues sont placées dans "Autres".
+///
+/// Affiche deux grands groupes fixes:
+///  1) Alléluia par ordre liturgique (8 sous-catégories)
+///  2) Alléluia par période (10 sous-catégories)
+///
+/// Les chants sont rangés à partir des champs:
+///  - Hymn.liturgicalTimes
+///  - Hymn.periods
+///
+/// Les sous-catégories sont récupérées directement
+/// depuis les données (JSON → Isar), puis triées A→Z.
+///
 class Category extends StatefulWidget {
   const Category({super.key});
 
@@ -19,22 +27,21 @@ class Category extends StatefulWidget {
 }
 
 class _CategoryState extends State<Category> {
-  late HymnsRepository _repo;
-  late Future<_GroupedData> _future;
+  HymnsRepository? _repo;
+  Future<_GroupedData>? _future;
 
-  // Sous-catégories connues (normalisées en minuscules pour matching robuste)
-  static const List<String> _liturgicList = [
+  // Ordre officiel d'affichage (en minuscules + accents corrects)
+  static const List<String> _liturgicOrder = [
     'louanges',
-    'adorations',
+    'adoration',
     'prière de repentance',
     'paroles de grâce',
     'après la leçon',
     'confession de foi',
-    'offrande',
+    'offrandes',
     'sortie',
   ];
-
-  static const List<String> _periodList = [
+  static const List<String> _periodOrder = [
     'ordinaire',
     'réformation',
     'avent',
@@ -50,79 +57,54 @@ class _CategoryState extends State<Category> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    final db = HymnDbScope.of(context);
-    _repo = HymnsRepository(db);
-    _future = _loadAndGroup();
+    if (_repo == null) {
+      final db = HymnDbScope.of(context);
+      _repo = HymnsRepository(db);
+      _future = _loadAndGroup();
+    }
   }
 
   Future<_GroupedData> _loadAndGroup() async {
-    final list = await _repo.getAll();
+    final list = await _repo!.getAll();
 
-    // maps: sous-catégorie -> liste de chants
+    // On prépare les maps avec les clés officielles
     final Map<String, List<Hymn>> liturgic = {
-      for (final k in _liturgicList) k: <Hymn>[],
-      'autres': <Hymn>[],
+      for (final k in _liturgicOrder) k: <Hymn>[],
     };
     final Map<String, List<Hymn>> period = {
-      for (final k in _periodList) k: <Hymn>[],
-      'autres': <Hymn>[],
+      for (final k in _periodOrder) k: <Hymn>[],
     };
 
-    // Collecte des catégories "inconnues" pour éventuellement les afficher à part
-    final Map<String, List<Hymn>> unknown = {};
-
-    String _norm(String s) => s.trim().toLowerCase();
+    String norm(String s) => s.trim().toLowerCase();
 
     for (final h in list) {
-      final cats = h.categories.map(_norm).toSet();
-      if (cats.isEmpty) {
-        // Sans catégorie : on ne range nulle part (ou on pourrait choisir un défaut).
-        continue;
-      }
-
-      // Flags pour savoir si au moins une cat a matché un bloc
-      bool matchedLiturgic = false;
-      bool matchedPeriod = false;
-
-      for (final c in cats) {
-        if (_liturgicList.contains(c)) {
+      // Catégories liturgiques
+      final lits = (h.liturgicalTimes).map(norm).where((e) => e.isNotEmpty).toSet();
+      for (final c in lits) {
+        if (_liturgicOrder.contains(c)) {
           liturgic[c]!.add(h);
-          matchedLiturgic = true;
-        } else if (_periodList.contains(c)) {
-          period[c]!.add(h);
-          matchedPeriod = true;
-        } else {
-          // on collectera dans "divers"
-          unknown.putIfAbsent(c, () => <Hymn>[]).add(h);
         }
       }
 
-      // S'il avait des catégories mais aucune reconnue dans le groupe,
-      // on pousse dans "autres" correspondant pour ne pas les perdre
-      if (!matchedLiturgic && cats.any((c) => !_periodList.contains(c))) {
-        liturgic['autres']!.add(h);
-      }
-      if (!matchedPeriod && cats.any((c) => !_liturgicList.contains(c))) {
-        period['autres']!.add(h);
+      // Catégories par période
+      final pers = (h.periods).map(norm).where((e) => e.isNotEmpty).toSet();
+      for (final p in pers) {
+        if (_periodOrder.contains(p)) {
+          period[p]!.add(h);
+        }
       }
     }
 
-    // Tri par numéro dans chaque groupe
-    void sortMapLists(Map<String, List<Hymn>> m) {
+    // Tri interne par numéro
+    void sortMap(Map<String, List<Hymn>> m) {
       for (final e in m.entries) {
         e.value.sort((a, b) => a.number.compareTo(b.number));
       }
     }
 
-    sortMapLists(liturgic);
-    sortMapLists(period);
-    sortMapLists(unknown);
-
-    return _GroupedData(
-      liturgic: liturgic,
-      period: period,
-      unknown: unknown,
-    );
+    sortMap(liturgic);
+    sortMap(period);
+    return _GroupedData(liturgic: liturgic, period: period);
   }
 
   @override
@@ -139,43 +121,68 @@ class _CategoryState extends State<Category> {
           }
           if (snap.hasError) {
             return Center(
-              child: Text('Erreur de chargement', style: TextStyle(color: cs.error)),
-            );
-          }
-
-          final data = snap.data!;
-          final blocks = <Widget>[
-            _CategoryBlock(
-              title: "Alléluia par ordre liturgique",
-              subtitle: "Louanges, Adorations, Prière de repentance, Paroles de grâce, Après la leçon, Confession de foi, Offrande, Sortie",
-              groups: data.liturgic,
-            ),
-            _CategoryBlock(
-              title: "Alléluia par période",
-              subtitle: "Ordinaire, Réformation, Avent, Noël, Nouvel an, Rameaux, Vendredi saint, Pâques, Ascension, Pentecôte",
-              groups: data.period,
-            ),
-          ];
-
-          // Si on a des catégories inconnues, on les montre dans un bloc "divers"
-          if (data.unknown.isNotEmpty) {
-            blocks.add(
-              _CategoryBlock(
-                title: "Catégories diverses",
-                subtitle: "Catégories non classées dans les deux grands blocs",
-                groups: data.unknown,
-                // on trie les keys par ordre alpha
-                sortKeysAlphabetically: true,
+              child: Text(
+                'Erreur de chargement',
+                style: TextStyle(color: cs.error),
               ),
             );
           }
+          if (!snap.hasData) {
+            return const Center(child: Text('Aucune donnée.'));
+          }
 
-          return ListView.separated(
-            padding: const EdgeInsets.all(10),
-            itemCount: blocks.length,
-            separatorBuilder: (_, __) => const SizedBox(height: 10),
-            itemBuilder: (_, i) => blocks[i],
+          final data = snap.data!;
+          return Padding(
+            padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
+            child: Column(
+              children: [
+                _CategoryEntryCard(
+                  title: "Ordre liturgique",
+                  subtitle: "Louanges, adoration, repentance, offrandes, sortie…",
+                  icon: Icons.menu_book_rounded,
+                  groupCount: _CategoryState._liturgicOrder.length,
+                  hymnCount: data.liturgic.values.fold<int>(0, (s, e) => s + e.length),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => CategoryGroupPage(
+                          title: "Ordre liturgique",
+                          groups: data.liturgic,
+                          order: _CategoryState._liturgicOrder,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                const SizedBox(height: 12),
+                _CategoryEntryCard(
+                  title: "Ordre périodique",
+                  subtitle: "Avent, Noël, Pâques, Pentecôte, Ascension…",
+                  icon: Icons.calendar_month_rounded,
+                  groupCount: _CategoryState._periodOrder.length,
+                  hymnCount: data.period.values.fold<int>(0, (s, e) => s + e.length),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => CategoryGroupPage(
+                          title: "Périodes",
+                          groups: data.period,
+                          order: _CategoryState._periodOrder,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                const Spacer(),
+                Text(
+                  "Astuce : utilise la loupe pour rechercher un chant rapidement.",
+                  style: TextStyle(color: cs.onSurfaceVariant, fontWeight: FontWeight.w600),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
           );
+
         },
       ),
     );
@@ -184,136 +191,123 @@ class _CategoryState extends State<Category> {
 
 /// Données regroupées passées à l'UI
 class _GroupedData {
-  _GroupedData({
-    required this.liturgic,
-    required this.period,
-    required this.unknown,
-  });
+  const _GroupedData({required this.liturgic, required this.period});
 
   final Map<String, List<Hymn>> liturgic;
   final Map<String, List<Hymn>> period;
-  final Map<String, List<Hymn>> unknown;
 }
 
-/// Un bloc card + ExpansionTiles pour un groupe (ex: "par ordre liturgique")
-class _CategoryBlock extends StatelessWidget {
-  const _CategoryBlock({
+class _CategoryEntryCard extends StatelessWidget {
+  const _CategoryEntryCard({
     required this.title,
     required this.subtitle,
-    required this.groups,
-    this.sortKeysAlphabetically = false,
+    required this.icon,
+    required this.groupCount,
+    required this.hymnCount,
+    required this.onTap,
   });
 
   final String title;
   final String subtitle;
-  final Map<String, List<Hymn>> groups;
-  final bool sortKeysAlphabetically;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final cs = theme.colorScheme;
-
-    // on prépare l'ordre d'affichage des sous-catégories
-    final entries = groups.entries.toList();
-    if (sortKeysAlphabetically) {
-      entries.sort((a, b) => a.key.toLowerCase().compareTo(b.key.toLowerCase()));
-    } else {
-      // sinon on garde l'ordre d'insertion (déjà dans la logique plus haut)
-    }
-
-    return Card(
-      elevation: 3,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 4),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // En-tête du bloc
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 14, 16, 6),
-              child: Text(
-                title,
-                style: theme.textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: cs.primary,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-              child: Text(
-                subtitle,
-                style: theme.textTheme.bodySmall?.copyWith(
-                  color: cs.onSurfaceVariant,
-                ),
-              ),
-            ),
-            const Divider(height: 1),
-
-            // Sous-catégories
-            ...entries.map((e) {
-              final subtitle = e.key; // clé normalisée (lower case)
-              final displayTitle = _displayKey(e.key); // version jolie en titre
-              final list = e.value;
-
-              // on n'affiche pas les sous-catégories vides
-              if (list.isEmpty) return const SizedBox.shrink();
-
-              return Theme(
-                data: theme.copyWith(
-                  dividerColor: Colors.transparent,
-                  listTileTheme: ListTileThemeData(
-                    iconColor: cs.primary,
-                    textColor: cs.onSurface,
-                  ),
-                ),
-                child: ExpansionTile(
-                  tilePadding: const EdgeInsets.symmetric(horizontal: 16),
-                  title: Text(
-                    displayTitle,
-                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  childrenPadding: const EdgeInsets.only(bottom: 8),
-                  children: list
-                      .map((h) => _HymnRow(hymn: h))
-                      .toList(),
-                ),
-              );
-            }),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /// Transforme la clé normalisée en libellé affichable (capitalisation simple).
-  String _displayKey(String k) {
-    if (k.isEmpty) return k;
-    return k[0].toUpperCase() + k.substring(1);
-  }
-}
-
-/// Ligne cliquable pour un Hymn
-class _HymnRow extends StatelessWidget {
-  const _HymnRow({required this.hymn});
-
-  final Hymn hymn;
+  final IconData icon;
+  final int groupCount;
+  final int hymnCount;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
 
-    return ListTile(
-      dense: true,
-      title: Text('${hymn.number} — ${hymn.title.toLowerCase()}'),
-      trailing: Icon(Icons.chevron_right, color: cs.primary, size: 20),
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (_) => PlayDetails(hymn)),
-        );
-      },
+    return InkWell(
+      borderRadius: BorderRadius.circular(18),
+      onTap: onTap,
+      child: Ink(
+        decoration: BoxDecoration(
+          color: cs.surface,
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(color: Colors.black12),
+          boxShadow: const [
+            BoxShadow(
+              blurRadius: 10,
+              offset: Offset(0, 4),
+              color: Color(0x12000000),
+            ),
+          ],
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Container(
+                width: 46,
+                height: 46,
+                decoration: BoxDecoration(
+                  color: AppTheme.primaryBlue.withOpacity(0.12),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Icon(icon, color: AppTheme.primaryBlue),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(title,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 16,
+                        )),
+                    const SizedBox(height: 6),
+                    Text(
+                      subtitle,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: cs.onSurfaceVariant,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Wrap(
+                      spacing: 8,
+                      children: [
+                        _Pill(text: "$groupCount sous-catégories"),
+                        _Pill(text: "$hymnCount chants"),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 8),
+              Icon(Icons.chevron_right_rounded, color: cs.primary, size: 28),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _Pill extends StatelessWidget {
+  const _Pill({required this.text});
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      decoration: BoxDecoration(
+        color: AppTheme.primaryBlue.withOpacity(0.10),
+        borderRadius: BorderRadius.circular(999),
+      ),
+      child: Text(
+        text,
+        style: const TextStyle(
+          fontWeight: FontWeight.w800,
+          color: AppTheme.primaryBlue,
+          fontSize: 12,
+        ),
+      ),
     );
   }
 }

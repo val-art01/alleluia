@@ -25,7 +25,6 @@ class _SplashScreenState extends State<SplashScreen> {
   void _startTimer() {
     _timer = Timer(_kSplashDuration, () {
       if (!mounted) return;
-      // Version Navigator (Phase A)
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => const Home()),
       );
@@ -37,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void dispose() {
-    // Bonne pratique : annuler le timer pour éviter toute fuite.
+    // annuler le timer pour éviter toute fuite.
     _timer?.cancel();
     super.dispose();
   }

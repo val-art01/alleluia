@@ -52,6 +52,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-
-// enchaîne vers la page SettingsPage (menu général : Favoris, Quoi de neuf, Partager, Avis, Don…).

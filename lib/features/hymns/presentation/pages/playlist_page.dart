@@ -1,3 +1,4 @@
+import 'package:alleluia_tome_1/app/themes/app_theme.dart';
 import 'package:alleluia_tome_1/core/services/hymn_db_scope.dart';
 import 'package:flutter/material.dart';
 import 'package:alleluia_tome_1/features/hymns/data/models/hymn.dart';
@@ -20,22 +21,18 @@ class PlayList extends StatefulWidget {
 class _PlayListState extends State<PlayList> {
   late HymnsRepository _repo;
   late Future<List<Hymn>> _futureHymns;
-  // late final List<Alleluia> _sortedChants;
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    // Récupérer la DB depuis le scope le plus haut
-    final db = HymnDbScope.of(context);
+    final db = HymnDbScope.of(context); // Récupérer la DB depuis le scope le plus haut
     _repo = HymnsRepository(db);
-
-    // Charger les chants une seule fois
-    _futureHymns = _loadAndSort();
+    _futureHymns = _loadAndSort();     // Charger les chants une seule fois
   }
 
+  /// tri alphabétique insensible à la casse sur le titre
   Future<List<Hymn>> _loadAndSort() async {
     final list = await _repo.getAll();
-    // tri alphabétique insensible à la casse sur le titre
     list.sort((a, b) => a.title.toLowerCase().compareTo(b.title.toLowerCase()));
     return list;
   }
@@ -45,12 +42,12 @@ class _PlayListState extends State<PlayList> {
     final cs = Theme.of(context).colorScheme;
 
     return Scaffold(
+      backgroundColor: cs.surface,
       appBar: const CustomAppBar(),
       body: FutureBuilder<List<Hymn>>(
         future: _futureHymns,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            // Chargement initial
             return const Center(child: CircularProgressIndicator());
           }
 
@@ -65,17 +62,28 @@ class _PlayListState extends State<PlayList> {
 
           final hymns = snapshot.data ?? [];
           if (hymns.isEmpty) {
-            return const Center(child: Text("Aucun chant disponible."));
+            return const Center(
+              child: Text(
+                "Aucun chant disponible.",
+                style: TextStyle(fontSize: 16),
+              ),
+            );
           }
 
           return ListView.separated(
+            padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
             itemCount: hymns.length,
-            separatorBuilder: (_, __) =>
-                const Divider(height: 1, thickness: 0.5),
+            separatorBuilder: (_, __) => const SizedBox(height: 10),
             itemBuilder: (context, index) {
               final hymn = hymns[index];
-              return _buildHymnTile(context, hymn);
+              return _buildHymnCard(context, hymn);
             },
+            // itemCount: hymns.length,
+            // separatorBuilder: (_, __) => const Divider(height: 1, thickness: 0.5, color: Colors.black12),
+            // itemBuilder: (context, index) {
+            //   final hymn = hymns[index];
+            //   return _buildHymnTile(context, hymn);
+            // },
           );
         },
       ),
@@ -83,38 +91,90 @@ class _PlayListState extends State<PlayList> {
   }
 
   /// Tuile de chant (carte cliquable → PlayDetails).
-  Widget _buildHymnTile(BuildContext context, Hymn hymn) {
-    final avatarColor = Theme.of(context).colorScheme.primary.withOpacity(0.15);
-    final arrowColor = Theme.of(context).colorScheme.primary;
+  Widget _buildHymnCard(BuildContext context, Hymn hymn) {
+    final cs = Theme.of(context).colorScheme;
 
-    return Card(
-      elevation: 3,
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      child: ListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-        title: Text(
-          hymn.title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+    return InkWell(
+      borderRadius: BorderRadius.circular(18),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => PlayDetails(hymn)),
+        );
+      },
+      child: Ink(
+        decoration: BoxDecoration(
+          color: cs.surface,
+          borderRadius: BorderRadius.circular(18),
+          border: Border.all(color: Colors.black12),
+          boxShadow: const [
+            BoxShadow(
+              blurRadius: 10,
+              offset: Offset(0, 4),
+              color: Color(0x14000000),
+            ),
+          ],
         ),
-        subtitle: Text(
-          hymn.actor ?? '',
-          style: TextStyle(color: Colors.grey.shade700),
-        ),
-        leading: CircleAvatar(
-          backgroundColor: avatarColor,
-          child: Text(
-            hymn.number.toString(),
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        child: Padding(
+          padding: const EdgeInsets.all(14),
+          child: Row(
+            children: [
+              // Numéro (badge)
+              Container(
+                width: 46,
+                height: 46,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: AppTheme.primaryBlue.withOpacity(0.12),
+                  borderRadius: BorderRadius.circular(14),
+                ),
+                child: Text(
+                  hymn.number.toString(),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w800,
+                    color: AppTheme.primaryBlue,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 12),
+
+              // Textes
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      hymn.title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w800,
+                        fontSize: 15.5,
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    if ((hymn.actor ?? '').trim().isNotEmpty)
+                      Text(
+                        hymn.actor!.trim(),
+                        style: TextStyle(
+                          color: AppTheme.ongrey,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 13,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(width: 8),
+              const Icon(
+                Icons.chevron_right_rounded,
+                size: 28,
+                color: AppTheme.primaryBlue,
+              ),
+            ],
           ),
         ),
-        trailing: Icon(Icons.arrow_forward_ios, size: 20, color: arrowColor),
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => PlayDetails(hymn)),
-          );
-        },
       ),
     );
   }

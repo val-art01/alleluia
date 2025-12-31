@@ -9,39 +9,6 @@
 ### 📸 Capture d’écran
 ![Capture d’écran de l’application](./assets/images/Screenshot_app.png)
 
-
-graph TD
-
-UI[Flutter UI<br/>Pages & Widgets]
-
-UI -->|utilise| HymnsRepo[HymnsRepository]
-UI -->|utilise| FavRepo[FavoritesRepository]
-UI -->|utilise| AudioService[AudioPlayerService]
-
-HymnsRepo -->|lit| HymnDB[HymnDbScope]
-FavRepo -->|lit/écrit| HymnDB
-
-HymnDB -->|chargement initial| JsonSource[JSON Hymn Data Source]
-
-JsonSource -->|parse via isolate| HymnModel[Hymn / Section / Line Models]
-
-AudioService -->|joue| AudioFiles[Fichiers audio MP3]
-----
-
-graph LR
-
-User[Utilisateur]
-
-Device[Smartphone<br/>(Android / iOS)]
-App[Alleluia App<br/>Flutter]
-
-Assets[Assets embarqués<br/>JSON + MP3]
-
-User --> Device
-Device --> App
-App --> Assets
-
-
 ---
 ## 🚀 Fonctionnalités principales
 

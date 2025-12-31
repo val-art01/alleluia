@@ -32,39 +32,44 @@ const HymnSchema = CollectionSchema(
       name: r'beats',
       type: IsarType.stringList,
     ),
-    r'categories': PropertySchema(
-      id: 3,
-      name: r'categories',
-      type: IsarType.stringList,
-    ),
     r'displayTitle': PropertySchema(
-      id: 4,
+      id: 3,
       name: r'displayTitle',
       type: IsarType.string,
     ),
     r'language': PropertySchema(
-      id: 5,
+      id: 4,
       name: r'language',
       type: IsarType.string,
+    ),
+    r'liturgicalTimes': PropertySchema(
+      id: 5,
+      name: r'liturgicalTimes',
+      type: IsarType.stringList,
     ),
     r'number': PropertySchema(
       id: 6,
       name: r'number',
       type: IsarType.long,
     ),
-    r'sections': PropertySchema(
+    r'periods': PropertySchema(
       id: 7,
+      name: r'periods',
+      type: IsarType.stringList,
+    ),
+    r'sections': PropertySchema(
+      id: 8,
       name: r'sections',
       type: IsarType.objectList,
       target: r'Section',
     ),
     r'title': PropertySchema(
-      id: 8,
+      id: 9,
       name: r'title',
       type: IsarType.string,
     ),
     r'titleNorm': PropertySchema(
-      id: 9,
+      id: 10,
       name: r'titleNorm',
       type: IsarType.string,
     )
@@ -114,14 +119,27 @@ const HymnSchema = CollectionSchema(
         )
       ],
     ),
-    r'categories': IndexSchema(
-      id: -7368044883450683743,
-      name: r'categories',
+    r'liturgicalTimes': IndexSchema(
+      id: 3939421813255591574,
+      name: r'liturgicalTimes',
       unique: false,
       replace: false,
       properties: [
         IndexPropertySchema(
-          name: r'categories',
+          name: r'liturgicalTimes',
+          type: IndexType.hash,
+          caseSensitive: false,
+        )
+      ],
+    ),
+    r'periods': IndexSchema(
+      id: 2116355595295030220,
+      name: r'periods',
+      unique: false,
+      replace: false,
+      properties: [
+        IndexPropertySchema(
+          name: r'periods',
           type: IndexType.hash,
           caseSensitive: false,
         )
@@ -161,18 +179,25 @@ int _hymnEstimateSize(
       bytesCount += value.length * 3;
     }
   }
-  bytesCount += 3 + object.categories.length * 3;
-  {
-    for (var i = 0; i < object.categories.length; i++) {
-      final value = object.categories[i];
-      bytesCount += value.length * 3;
-    }
-  }
   bytesCount += 3 + object.displayTitle.length * 3;
   {
     final value = object.language;
     if (value != null) {
       bytesCount += 3 + value.length * 3;
+    }
+  }
+  bytesCount += 3 + object.liturgicalTimes.length * 3;
+  {
+    for (var i = 0; i < object.liturgicalTimes.length; i++) {
+      final value = object.liturgicalTimes[i];
+      bytesCount += value.length * 3;
+    }
+  }
+  bytesCount += 3 + object.periods.length * 3;
+  {
+    for (var i = 0; i < object.periods.length; i++) {
+      final value = object.periods[i];
+      bytesCount += value.length * 3;
     }
   }
   bytesCount += 3 + object.sections.length * 3;
@@ -197,18 +222,19 @@ void _hymnSerialize(
   writer.writeString(offsets[0], object.actor);
   writer.writeString(offsets[1], object.audioPath);
   writer.writeStringList(offsets[2], object.beats);
-  writer.writeStringList(offsets[3], object.categories);
-  writer.writeString(offsets[4], object.displayTitle);
-  writer.writeString(offsets[5], object.language);
+  writer.writeString(offsets[3], object.displayTitle);
+  writer.writeString(offsets[4], object.language);
+  writer.writeStringList(offsets[5], object.liturgicalTimes);
   writer.writeLong(offsets[6], object.number);
+  writer.writeStringList(offsets[7], object.periods);
   writer.writeObjectList<Section>(
-    offsets[7],
+    offsets[8],
     allOffsets,
     SectionSchema.serialize,
     object.sections,
   );
-  writer.writeString(offsets[8], object.title);
-  writer.writeString(offsets[9], object.titleNorm);
+  writer.writeString(offsets[9], object.title);
+  writer.writeString(offsets[10], object.titleNorm);
 }
 
 Hymn _hymnDeserialize(
@@ -220,21 +246,22 @@ Hymn _hymnDeserialize(
   final object = Hymn(
     actor: reader.readStringOrNull(offsets[0]),
     audioPath: reader.readStringOrNull(offsets[1]),
-    beats: reader.readStringList(offsets[2]) ?? const <String>[],
-    categories: reader.readStringList(offsets[3]) ?? const <String>[],
-    language: reader.readStringOrNull(offsets[5]),
+    language: reader.readStringOrNull(offsets[4]),
     number: reader.readLong(offsets[6]),
-    sections: reader.readObjectList<Section>(
-          offsets[7],
-          SectionSchema.deserialize,
-          allOffsets,
-          Section(),
-        ) ??
-        const <Section>[],
-    title: reader.readString(offsets[8]),
-    titleNorm: reader.readString(offsets[9]),
+    title: reader.readString(offsets[9]),
+    titleNorm: reader.readString(offsets[10]),
   );
+  object.beats = reader.readStringList(offsets[2]) ?? [];
   object.id = id;
+  object.liturgicalTimes = reader.readStringList(offsets[5]) ?? [];
+  object.periods = reader.readStringList(offsets[7]) ?? [];
+  object.sections = reader.readObjectList<Section>(
+        offsets[8],
+        SectionSchema.deserialize,
+        allOffsets,
+        Section(),
+      ) ??
+      [];
   return object;
 }
 
@@ -250,26 +277,28 @@ P _hymnDeserializeProp<P>(
     case 1:
       return (reader.readStringOrNull(offset)) as P;
     case 2:
-      return (reader.readStringList(offset) ?? const <String>[]) as P;
+      return (reader.readStringList(offset) ?? []) as P;
     case 3:
-      return (reader.readStringList(offset) ?? const <String>[]) as P;
-    case 4:
       return (reader.readString(offset)) as P;
-    case 5:
+    case 4:
       return (reader.readStringOrNull(offset)) as P;
+    case 5:
+      return (reader.readStringList(offset) ?? []) as P;
     case 6:
       return (reader.readLong(offset)) as P;
     case 7:
+      return (reader.readStringList(offset) ?? []) as P;
+    case 8:
       return (reader.readObjectList<Section>(
             offset,
             SectionSchema.deserialize,
             allOffsets,
             Section(),
           ) ??
-          const <Section>[]) as P;
-    case 8:
-      return (reader.readString(offset)) as P;
+          []) as P;
     case 9:
+      return (reader.readString(offset)) as P;
+    case 10:
       return (reader.readString(offset)) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
@@ -469,7 +498,7 @@ extension HymnQueryWhere on QueryBuilder<Hymn, Hymn, QWhereClause> {
 
   QueryBuilder<Hymn, Hymn, QAfterWhereClause> numberGreaterThan(
     int number, {
-    bool include = false,
+    bool include = false, required Sort sort,
   }) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(IndexWhereClause.between(
@@ -483,7 +512,7 @@ extension HymnQueryWhere on QueryBuilder<Hymn, Hymn, QWhereClause> {
 
   QueryBuilder<Hymn, Hymn, QAfterWhereClause> numberLessThan(
     int number, {
-    bool include = false,
+    bool include = false, required Sort sort,
   }) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(IndexWhereClause.between(
@@ -622,45 +651,90 @@ extension HymnQueryWhere on QueryBuilder<Hymn, Hymn, QWhereClause> {
     });
   }
 
-  QueryBuilder<Hymn, Hymn, QAfterWhereClause> categoriesEqualTo(
-      List<String> categories) {
+  QueryBuilder<Hymn, Hymn, QAfterWhereClause> liturgicalTimesEqualTo(
+      List<String> liturgicalTimes) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(IndexWhereClause.equalTo(
-        indexName: r'categories',
-        value: [categories],
+        indexName: r'liturgicalTimes',
+        value: [liturgicalTimes],
       ));
     });
   }
 
-  QueryBuilder<Hymn, Hymn, QAfterWhereClause> categoriesNotEqualTo(
-      List<String> categories) {
+  QueryBuilder<Hymn, Hymn, QAfterWhereClause> liturgicalTimesNotEqualTo(
+      List<String> liturgicalTimes) {
     return QueryBuilder.apply(this, (query) {
       if (query.whereSort == Sort.asc) {
         return query
             .addWhereClause(IndexWhereClause.between(
-              indexName: r'categories',
+              indexName: r'liturgicalTimes',
               lower: [],
-              upper: [categories],
+              upper: [liturgicalTimes],
               includeUpper: false,
             ))
             .addWhereClause(IndexWhereClause.between(
-              indexName: r'categories',
-              lower: [categories],
+              indexName: r'liturgicalTimes',
+              lower: [liturgicalTimes],
               includeLower: false,
               upper: [],
             ));
       } else {
         return query
             .addWhereClause(IndexWhereClause.between(
-              indexName: r'categories',
-              lower: [categories],
+              indexName: r'liturgicalTimes',
+              lower: [liturgicalTimes],
               includeLower: false,
               upper: [],
             ))
             .addWhereClause(IndexWhereClause.between(
-              indexName: r'categories',
+              indexName: r'liturgicalTimes',
               lower: [],
-              upper: [categories],
+              upper: [liturgicalTimes],
+              includeUpper: false,
+            ));
+      }
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterWhereClause> periodsEqualTo(
+      List<String> periods) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(IndexWhereClause.equalTo(
+        indexName: r'periods',
+        value: [periods],
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterWhereClause> periodsNotEqualTo(
+      List<String> periods) {
+    return QueryBuilder.apply(this, (query) {
+      if (query.whereSort == Sort.asc) {
+        return query
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'periods',
+              lower: [],
+              upper: [periods],
+              includeUpper: false,
+            ))
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'periods',
+              lower: [periods],
+              includeLower: false,
+              upper: [],
+            ));
+      } else {
+        return query
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'periods',
+              lower: [periods],
+              includeLower: false,
+              upper: [],
+            ))
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'periods',
+              lower: [],
+              upper: [periods],
               includeUpper: false,
             ));
       }
@@ -1173,221 +1247,6 @@ extension HymnQueryFilter on QueryBuilder<Hymn, Hymn, QFilterCondition> {
     });
   }
 
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesElementEqualTo(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'categories',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesElementGreaterThan(
-    String value, {
-    bool include = false,
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.greaterThan(
-        include: include,
-        property: r'categories',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesElementLessThan(
-    String value, {
-    bool include = false,
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.lessThan(
-        include: include,
-        property: r'categories',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesElementBetween(
-    String lower,
-    String upper, {
-    bool includeLower = true,
-    bool includeUpper = true,
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.between(
-        property: r'categories',
-        lower: lower,
-        includeLower: includeLower,
-        upper: upper,
-        includeUpper: includeUpper,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesElementStartsWith(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.startsWith(
-        property: r'categories',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesElementEndsWith(
-    String value, {
-    bool caseSensitive = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.endsWith(
-        property: r'categories',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesElementContains(
-      String value,
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.contains(
-        property: r'categories',
-        value: value,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesElementMatches(
-      String pattern,
-      {bool caseSensitive = true}) {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.matches(
-        property: r'categories',
-        wildcard: pattern,
-        caseSensitive: caseSensitive,
-      ));
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesElementIsEmpty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.equalTo(
-        property: r'categories',
-        value: '',
-      ));
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition>
-      categoriesElementIsNotEmpty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addFilterCondition(FilterCondition.greaterThan(
-        property: r'categories',
-        value: '',
-      ));
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesLengthEqualTo(
-      int length) {
-    return QueryBuilder.apply(this, (query) {
-      return query.listLength(
-        r'categories',
-        length,
-        true,
-        length,
-        true,
-      );
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesIsEmpty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.listLength(
-        r'categories',
-        0,
-        true,
-        0,
-        true,
-      );
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesIsNotEmpty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.listLength(
-        r'categories',
-        0,
-        false,
-        999999,
-        true,
-      );
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesLengthLessThan(
-    int length, {
-    bool include = false,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.listLength(
-        r'categories',
-        0,
-        true,
-        length,
-        include,
-      );
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesLengthGreaterThan(
-    int length, {
-    bool include = false,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.listLength(
-        r'categories',
-        length,
-        include,
-        999999,
-        true,
-      );
-    });
-  }
-
-  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> categoriesLengthBetween(
-    int lower,
-    int upper, {
-    bool includeLower = true,
-    bool includeUpper = true,
-  }) {
-    return QueryBuilder.apply(this, (query) {
-      return query.listLength(
-        r'categories',
-        lower,
-        includeLower,
-        upper,
-        includeUpper,
-      );
-    });
-  }
-
   QueryBuilder<Hymn, Hymn, QAfterFilterCondition> displayTitleEqualTo(
     String value, {
     bool caseSensitive = true,
@@ -1715,6 +1574,227 @@ extension HymnQueryFilter on QueryBuilder<Hymn, Hymn, QFilterCondition> {
     });
   }
 
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> liturgicalTimesElementEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'liturgicalTimes',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition>
+      liturgicalTimesElementGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'liturgicalTimes',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition>
+      liturgicalTimesElementLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'liturgicalTimes',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> liturgicalTimesElementBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'liturgicalTimes',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition>
+      liturgicalTimesElementStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'liturgicalTimes',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition>
+      liturgicalTimesElementEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'liturgicalTimes',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition>
+      liturgicalTimesElementContains(String value,
+          {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'liturgicalTimes',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> liturgicalTimesElementMatches(
+      String pattern,
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'liturgicalTimes',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition>
+      liturgicalTimesElementIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'liturgicalTimes',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition>
+      liturgicalTimesElementIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'liturgicalTimes',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> liturgicalTimesLengthEqualTo(
+      int length) {
+    return QueryBuilder.apply(this, (query) {
+      return query.listLength(
+        r'liturgicalTimes',
+        length,
+        true,
+        length,
+        true,
+      );
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> liturgicalTimesIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.listLength(
+        r'liturgicalTimes',
+        0,
+        true,
+        0,
+        true,
+      );
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> liturgicalTimesIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.listLength(
+        r'liturgicalTimes',
+        0,
+        false,
+        999999,
+        true,
+      );
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> liturgicalTimesLengthLessThan(
+    int length, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.listLength(
+        r'liturgicalTimes',
+        0,
+        true,
+        length,
+        include,
+      );
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition>
+      liturgicalTimesLengthGreaterThan(
+    int length, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.listLength(
+        r'liturgicalTimes',
+        length,
+        include,
+        999999,
+        true,
+      );
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> liturgicalTimesLengthBetween(
+    int lower,
+    int upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.listLength(
+        r'liturgicalTimes',
+        lower,
+        includeLower,
+        upper,
+        includeUpper,
+      );
+    });
+  }
+
   QueryBuilder<Hymn, Hymn, QAfterFilterCondition> numberEqualTo(int value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
@@ -1764,6 +1844,220 @@ extension HymnQueryFilter on QueryBuilder<Hymn, Hymn, QFilterCondition> {
         upper: upper,
         includeUpper: includeUpper,
       ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsElementEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'periods',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsElementGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'periods',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsElementLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'periods',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsElementBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'periods',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsElementStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'periods',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsElementEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'periods',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsElementContains(
+      String value,
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'periods',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsElementMatches(
+      String pattern,
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'periods',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsElementIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'periods',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsElementIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'periods',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsLengthEqualTo(
+      int length) {
+    return QueryBuilder.apply(this, (query) {
+      return query.listLength(
+        r'periods',
+        length,
+        true,
+        length,
+        true,
+      );
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.listLength(
+        r'periods',
+        0,
+        true,
+        0,
+        true,
+      );
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.listLength(
+        r'periods',
+        0,
+        false,
+        999999,
+        true,
+      );
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsLengthLessThan(
+    int length, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.listLength(
+        r'periods',
+        0,
+        true,
+        length,
+        include,
+      );
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsLengthGreaterThan(
+    int length, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.listLength(
+        r'periods',
+        length,
+        include,
+        999999,
+        true,
+      );
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QAfterFilterCondition> periodsLengthBetween(
+    int lower,
+    int upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.listLength(
+        r'periods',
+        lower,
+        includeLower,
+        upper,
+        includeUpper,
+      );
     });
   }
 
@@ -2326,12 +2620,6 @@ extension HymnQueryWhereDistinct on QueryBuilder<Hymn, Hymn, QDistinct> {
     });
   }
 
-  QueryBuilder<Hymn, Hymn, QDistinct> distinctByCategories() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addDistinctBy(r'categories');
-    });
-  }
-
   QueryBuilder<Hymn, Hymn, QDistinct> distinctByDisplayTitle(
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
@@ -2346,9 +2634,21 @@ extension HymnQueryWhereDistinct on QueryBuilder<Hymn, Hymn, QDistinct> {
     });
   }
 
+  QueryBuilder<Hymn, Hymn, QDistinct> distinctByLiturgicalTimes() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'liturgicalTimes');
+    });
+  }
+
   QueryBuilder<Hymn, Hymn, QDistinct> distinctByNumber() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'number');
+    });
+  }
+
+  QueryBuilder<Hymn, Hymn, QDistinct> distinctByPeriods() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'periods');
     });
   }
 
@@ -2392,12 +2692,6 @@ extension HymnQueryProperty on QueryBuilder<Hymn, Hymn, QQueryProperty> {
     });
   }
 
-  QueryBuilder<Hymn, List<String>, QQueryOperations> categoriesProperty() {
-    return QueryBuilder.apply(this, (query) {
-      return query.addPropertyName(r'categories');
-    });
-  }
-
   QueryBuilder<Hymn, String, QQueryOperations> displayTitleProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'displayTitle');
@@ -2410,9 +2704,21 @@ extension HymnQueryProperty on QueryBuilder<Hymn, Hymn, QQueryProperty> {
     });
   }
 
+  QueryBuilder<Hymn, List<String>, QQueryOperations> liturgicalTimesProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'liturgicalTimes');
+    });
+  }
+
   QueryBuilder<Hymn, int, QQueryOperations> numberProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'number');
+    });
+  }
+
+  QueryBuilder<Hymn, List<String>, QQueryOperations> periodsProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'periods');
     });
   }
 
@@ -2976,18 +3282,18 @@ Section _sectionDeserialize(
   Map<Type, List<int>> allOffsets,
 ) {
   final object = Section(
-    lines: reader.readObjectList<Line>(
-          offsets[0],
-          LineSchema.deserialize,
-          allOffsets,
-          Line(),
-        ) ??
-        const <Line>[],
     orderSection: reader.readLongOrNull(offsets[1]) ?? 0,
     repeatCountSection: reader.readLongOrNull(offsets[2]) ?? 1,
     type: _SectiontypeValueEnumMap[reader.readByteOrNull(offsets[3])] ??
         SectionType.SoloAss,
   );
+  object.lines = reader.readObjectList<Line>(
+        offsets[0],
+        LineSchema.deserialize,
+        allOffsets,
+        Line(),
+      ) ??
+      [];
   return object;
 }
 
@@ -3005,7 +3311,7 @@ P _sectionDeserializeProp<P>(
             allOffsets,
             Line(),
           ) ??
-          const <Line>[]) as P;
+          []) as P;
     case 1:
       return (reader.readLongOrNull(offset) ?? 0) as P;
     case 2:

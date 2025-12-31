@@ -1,208 +1,208 @@
+import 'dart:async';
 import 'package:isar/isar.dart';
 import 'package:alleluia_tome_1/core/services/hymn_db_service.dart';
 import 'package:alleluia_tome_1/features/hymns/data/models/hymn.dart';
+import 'package:alleluia_tome_1/features/hymns/data/sources/json_hymn_data_source.dart';
 import 'package:alleluia_tome_1/features/hymns/data/repositories/search_repositories.dart';
 
-/// HymnsRepository
+/// HymnsRepository principal pour accéder aux chants.
 ///
-/// Rôle:
-/// - Fournit un accès "propre" aux chants stockés en base Isar.
-/// - Sert d'API de lecture/écriture pour l'UI.
-/// - Centralise les requêtes courantes (tous les chants, suivant/précédent,
-///   regroupements par catégories et par battement).
-///
+/// - Lit/écrit dans Isar via HymnDbService.
+/// - Peut remplir la base à partir du JSON `chants_alleluai.json`.
+/// - Fournit des méthodes pour :
+///   * tout lister,
+///   * trouver un chant par numéro,
+///   * précédent / suivant,
+///   * recherche avec scoring (SearchResult).
 /// IMPORTANT:
 /// On ne met AUCUNE logique d'UI ici.
 /// Ce fichier ne dépend que de la DB + du modèle.
 class HymnsRepository {
-  HymnsRepository(this._db);
+  HymnsRepository(this._db, {this.assetPath = 'assets/data/chants_alleluia.json'});
   final HymnDbService _db;
+  final String assetPath;
+  Isar get _isar => _db.isar;
 
-  /// Récupérer tous les chants triés par numéro croissant.
-  Future<List<Hymn>> getAll() async {
-    // Isar génère un accessoire `hymns` basé sur le nom du modèle Hymn
-    // et des helpers de requêtes à partir du schéma.
-    return _db.isar.hymns.where().sortByNumber().findAll();
-  }
+  // ---- seed params (configurables si besoin) ----
+  static const int _chunkSize = 500;
+  static const int _minNumberForValid = 1;
 
-  /// Retrouver un chant par son numéro (ex: 45).
-  Future<Hymn?> findByNumber(int number) async {
-    return _db.isar.hymns.filter().numberEqualTo(number).findFirst();
-  }
+  /// Seed la DB si vide (ou force si force=true).
+  /// Retourne le nombre d'éléments insérés.
+  /// onProgress(optional): callback (insertedSoFar, totalToInsert)
+  Future<int> seedFromJsonIfNeeded({bool force = true, void Function(int inserted, int total)? onProgress}) async {
+    final existing = await _isar.hymns.count();
+    if (existing > 0 && !force) return 0;
 
-  /// Donner le chant suivant par numéro.
-  Future<Hymn?> nextOf(int number) async {
-    final list = await getAll();
-    final i = list.indexWhere((h) => h.number == number);
-    if (i >= 0 && i < list.length - 1) return list[i + 1];
-    return null;
-  }
+    final rawHymns = await loadHymnsFromJsonAssetInIsolate(assetPath);
+    if (rawHymns.isEmpty) return 0;
 
-  /// Donner le chant précédent par numéro.
-  Future<Hymn?> previousOf(int number) async {
-    final list = await getAll();
-    final i = list.indexWhere((h) => h.number == number);
-    if (i > 0) return list[i - 1];
-    return null;
-  }
+    // tri par number pour insertion stable
+    rawHymns.sort((a, b) => a.number.compareTo(b.number));
 
-  /// Regroupe les chants par catégorie liturgique.
-  ///
-  /// Renvoie une map du style:
-  /// {
-  ///   "Adoration": [Hymn, Hymn, ...],
-  ///   "Louange": [Hymn, ...],
-  /// }
-  Future<Map<String, List<Hymn>>> groupByCategory() async {
-    final list = await getAll();
-    final map = <String, List<Hymn>>{};
-    for (final h in list) {
-      for (final cat in h.categories) {
-        map.putIfAbsent(cat, () => <Hymn>[]).add(h);
+    // validations + normalisations supplémentaires
+    final List<Hymn> valid = <Hymn>[];
+    final seenNumbers = <int>{};
+    for (final h in rawHymns) {
+      if (h.number < _minNumberForValid) continue;
+      if (h.title.trim().isEmpty) continue;
+      if (seenNumbers.contains(h.number)) {
+        // si doublon sur number -> on ignore la seconde occurrence
+        continue;
       }
+      // assure titleNorm
+      if (h.titleNorm.trim().isEmpty) {
+        h.titleNorm = h.title.toLowerCase();
+      }
+      valid.add(h);
+      seenNumbers.add(h.number);
     }
-    // Optionnel: trier les listes dans chaque catégorie
-    for (final entry in map.entries) {
-      entry.value.sort((a, b) => a.number.compareTo(b.number));
+
+    final total = valid.length;
+    int inserted = 0;
+
+    // Insert par chunks dans des transactions séparées
+    for (var i = 0; i < total; i += _chunkSize) {
+      final end = (i + _chunkSize < total) ? i + _chunkSize : total;
+      final chunk = valid.sublist(i, end);
+
+      await _isar.writeTxn(() async {
+        await _isar.hymns.putAll(chunk);
+      });
+
+      inserted += chunk.length;
+      if (onProgress != null) onProgress(inserted, total);
     }
-    return map;
+
+    return inserted;
   }
 
-  /// Regroupe les chants par battement / rythme.
-  ///
-  /// Renvoie une map du style:
-  /// {
-  ///   "1 temps": [...],
-  ///   "3 temps rapide/BOBO": [...],
-  ///   "4 temps rapide": [...],
-  ///   "Autres": [...],
-  /// }
-  Future<Map<String, List<Hymn>>> groupByBeat() async {
-    final list = await getAll();
-    final map = <String, List<Hymn>>{};
+  // ---------------- Basic access APIs ----------------
 
-    String normalizeBeat(List<String> beats) {
-      if (beats.isEmpty) return 'Autres';
-      // On prend le premier beat comme "beat principal"
-      // (tu pourras raffiner ici plus tard)
-      return beats.first;
-    }
-
-    for (final h in list) {
-      final key = normalizeBeat(h.beats);
-      map.putIfAbsent(key, () => <Hymn>[]).add(h);
-    }
-
-    // Tri par numéro à l'intérieur de chaque groupe
-    for (final entry in map.entries) {
-      entry.value.sort((a, b) => a.number.compareTo(b.number));
-    }
-
-    return map;
+  /// Tous les chants, triés par numéro.
+  Future<List<Hymn>> getAll() async {
+    return _isar.hymns.where().sortByNumber().findAll();
   }
 
-  /// Seed initial de la base.
-  /// On insère une liste complète de chants si la DB est vide.
-  /// Utilisé au démarrage dans main.dart.
-  Future<void> seedIfEmpty(List<Hymn> initialData) async {
-    final existingCount = await _db.isar.hymns.count();
-    if (existingCount > 0) return;
-
-    if (initialData.isEmpty) return;
-
-    await _db.isar.writeTxn(() async {
-      await _db.isar.hymns.putAll(initialData);
-    });
+  /// Un chant par son numéro.
+  Future<Hymn?> getByNumber(int number) {
+    return _isar.hymns.where().numberEqualTo(number).findFirst();
   }
 
-  /// Recherche multi-critères dans Isar.
+  /// Chant précédent (par numéro).
+  Future<Hymn?> previousOf(int number) {
+    return _isar.hymns.filter().numberLessThan(number).sortByNumberDesc().findFirst();
+  }
+
+  /// Chant suivant (par numéro).
+  Future<Hymn?> nextOf(int number) {
+    return _isar.hymns.filter().numberGreaterThan(number).sortByNumber().findFirst();
+  }
+
+  /// Chants pour une liste de numéros (utile pour les favoris).
+  Future<List<Hymn>> getByNumbers(List<int> numbers) async {
+    if (numbers.isEmpty) return [];
+    final res = await _isar.hymns.filter()
+      .anyOf(numbers, (q, n) => q.numberEqualTo(n))
+      .findAll();
+    res.sort((a, b) => a.number.compareTo(b.number));
+    return res;
+  }
+
+  /// Recherche multi-critères en mémoire (numéro, titre, texte).
   ///
   /// - `query` : texte saisi par l'utilisateur (peut être un numéro).
-  ///   *Si numérique*, on filtre `number == query`.
-  ///   *Sinon*, on cherche dans:
-  ///     - title (contains, insensible à la casse)
-  ///     - titleNorm (contains, insensible)
-  ///     - sections.lines.textLine (contains, insensible)
-  ///     - sections.lines.textNormLine (contains, insensible)
-  /// Résultat trié par numéro.
-  Future<List<SearchResult>> search({String? query, int limit = 15, int minChars = 1, }) async {
+  /// - Renvoie une liste de SearchResult (hymn + score + ligne trouvée).
+  Future<List<SearchResult>> search({String? query, int limit = 20, int minChars = 1}) async {
     if (query == null || query.trim().length < minChars) return [];
 
     final raw = query.trim();
-    final n = int.tryParse(raw);
+    final asNumber = int.tryParse(raw);
     final searchTerm = raw.toLowerCase();
-    final allHymns = await getAll();
-    final results = <SearchResult>[];
 
-    for (final hymn in allHymns) {
+    final results = <SearchResult>[];
+    final hymns = await getAll(); // On charge tout une seule fois
+
+    for (final hymn in hymns) {
       int score = 0;
       String? matchedLine;
 
-      // Si la recherche est numérique
-      if (n != null) {
-        if (hymn.number == n) {
-          results.add(SearchResult(hymn: hymn, score: 1000));
+      // Recherche numérique -> priorité maximale
+      if (asNumber != null) {
+        if (hymn.number == asNumber) {
+          results.add(SearchResult(hymn: hymn, score: 1000,  matchedLine: hymn.title));
         }
         continue;
       }
 
-      // Titre exact (priorité maximale)
-      if (hymn.title.toLowerCase().startsWith(searchTerm)) {
+      // Titre (priorité forte)
+      final titleLower = hymn.title.toLowerCase();
+
+      if (titleLower.startsWith(searchTerm)) {
         score = 200;
         matchedLine = hymn.title;
-      } else if (hymn.title.toLowerCase().contains(searchTerm)) {
+      } else if (titleLower.contains(searchTerm)) {
         score = 150;
         matchedLine = hymn.title;
       }
 
-      // Variante normalisée du titre
-      if (score == 0 && hymn.titleNorm.toLowerCase().contains(searchTerm) == true) {
-        score = 120;
-        matchedLine = hymn.title;
-      }
-
-      // Texte (sections/lignse)
+      // Variante normalisée du titre (null-safe)
       if (score == 0) {
-        for (final section in hymn.sections) {
-          for (final line in section.lines) {
-            if (line.textLine.toLowerCase().contains(searchTerm)) {
-              score = 50;
-              matchedLine = line.textLine;
-              break;
-            } else if (line.textNormLine.toLowerCase().contains(searchTerm) == true) {
-              score = 40;
-              matchedLine = line.textLine;
-              break;
-            }
-          }
-          if (score > 0) break;
+        final titleNorm = hymn.titleNorm?.toLowerCase() ?? "";
+        if (titleNorm.contains(searchTerm)) {
+          score = 120;
+          matchedLine = hymn.title;
         }
       }
 
+      // 4) Recherche dans le texte des lignes (null-safe)
+      if (score == 0) {
+        final sections = hymn.sections ?? const <Section>[];
+        bool found = false;
+
+        for (final section in sections) {
+          final lines = section.lines ?? const <Line>[];
+
+          for (final line in lines) {
+            final textLower = (line.textLine ?? "").toLowerCase();
+            final normLower = (line.textNormLine ?? "").toLowerCase();
+
+            if (textLower.contains(searchTerm)) {
+              score = 50;
+              matchedLine = line.textLine;
+              found = true;
+              break;
+            }
+
+            if (normLower.contains(searchTerm)) {
+              score = 40;
+              matchedLine = line.textLine?.isNotEmpty == true ? line.textLine : line.textNormLine;
+              found = true;
+              break;
+            }
+          }
+
+          if (found) break;
+        }
+      }
+
+      // Si match, on ajoute
       if (score > 0) {
-        results.add(SearchResult(hymn: hymn, score: score, matchedLine: matchedLine));
+        results.add(SearchResult(hymn: hymn, score: score,  matchedLine: matchedLine));
       }
     }
 
-    // Tri final : par score desc, puis par numéro
+    // Tri final
     results.sort((a, b) {
-      if (a.score != b.score) return b.score.compareTo(a.score);
-      return a.hymn.number.compareTo(b.hymn.number);
+      if (a.score != b.score) {
+        return b.score.compareTo(a.score); // score desc
+      }
+      return a.hymn.number.compareTo(b.hymn.number); // numéro asc
     });
 
-    return results;
+    // Limitation du nombre de résultats
+    return results.take(limit).toList();
   }
 
-  Future<List<Hymn>> getByNumbers(List<int> numbers) async {
-    if (numbers.isEmpty) return [];
-    final isar = _db.isar;
-    final res = await isar.hymns
-      .filter()
-      .anyOf(numbers, (q, n) => q.numberEqualTo(n))
-      .findAll();
-    // On peut trier par l’ordre des favoris s’il faut, pour l’instant par numéro
-    res.sort((a, b) => a.number.compareTo(b.number));
-    return res;
-  }
 
 }
