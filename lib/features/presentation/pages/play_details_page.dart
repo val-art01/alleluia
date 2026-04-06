@@ -1,105 +1,169 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:alleluia_tome_1/app/themes/app_theme.dart';
-import 'package:alleluia_tome_1/core/routes/app_router.dart';
 import 'package:alleluia_tome_1/features/data/models/hymn.dart';
 import 'package:alleluia_tome_1/core/providers/hymns_provider.dart';
 import 'package:alleluia_tome_1/core/providers/audio_provider.dart';
 import 'package:alleluia_tome_1/core/providers/favorites_provider.dart';
 import 'package:alleluia_tome_1/core/services/audio_player_service.dart';
 
-//  PAGE PLAY DETAILS
-//  Reçoit un hymnId depuis go_router,
-//  charge le chant via hymnByNumberProvider.
+
+///  PAGE PLAY DETAILS
+///
+///  Architecture :
+///  - Scaffold fixe : AppBar + BottomPlayer
+///  - Body : AnimatedSwitcher avec slide gauche/droite
+///    qui anime UNIQUEMENT les paroles quand on
+///    change de chant (prev/next).
+///  - L'AppBar et le player ne bougent jamais.
+
 class PlayDetails extends ConsumerStatefulWidget {
   const PlayDetails({super.key, required this.hymnId});
   final int hymnId;
- 
+
   @override
   ConsumerState<PlayDetails> createState() => _PlayDetailsState();
 }
- 
+
 class _PlayDetailsState extends ConsumerState<PlayDetails> {
-  // Stocké en variable pour éviter ref.read() dans dispose()
   AudioPlayerService? _audio;
- 
+
+  // Chant actuellement affiché
+  Hymn? _hymn;
+
+  // Direction de l'animation : true = vers la droite (prev), false = vers la gauche (next)
+  bool _slideToRight = false;
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) => _initAudio());
   }
- 
+
   Future<void> _initAudio() async {
     if (!mounted) return;
-    // Capturer le service AVANT tout await
     final audio = ref.read(audioServiceProvider);
     _audio = audio;
- 
     final hymn = await ref.read(hymnByNumberProvider(widget.hymnId).future);
-    if (!mounted) return;
- 
-    audio.setCurrentHymn(hymn!);
+    if (!mounted || hymn == null) return;
+    setState(() => _hymn = hymn);
+    audio.setCurrentHymn(hymn);
     await audio.stop();
   }
- 
+
   @override
   void dispose() {
-    // Variable locale — jamais ref.read() dans dispose()
     _audio?.stop();
     super.dispose();
   }
- 
+
+  // ── Navigation avec animation 
+  Future<void> _navigate({required bool previous}) async {
+    final audio = ref.read(audioServiceProvider);
+    final repo = ref.read(hymnsRepositoryProvider);
+
+    await audio.stop();
+
+    final target = previous
+        ? await repo.previousOf(_hymn!.number)
+        : await repo.nextOf(_hymn!.number);
+
+    if (!mounted) return;
+
+    if (target == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            previous ? 'Pas de chant précédent' : 'Pas de chant suivant',
+          ),
+        ),
+      );
+      return;
+    }
+
+    // Met à jour la direction AVANT de changer le chant
+    setState(() {
+      _slideToRight = previous;
+      _hymn = target;
+    });
+
+    audio.setCurrentHymn(target);
+    await audio.stop();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final hymnAsync = ref.watch(hymnByNumberProvider(widget.hymnId));
- 
-    return hymnAsync.when(
-      loading: () => const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
-      ),
-      error: (e, _) => Scaffold(
-        appBar: AppBar(),
-        body: Center(child: Text('Erreur : $e')),
-      ),
-      data: (hymn) {
-        if (hymn == null) {
-          return Scaffold(
-            appBar: AppBar(),
-            body: const Center(child: Text('Chant introuvable')),
-          );
-        }
-        return _PlayDetailsContent(hymn: hymn);
-      },
-    );
-  }
-}
-
-//  CONTENU PRINCIPAL
-class _PlayDetailsContent extends ConsumerWidget {
-  const _PlayDetailsContent({required this.hymn});
-  final Hymn hymn;
- 
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
     final cs = Theme.of(context).colorScheme;
-    final isFav = ref.watch(isFavoriteProvider(hymn.number));
- 
+    final hymn = _hymn;
+
+    // Chargement initial
+    if (hymn == null) {
+      return Scaffold(
+        backgroundColor: cs.surface,
+        appBar: AppBar(
+          backgroundColor: cs.primary,
+          foregroundColor: cs.onPrimary,
+        ),
+        body: const Center(child: CircularProgressIndicator()),
+      );
+    }
+
     return Scaffold(
       backgroundColor: cs.surface,
- 
-      appBar: AppBar(
-        backgroundColor: cs.primary,
-        foregroundColor: cs.onPrimary,
-        surfaceTintColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        toolbarHeight: 64,
-        title: Text(
+
+      // AppBar FIXE
+      appBar: _buildAppBar(context, hymn),
+
+      // Body : seules les paroles animent
+      body: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 320),
+        switchInCurve: Curves.easeOutCubic,
+        switchOutCurve: Curves.easeInCubic,
+        transitionBuilder: (child, animation) {
+          // Slide horizontal : droite→gauche (next) ou gauche→droite (prev)
+          final offsetIn = Tween<Offset>(
+            begin: Offset(_slideToRight ? -1.0 : 1.0, 0),
+            end: Offset.zero,
+          ).animate(animation);
+
+          return SlideTransition(
+            position: offsetIn,
+            child: FadeTransition(opacity: animation, child: child),
+          );
+        },
+        // La clé force l'animation à chaque changement de chant
+        child: _LyricsBody(key: ValueKey(hymn.number), hymn: hymn),
+      ),
+
+      // BottomPlayer FIXE
+      bottomSheet: _BottomPlayer(
+        hymn: hymn,
+        onPrevious: () => _navigate(previous: true),
+        onNext: () => _navigate(previous: false),
+      ),
+    );
+  }
+
+  PreferredSizeWidget _buildAppBar(BuildContext context, Hymn hymn) {
+    final cs = Theme.of(context).colorScheme;
+
+    return AppBar(
+      backgroundColor: cs.primary,
+      foregroundColor: cs.onPrimary,
+      surfaceTintColor: Colors.transparent,
+      elevation: 0,
+      centerTitle: true,
+      toolbarHeight: 64,
+      // Animate uniquement le titre quand le chant change
+      title: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 250),
+        child: Text(
           '${hymn.number} — ${hymn.title}',
+          key: ValueKey(hymn.number),
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w700,
@@ -107,60 +171,79 @@ class _PlayDetailsContent extends ConsumerWidget {
             height: 1.3,
           ),
         ),
-        actions: [
-          IconButton(
-            tooltip: isFav ? 'Retirer des favoris' : 'Ajouter aux favoris',
-            icon: Icon(
-              isFav
-                  ? Icons.favorite_rounded
-                  : Icons.favorite_border_rounded,
-              color: isFav
-                  ? Theme.of(context).extension<AppColors>()!.favoriteFill
-                  : cs.onPrimary,
-            ),
-            onPressed: () =>
-                ref.read(favoritesProvider.notifier).toggle(hymn.number),
-          ),
-        ],
       ),
- 
-      body: CustomScrollView(
-        slivers: [
-          SliverPadding(
-            padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
-            sliver: SliverToBoxAdapter(
-              child: HymnLyricsView(hymn: hymn),
-            ),
-          ),
-          if ((hymn.actor ?? '').trim().isNotEmpty)
-            SliverPadding(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 120),
-              sliver: SliverToBoxAdapter(
-                child: Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Auteur : ${hymn.actor!.trim()}',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 13,
-                      fontStyle: FontStyle.italic,
-                      color: cs.onSurfaceVariant,
-                    ),
-                  ),
+      actions: [
+        Consumer(
+          builder: (context, ref, _) {
+            final isFav = ref.watch(isFavoriteProvider(hymn.number));
+            return IconButton(
+              tooltip: isFav ? 'Retirer des favoris' : 'Ajouter aux favoris',
+              icon: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 200),
+                child: Icon(
+                  isFav ? Icons.favorite_rounded : Icons.favorite_border_rounded,
+                  key: ValueKey(isFav),
+                  color: isFav
+                      ? Theme.of(context).extension<AppColors>()!.favoriteFill
+                      : cs.onPrimary,
                 ),
               ),
-            )
-          else
-            const SliverToBoxAdapter(child: SizedBox(height: 120)),
-        ],
-      ),
- 
-      bottomSheet: _BottomPlayer(hymn: hymn),
+              onPressed: () => ref.read(favoritesProvider.notifier).toggle(hymn.number)
+            );
+          },
+        ),
+      ],
     );
   }
 }
 
-//  PAROLES DU CHANT
+///  BODY : PAROLES + AUTEUR
+///  Reçoit une ValueKey(hymn.number) pour que
+///  AnimatedSwitcher détecte le changement.
+class _LyricsBody extends StatelessWidget {
+  const _LyricsBody({super.key, required this.hymn});
+  final Hymn hymn;
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+
+    return CustomScrollView(
+      // Remet le scroll en haut à chaque nouveau chant
+      key: PageStorageKey(hymn.number),
+      slivers: [
+        SliverPadding(
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
+          sliver: SliverToBoxAdapter(
+            child: HymnLyricsView(hymn: hymn),
+          ),
+        ),
+        if ((hymn.actor ?? '').trim().isNotEmpty)
+          SliverPadding(
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 120),
+            sliver: SliverToBoxAdapter(
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  'Auteur : ${hymn.actor!.trim()}',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13,
+                    fontStyle: FontStyle.italic,
+                    color: cs.onSurfaceVariant,
+                  ),
+                ),
+              ),
+            ),
+          )
+        else
+          const SliverToBoxAdapter(child: SizedBox(height: 120)),
+      ],
+    );
+  }
+}
+
+///  PAROLES
 class HymnLyricsView extends StatelessWidget {
   const HymnLyricsView({super.key, required this.hymn});
   final Hymn hymn;
@@ -186,7 +269,6 @@ class HymnLyricsView extends StatelessWidget {
   }
 }
 
-//  BLOC D'UNE SECTION
 class _SectionBlock extends StatelessWidget {
   const _SectionBlock({required this.section});
   final Section section;
@@ -220,8 +302,7 @@ class _SectionBlock extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(bottom: 8),
               child: Container(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
                   color: cs.primaryContainer,
                   borderRadius: BorderRadius.circular(99),
@@ -237,17 +318,13 @@ class _SectionBlock extends StatelessWidget {
               ),
             ),
           for (final line in lines)
-            _LyricLine(
-              text: line.textLine.trim(),
-              repeatCount: line.repeatCountLine,
-            ),
+            _LyricLine(text: line.textLine.trim(),repeatCount: line.repeatCountLine),
         ],
       ),
     );
   }
 }
 
-//  UNE LIGNE DE PAROLES
 class _LyricLine extends StatelessWidget {
   const _LyricLine({required this.text, required this.repeatCount});
   final String text;
@@ -298,10 +375,13 @@ class _LyricLine extends StatelessWidget {
   }
 }
 
-//  LECTEUR AUDIO EN BAS
+///  LECTEUR EN BAS (FIXE)
 class _BottomPlayer extends ConsumerWidget {
-  const _BottomPlayer({required this.hymn});
+  const _BottomPlayer({ required this.hymn, required this.onPrevious, required this.onNext});
+
   final Hymn hymn;
+  final VoidCallback onPrevious;
+  final VoidCallback onNext;
 
   static String _fmt(Duration d) {
     if (d <= Duration.zero) return '00:00';
@@ -331,6 +411,7 @@ class _BottomPlayer extends ConsumerWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            // Poignée
             Container(
               width: 32, height: 3,
               margin: const EdgeInsets.only(bottom: 8),
@@ -339,7 +420,7 @@ class _BottomPlayer extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(99),
               ),
             ),
-            _TransportRow(hymn: hymn),
+            _TransportRow(hymn: hymn, onPrevious: onPrevious, onNext: onNext),
             const SizedBox(height: 4),
             _SeekRow(fmt: _fmt),
           ],
@@ -349,10 +430,13 @@ class _BottomPlayer extends ConsumerWidget {
   }
 }
 
-//  TRANSPORT : PREV / PLAY / NEXT
+///  TRANSPORT
 class _TransportRow extends ConsumerWidget {
-  const _TransportRow({required this.hymn});
+  const _TransportRow({required this.hymn, required this.onPrevious, required this.onNext});
+
   final Hymn hymn;
+  final VoidCallback onPrevious;
+  final VoidCallback onNext;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -365,9 +449,8 @@ class _TransportRow extends ConsumerWidget {
         // Précédent
         IconButton(
           tooltip: 'Précédent',
-          icon: Icon(Icons.skip_previous_rounded,
-              size: 32, color: cs.onPrimary),
-          onPressed: () => _navigate(context, ref, previous: true),
+          icon: Icon(Icons.skip_previous_rounded, size: 32, color: cs.onPrimary),
+          onPressed: onPrevious,
         ),
 
         const SizedBox(width: 8),
@@ -394,16 +477,14 @@ class _TransportRow extends ConsumerWidget {
         // Suivant
         IconButton(
           tooltip: 'Suivant',
-          icon: Icon(Icons.skip_next_rounded,
-              size: 32, color: cs.onPrimary),
-          onPressed: () => _navigate(context, ref, previous: false),
+          icon: Icon(Icons.skip_next_rounded, size: 32, color: cs.onPrimary),
+          onPressed: onNext,
         ),
       ],
     );
   }
 
   Future<void> _togglePlay(BuildContext context, WidgetRef ref) async {
-    // Capturer tout AVANT les awaits
     final audio = ref.read(audioServiceProvider);
     final path = hymn.audioPath?.trim() ?? '';
 
@@ -427,41 +508,9 @@ class _TransportRow extends ConsumerWidget {
       }
     }
   }
-
-  Future<void> _navigate(
-    BuildContext context,
-    WidgetRef ref, {
-    required bool previous,
-  }) async {
-    // Capturer tout AVANT les awaits
-    final audio = ref.read(audioServiceProvider);
-    final repo = ref.read(hymnsRepositoryProvider);
-
-    await audio.stop();
-
-    final target = previous
-        ? await repo.previousOf(hymn.number)
-        : await repo.nextOf(hymn.number);
-
-    // Vérifier mounted APRÈS chaque await
-    if (!context.mounted) return;
-
-    if (target == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            previous ? 'Pas de chant précédent' : 'Pas de chant suivant',
-          ),
-        ),
-      );
-      return;
-    }
-
-    context.pushReplacement(AppRoutes.playDetailsPath(target.number));
-  }
 }
 
-//  SEEK ROW : SLIDER + DURÉES
+///  SEEK ROW
 class _SeekRow extends ConsumerWidget {
   const _SeekRow({required this.fmt});
   final String Function(Duration) fmt;
@@ -469,10 +518,8 @@ class _SeekRow extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cs = Theme.of(context).colorScheme;
-    final position = ref.watch(audioPositionProvider).valueOrNull
-        ?? Duration.zero;
-    final duration = ref.watch(audioDurationProvider).valueOrNull
-        ?? Duration.zero;
+    final position = ref.watch(audioPositionProvider).valueOrNull ?? Duration.zero;
+    final duration = ref.watch(audioDurationProvider).valueOrNull ?? Duration.zero;
 
     final totalSecs = duration.inSeconds;
     final currSecs = position.inSeconds.clamp(0, totalSecs > 0 ? totalSecs : 0);
@@ -487,8 +534,7 @@ class _SeekRow extends ConsumerWidget {
       children: [
         SizedBox(
           width: 44,
-          child: Text(fmt(position), textAlign: TextAlign.center,
-              style: labelStyle),
+          child: Text(fmt(position), textAlign: TextAlign.center, style: labelStyle),
         ),
         Expanded(
           child: SliderTheme(
@@ -515,8 +561,7 @@ class _SeekRow extends ConsumerWidget {
         ),
         SizedBox(
           width: 44,
-          child: Text(fmt(duration), textAlign: TextAlign.center,
-              style: labelStyle),
+          child: Text(fmt(duration), textAlign: TextAlign.center, style: labelStyle),
         ),
       ],
     );
