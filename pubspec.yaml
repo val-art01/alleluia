@@ -1,7 +1,6 @@
 name: alleluia_tome_1
-description: "A new Flutter project."
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
+description: "Application de chants religieux — Culte d'enfants de EEC"
+
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
@@ -17,6 +16,14 @@ dependencies:
   cupertino_icons: ^1.0.8
   curved_navigation_bar: ^1.0.6
   font_awesome_flutter: ^10.9.1
+  google_fonts: ^6.3.2
+
+  # State management 
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+
+  # Navigation
+  go_router: ^17.0.0
 
   # Gestion du splash screen
   flutter_native_splash: ^2.4.7
@@ -30,9 +37,9 @@ dependencies:
 
   # Accès aux chemins du stockage local
   path_provider: ^2.1.5
-
-  
   diacritic: ^0.1.6
+  # custom_lint: ^0.5.11
+  # riverpod_lint: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -44,6 +51,8 @@ dev_dependencies:
   isar_generator: ^3.1.0+1
   build_runner: ^2.4.13
   analyzer: ^5.13.0
+  riverpod_generator: ^2.3.3
+  custom_lint: ^0.6.4
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -56,12 +65,33 @@ flutter:
     - assets/sound/
 
 flutter_native_splash:
-  color: "#7ABAEE" # Couleur de fond
-  image: assets/images/playstore.png # logo/image de splash
-  fullscreen: true # Plein écran
+  # Fond blanc pur (mode clair)
+  color: "#7ABAEE"
+  # Logo centré
+  image: assets/images/logoEEC.png
+  # Mode sombre
+  color_dark: "#7ABAEE"
+  image_dark: assets/images/logoEEC.png
+  # Plein écran
+  fullscreen: true
+  # Android 12+ : cercle blanc derrière le logo
   android_12:
-    image: assets/images/playstore.png
-    icon_background_color: "#ffffff"
+    image: assets/images/logoEEC.png
+    icon_background_color: "#FFFFFF"
+    image_dark: assets/images/logoEEC.png
+    icon_background_color_dark: "#FFFFFF"
+  web: false
+
+
+# flutter_native_splash:
+#   color: "#7ABAEE" # Couleur de fond
+#   image: assets/images/logoEEC.png # logo/image de splash
+#   fullscreen: true # Plein écran
+#   android_12:
+#     image: assets/images/logoEEC.png
+#     icon_background_color: "#ffffff"
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
