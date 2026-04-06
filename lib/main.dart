@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:alleluia_tome_1/app/app.dart';
 import 'package:alleluia_tome_1/core/services/hymn_db_service.dart';
-import 'package:alleluia_tome_1/core/services/audio_player_service.dart';
-import 'package:alleluia_tome_1/features/hymns/data/repositories/hymns_repository.dart';
+import 'package:alleluia_tome_1/core/providers/hymn_db_service_provider.dart';
+import 'package:alleluia_tome_1/features/data/repositories/hymns_repository.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Ouvrir la base Isar
+  // Initialisation de la base Isar
   final hymnDb = await HymnDbService.init();
 
-  // Créer le repository qui manipule les Hymn dans Isar
+  // Seed automatique si la DB est vide
   final hymnsRepo = HymnsRepository(hymnDb);
-
-  // Seed depuis le fichier JSON si la DB est vide
   await hymnsRepo.seedFromJsonIfNeeded();
 
-  // Créer le service audio (unique pour l'app)
-  final audioService = AudioPlayerService();
-
-  // Lancer l'app en lui injectant hymnDb et audioService
+  // Lancement avec ProviderScope
+  // On passe hymnDb via un override pour que les providers
+  // Riverpod y aient accès sans InheritedWidget manuel.
   runApp(
-    App(
-      hymnDb: hymnDb,
-      audioService: audioService,
+    ProviderScope(
+      overrides: [
+        hymnDbServiceProvider.overrideWithValue(hymnDb),
+      ],
+      child: const App(),
     ),
   );
 }

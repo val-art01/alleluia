@@ -1,52 +1,36 @@
-import 'themes/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'presentation/pages/splash_screen.dart';
-import 'package:alleluia_tome_1/core/services/hymn_db_scope.dart';
-import 'package:alleluia_tome_1/core/services/hymn_db_service.dart';
-import 'package:alleluia_tome_1/core/services/audio_service_scope.dart';
-import 'package:alleluia_tome_1/core/services/audio_player_service.dart';
+import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-/// App est maintenant stateful car elle doit disposer proprement le service audio.
-class App extends StatefulWidget {
-  const App({
-    super.key,
-    required this.hymnDb,
-    required this.audioService,
-  });
+import 'package:alleluia_tome_1/app/themes/app_theme.dart';
+import 'package:alleluia_tome_1/core/routes/app_router.dart';
 
-  final HymnDbService hymnDb;
-  final AudioPlayerService audioService;
+/// Point d'entrée de l'application.
+/// ConsumerWidget permet d'accéder aux providers Riverpod
+class App extends ConsumerWidget {
+  const App({super.key});
 
   @override
-  State<App> createState() => _AppState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final GoRouter router = ref.watch(appRouterProvider);
+    final themeMode = ref.watch(themeModeProvider);
 
-class _AppState extends State<App> {
-  @override
-  void dispose() {
-    // Libère les ressources audio proprement quand l'app se ferme
-    widget.audioService.dispose();
+    return MaterialApp.router(
+      title: 'Alleluia',
+      debugShowCheckedModeBanner: false,
 
-    // On pourrait fermer la DB ici avec widget.hymnDb.close();
-    // mais ce n'est pas obligatoire sur mobile.
-    super.dispose();
-  }
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: themeMode,
 
-  @override
-  Widget build(BuildContext context) {
-    return HymnDbScope(
-      db: widget.hymnDb,
-      child: AudioServiceScope(
-        service: widget.audioService,
-        child: MaterialApp(
-          title: 'Alleluia',
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.light,
-          // darkTheme: AppTheme.dark,
-          home: const SplashScreen(),
-        ),
-      ),
+      // Navigation
+      routerConfig: router,
     );
   }
 }
+
+//  Permet à l'utilisateur de choisir son thème.
+final themeModeProvider = StateProvider<ThemeMode>(
+  (ref) => ThemeMode.light,
+);
 
