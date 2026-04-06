@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:alleluia_tome_1/features/data/models/hymn.dart';
+
 import 'package:alleluia_tome_1/app/screens/splash_screen.dart';
 import 'package:alleluia_tome_1/features/presentation/pages/home_page.dart';
 import 'package:alleluia_tome_1/features/presentation/pages/playlist_page.dart';
@@ -64,11 +63,11 @@ final appRouterProvider = Provider<GoRouter>((ref) {
             name: 'battements',
             builder: (context, state) => const Battements(),
           ),
-          // GoRoute(
-          //   path: '/home/settings',
-          //   name: 'settings',
-          //   builder: (context, state) => const SettingsPage(),
-          // ),
+          GoRoute(
+            path: '/home/settings',
+            name: 'settings',
+            builder: (context, state) => const Settings(),
+          ),
         ],
       ),
 
