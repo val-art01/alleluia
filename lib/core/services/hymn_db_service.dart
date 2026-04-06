@@ -1,7 +1,7 @@
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:alleluia_tome_1/features/hymns/data/models/hymn.dart';
-import 'package:alleluia_tome_1/features/hymns/data/models/favorite.dart';
+import 'package:alleluia_tome_1/features/data/models/hymn.dart';
+import 'package:alleluia_tome_1/features/data/models/favorite.dart';
 
 /// Service bas niveau responsable de la gestion de la base Isar.
 /// 

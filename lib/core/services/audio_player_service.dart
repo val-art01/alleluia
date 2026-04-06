@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:alleluia_tome_1/features/hymns/data/models/hymn.dart';
+import 'package:alleluia_tome_1/features/data/models/hymn.dart';
 
 /// Service audio partagé dans toute l'app.
 ///
