@@ -15,10 +15,12 @@ import 'package:alleluia_tome_1/features/data/models/search_result.dart';
 ///  - Debounce géré par [searchResultsProvider] (300ms)
 ///  - Navigation via context.push() (go_router)
 ///  - Couleurs depuis le ColorScheme du thème
+
+ 
 class HymnSearchDelegate extends SearchDelegate<void> {
   HymnSearchDelegate({required this.ref});
 
-  /// WidgetRef passé depuis CustomAppBar pour accéder aux providers.
+  // WidgetRef passé depuis CustomAppBar pour accéder aux providers.
   final WidgetRef ref;
 
   @override
@@ -60,7 +62,10 @@ class HymnSearchDelegate extends SearchDelegate<void> {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide(color: cs.secondary, width: 2),
+          borderSide: BorderSide(
+            color: cs.secondary,
+            width: 2,
+          ),
         ),
       ),
     );
@@ -82,7 +87,7 @@ class HymnSearchDelegate extends SearchDelegate<void> {
     ];
   }
 
-  // Bouton retour─
+  // Bouton retour
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
@@ -95,8 +100,8 @@ class HymnSearchDelegate extends SearchDelegate<void> {
   // Suggestions (temps réel)
   @override
   Widget buildSuggestions(BuildContext context) {
-    // Met à jour le provider de recherche avec la query courante
-    ref.read(searchQueryProvider.notifier).state = query;
+    // Mise à jour après le build — interdit pendant le build par Riverpod
+    Future.microtask(() => ref.read(searchQueryProvider.notifier).state = query);
     return _SearchResultsList(
       ref: ref,
       onTap: (hymn) => _navigateToHymn(context, hymn),
@@ -106,7 +111,7 @@ class HymnSearchDelegate extends SearchDelegate<void> {
   // Résultats (après validation)
   @override
   Widget buildResults(BuildContext context) {
-    ref.read(searchQueryProvider.notifier).state = query;
+    Future.microtask(() => ref.read(searchQueryProvider.notifier).state = query);
     return _SearchResultsList(
       ref: ref,
       onTap: (hymn) => _navigateToHymn(context, hymn),
@@ -119,8 +124,8 @@ class HymnSearchDelegate extends SearchDelegate<void> {
   }
 }
 
-//  LISTE DES RÉSULTATS
-//  ConsumerWidget — écoute searchResultsProvider
+///  LISTE DES RÉSULTATS
+///  ConsumerWidget — écoute searchResultsProvider
 class _SearchResultsList extends ConsumerWidget {
   const _SearchResultsList({required this.ref, required this.onTap});
 
@@ -164,7 +169,10 @@ class _SearchResultsList extends ConsumerWidget {
 
       // Erreur
       error: (e, _) => Center(
-        child: Text('Erreur : $e', style: TextStyle(color: cs.error)),
+        child: Text(
+          'Erreur : $e',
+          style: TextStyle(color: cs.error),
+        ),
       ),
 
       // Résultats
@@ -255,7 +263,7 @@ class _SearchResultCard extends StatelessWidget {
 
               const SizedBox(width: 12),
 
-              // Titre + ligne matchée─
+              // Titre + ligne matchée
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
