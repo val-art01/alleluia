@@ -717,7 +717,7 @@
         "orderSection": 5,
         "repeatCountSection": 1,
         "lines": [
-          { "textLine": "4. S'il n'y a que quarante, \n\tet cinq justes \n\tLes feras-tu tous aussi ?", "textNormLine": "s'il n'y a que quarante et cinq justes les feras tu tous aussi ?", "orderLine": 4, "repeatCountLine":1}
+          { "textLine": "4. S'il n'y a que quarante, \n\tet cinq justes \n\tLes feras-tu périr tous aussi ?", "textNormLine": "s'il n'y a que quarante et cinq justes les feras tu tous aussi ?", "orderLine": 4, "repeatCountLine":1}
         ]
       },
       {
@@ -828,7 +828,7 @@
           { "textLine": "De ta voix très sainte", "textNormLine": "de ta voix tres sainte", "orderLine": 3, "repeatCountLine":1},
           { "textLine": "Nous marchons vers ta maison", "textNormLine": "nous marchons vers ta maison", "orderLine": 4, "repeatCountLine":1},
           { "textLine": "Aie pitié de nous", "textNormLine": "aie pitie de nous", "orderLine": 5, "repeatCountLine":1},
-          { "textLine": "Seigneur...\n", "textNormLine": "seigneur....", "orderLine": 6, "repeatCountLine":1}
+          { "textLine": "Seigneur...", "textNormLine": "seigneur....", "orderLine": 6, "repeatCountLine":1}
         ]
       },
       {
@@ -836,7 +836,7 @@
         "orderSection": 3,
         "repeatCountSection": 1,
         "lines":[
-          { "textLine": "\n2. Nous sommes tous des pécheurs", "textNormLine": "nous sommes tous des pecheurs", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "2. Nous sommes tous des pécheurs", "textNormLine": "nous sommes tous des pecheurs", "orderLine": 1, "repeatCountLine":1},
           { "textLine": "Chaque jour de notre vie", "textNormLine": "chaque jour de notre vie", "orderLine": 2, "repeatCountLine":1},
           { "textLine": "Transgressons tes Saintes Lois", "textNormLine": "transgressons tes saintes lois", "orderLine": 3, "repeatCountLine":1},
           { "textLine": "Nous marchons vers ta maison", "textNormLine": "nous marchons vers ta maison", "orderLine": 4, "repeatCountLine":1},
@@ -1305,67 +1305,515 @@
   },
   {
     "number": 20,
-    "title": "Voici la loi de Yahvé",
+    "title": "VOICI LA LOI DE YAHVÉ",
     "titleNorm": "voici la loi de yahve",
     "actor": "",
     "audioPath": "sound/Alleluia 20.mp3",
     "language": "fr",
-    "liturgicalTimes": ["Prière de repentance", "Loi"],
+    "liturgicalTimes": ["Loi"],
     "periods": ["Réformation"],
     "beats": ["2 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Solo",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "1. Voici la loi de Yahvé", "textNormLine": "voici la loi de yahve", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qui veut nous réconforter", "textNormLine": "qui veut nous reconforter", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Par sa pureté.", "textNormLine": "par sa purete", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Ref",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Nous voulons nous confier au Seigneur.", "textNormLine": "nous voulons nous confier au Seigneur.", "orderLine": 1, "repeatCountLine":2}
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "2. La loi c'est le témoignage", "textNormLine": "la loi c est le temoignage", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qui veut nous montrer Yahvé", "textNormLine": "qui veut nous montrer yahve", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Dans sa vérité.", "textNormLine": "Dans sa verite", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "3. La loi est commandement", "textNormLine": "la loi est commandement", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Éclairant notre chemin", "textNormLine": "eclairant notre chemin", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Par sa pureté.", "textNormLine": "par sa pureté.", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "4. Face à la gloire de Yahvé", "textNormLine": "face a la gloire de yahve", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "La crainte nous a courbés", "textNormLine": "la crainte nous a courbes", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Pour nous libérer.", "textNormLine": "pour nous liberer.", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "5. Les jugements de Yahvé", "textNormLine": "les jugements de yahve", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Sont tous fidèles, justes et vrais", "textNormLine": "sont tous fideles, justes et vrais", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Pour nous libérer.", "textNormLine": "pour nous liberer.", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 7,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "6. Ils sont plus précieux que l'or,", "textNormLine": "ils sont plus precieux que l or,", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Ils sont plus doux que le miel,", "textNormLine": "ils sont plus doux que le miel", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Ils sont mon salut.", "textNormLine": "ils sont mon salut", "orderLine": 3, "repeatCountLine":1}
+        ]
+      }
+    ]
   },
   {
     "number": 21,
-    "title": "Témoin de Jésus en Afrique",
-    "titleNorm": "temoin de jesus en afrique",
+    "title": "TÉMOIGNAGE DE JÉSUS-CHRIST EN AFRIQUE",
+    "titleNorm": "temoignage de jesus christ en afrique",
     "actor": "",
     "audioPath": "sound/Alleluia 21.mp3",
     "language": "fr",
     "liturgicalTimes": ["Adoration"],
     "periods": ["Réformation"],
     "beats": ["3 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 2,
+        "lines":[
+          { "textLine": "Jésus-Christ, notre Seigneur", "textNormLine": "jesus christ notre seigneur", "orderLine": 1, "repeatCountLine":1},
+           { "textLine": "Est le Fils du Dieu vivant.", "textNormLine": "est le fils du dieu vivant.", "orderLine": 2, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "1. Ils sont venus par la mer", "textNormLine": "ils sont venus par la mer", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Portés par un chant nouveau : ", "textNormLine": "portes par un chant nouveau", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Jésus-Christ.", "textNormLine": "jesus christ", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "2. Ils étaient partis esclaves,", "textNormLine": "ils etaient partis esclaves", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Ils viennent en libérateurs : ", "textNormLine": "ils viennent en liberateurs", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Car Jésus.", "textNormLine": "car jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "3. Merrick le Jamaïcain", "textNormLine": "merrick le jamaicain", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Disait devant le roi Bell :", "textNormLine": "disait devant le roi bell", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Que Jésus.", "textNormLine": "que jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "4. NKWE Georges le premier pasteur", "textNormLine": "nkwe georges le premier pasteur", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Fait vivre en paix les douala :", "textNormLine": "fait vivre en paix les douala", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Car Jésus.", "textNormLine": "car jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "5. SAME, le chantre du Christ", "textNormLine": "same le chantre du Christ", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Devant NJOYA proclamait", "textNormLine": "devant njoya proclamait", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Que Jésus", "textNormLine": "que jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 7,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "6. KAGOUA en Ouganda", "textNormLine": "kagouaA en ouganda", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Savait tenir tête au roi :", "textNormLine": "savait tenir tete au roi", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Car Jésus.", "textNormLine": "jesus christ", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 8,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "7. EKOLO parmi les siens", "textNormLine": "ekolo parmi les siens", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Refusait tout compromis :", "textNormLine": "refusait tout compromis", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Car Jésus.", "textNormLine": "car jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 9,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "8. Renonçant à tous ses biens", "textNormLine": "renoncant a tous ses biens", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Au Gabon, MINTSA disait :", "textNormLine": "au gabon, mintsa disait", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Que Jésus.", "textNormLine": "que jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 10,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "9. De Douala à Bangangté", "textNormLine": "de douala a dangangté", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "MODI DIN marchait prêchant :", "textNormLine": "modi din marchait prechant", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Que Jésus.", "textNormLine": "que jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 11,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "10. Bravant les persécutions", "textNormLine": "bravant les persecutions", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Il soutenait les Bamouns :", "textNormLine": "il soutenait les bamouns", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Car Jésus.", "textNormLine": "car jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 12,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "11. MENGWELOUNNE et NCHA'CHEMBE", "textNormLine": "mengwelounne et ncha chembe", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Méprisaient les féticheurs :", "textNormLine": "Méprisaient les féticheurs : ", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Car Jésus.", "textNormLine": " car jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 13,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "12. NGANDUI, sa femme, son ami", "textNormLine": "ngandui sa femme son ami", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "À leur chef ont résisté :", "textNormLine": "a leur chef ont resiste", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Car Jésus.", "textNormLine": "car jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 14,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "13. Les chrétiens de Bangangté", "textNormLine": "les chretiens de bangangté", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Osaient dire au roi NJIKE :", "textNormLine": "osaient dire au roi njike", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Que Jésus.", "textNormLine": "que jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 15,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "14. Nos ancêtres ont accepté", "textNormLine": "nos ancêtres ont accepte", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "De souffrir, de supporter :", "textNormLine": "de souffrir de supporter", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Car Jésus.", "textNormLine": "car jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 16,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "15. Grâce à leur fidélité", "textNormLine": "grace a leur fidelite", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Nous avons la liberté :", "textNormLine": "nous avons la liberte", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Car Jésus.", "textNormLine": "car jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 17,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "16. À notre tour, soyons prêts", "textNormLine": "a notre tour soyons prets", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "À témoigner devant tous :", "textNormLine": "a temoigner devant tous", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Que Jésus.", "textNormLine": "que jesus", "orderLine": 3, "repeatCountLine":1}
+        ]
+      }
+    ]
   },
   {
     "number": 22,
-    "title": "Garde-toi d’oublier le seigneur…",
-    "titleNorm": "garde toi d oublier le seigneur",
-    "actor": "",
+    "title": "GARDE-TOI D'OUBLIER LE SEIGNEUR TON DIEU",
+    "titleNorm": "garde toi d oublier le seigneur ton dieu",
+    "actor": "NZIMI Félix",
     "audioPath": "sound/Alleluia 22.mp3",
     "language": "fr",
-    "liturgicalTimes": ["Prière de repentance", "Loi"],
+    "liturgicalTimes": ["Loi"],
     "periods": ["Réformation"],
     "beats": ["2 temps", "3 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Garde-toi d'oublier le Seigneur ton Dieu", "textNormLine": "garde toi d oublier le seigneur ton dieu", "orderLine": 1, "repeatCountLine":2},
+          { "textLine": "Au point de ne pas observer", "textNormLine": "au point de ne pas observer", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Ses commandements.", "textNormLine": "ses commandements.", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "1. Je suis l'Éternel ton Dieu", "textNormLine": "je suis l eternel ton dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qui t'ai fait sortir d'Égypte", "textNormLine": "qui t ai fait sortir d egypte", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Tu n'auras point d'autres dieux", "textNormLine": "tu n auras point d autres dieux", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Devant ma face.", "textNormLine": "devant ma face.", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "2. Je suis l'Éternel ton Dieu", "textNormLine": "je suis l eternel ton dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qui t'ai fait sortir d'Égypte ", "textNormLine": "qui t ai fait sortir d egypte", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Tu ne te feras donc point", "textNormLine": "tu ne te feras donc point", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "D'images taillées.", "textNormLine": "d images taillees.", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "3. Je suis l'Éternel ton Dieu", "textNormLine": "je suis l eternel ton dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qui t'ai fait sortir d'Égypte ", "textNormLine": "qui t ai fait sortir d egypte", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Ne prononce point en vain", "textNormLine": "ne prononce point en vain", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Le nom de ton Dieu.", "textNormLine": "le nom de ton dieu.", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "4. Je suis l'Éternel ton Dieu", "textNormLine": "je suis l eternel ton dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qui t'ai fait sortir d'Égypte ", "textNormLine": "qui t ai fait sortir d egypte", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Souviens-toi du jour du repos", "textNormLine": "souviens toi du jour du repos", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "De ton Dieu.", "textNormLine": "de ton dieu.", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "5. Je suis l'Éternel ton Dieu", "textNormLine": "je suis l eternel ton dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qui t'ai fait sortir d'Égypte ", "textNormLine": "qui t ai fait sortir d egypte", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Honore ton père et ta mère", "textNormLine": "honore ton pere et ta mere", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Et tous les vieux.", "textNormLine": "et tous les vieux.", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 7,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "6. Je suis l'Éternel ton Dieu", "textNormLine": "je suis l eternel ton dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qui t'ai fait sortir d'Égypte", "textNormLine": "qui t ai fait sortir d egypte", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Ne porte point atteinte", "textNormLine": "ne porte point atteinte", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "À la vie du prochain.", "textNormLine": "a la vie du prochain.", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 8,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "7. Je suis l'Éternel ton Dieu", "textNormLine": "je suis l eternel ton dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qui t'ai fait sortir d'Égypte ", "textNormLine": "qui t ai fait sortir d egypte", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Tu ne devras point", "textNormLine": "tu ne devras point", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Commettre l'adultère.", "textNormLine": "commettre l adultere.", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 9,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "8. Je suis l'Éternel ton Dieu", "textNormLine": "je suis l eternel ton dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qui t'ai fait sortir d'Égypte ", "textNormLine": "qui t ai fait sortir d egypte", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Tu ne prendras point", "textNormLine": "tu ne prendras point", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Ce qui ne t'appartient pas.", "textNormLine": "ce qui ne t appartient pas.", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 10,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "9. Je suis l'Éternel ton Dieu", "textNormLine": "je suis l eternel ton dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qui t'ai fait sortir d'Égypte ", "textNormLine": "qui t ai fait sortir d egypte", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Ne témoigne pas en mal", "textNormLine": "ne temoigne pas en mal", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Contre ton frère.", "textNormLine": "contre ton frere.", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 11,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "10. Je suis l'Éternel ton Dieu", "textNormLine": "je suis l eternel ton dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qui t'ai fait sortir d'Égypte ", "textNormLine": "qui t ai fait sortir d egypte", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Tu ne convoiteras rien", "textNormLine": "tu ne convoiteras rien", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Qui soit pour ton frère.", "textNormLine": "qui soit pour ton frere", "orderLine": 4, "repeatCountLine":1}
+        ]
+      }
+    ]
   },
   {
     "number": 23,
-    "title": "En lui nous avons la vie",
+    "title": "EN LUI NOUS AVONS LA VIE",
     "titleNorm": "en lui nous avons la vie",
-    "actor": "",
+    "actor": "MENCHOU Valentin & MOUNCHINGAM Pierre",
     "audioPath": "sound/Alleluia 23.mp3",
     "language": "fr",
     "liturgicalTimes": ["Paroles de grâce"],
     "periods": ["Avent"],
     "beats": ["2 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Ainsi tous en lui nous avons la vie", "textNormLine": "ainsi tous en lui nous avons la vie", "orderLine": 1, "repeatCountLine":2}
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Avant que le monde fût Jésus était.", "textNormLine": "avant que le monde fut jesus etait", "orderLine": 1, "repeatCountLine":2},
+          { "textLine": "2. Par amour, Dieu le fit venir vers nous.", "textNormLine": "par amour dieu le fit venir vers nous", "orderLine": 2, "repeatCountLine":2},
+          { "textLine": "3. Il s'est abaissé en venant vers nous.", "textNormLine": "il s est abaisse en venant vers nous", "orderLine": 3, "repeatCountLine":2},
+          { "textLine": "4. Il s'offrit et supporta les injures.", "textNormLine": "il s offrit et supporta les injures", "orderLine": 4, "repeatCountLine":2},
+          { "textLine": "5. Étant le grand Roi, il s'est humilié.", "textNormLine": "etant le grand roi il s est humilie", "orderLine": 5, "repeatCountLine":2},
+          { "textLine": "6. Mais il obéissait à Dieu son Père.", "textNormLine": "mais il obeissait a dieu son pere", "orderLine": 6, "repeatCountLine":2},
+          { "textLine": "7. Que toute la terre bénisse son nom.", "textNormLine": "que toute la terre benisse son nom", "orderLine": 7, "repeatCountLine":2},
+          { "textLine": "8. Louons le nom de Jésus, Prince de paix.", "textNormLine": "louons le nom de jesus prince de paix", "orderLine": 8, "repeatCountLine":2},
+          { "textLine": "9. Vainqueur de la mort, il fut élevé.", "textNormLine": "vainqueur de la mort il fut eleve", "orderLine": 9, "repeatCountLine":2}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Ainsi tous en lui nous avons la vie", "textNormLine": "ainsi tous en lui nous avons la vie", "orderLine": 1, "repeatCountLine":2},
+          { "textLine": "Nous avons la vie", "textNormLine": "nous avons la vie", "orderLine": 1, "repeatCountLine":4}
+        ]
+      }
+    ]
   },
   {
     "number": 24,
-    "title": "Ta parole est vivante",
+    "title": "TA PAROLE EST VIVANTE",
     "titleNorm": "ta parole est vivante",
-    "actor": "",
+    "actor": "NGANKAM Emmanuel",
     "audioPath": "sound/Alleluia 24.mp3",
     "language": "fr",
     "liturgicalTimes": ["Leçon"],
     "periods": ["Ordinaire"],
     "beats": ["3 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 2,
+        "lines":[
+          { "textLine": "Ta parole est vivante, mon Dieu", "textNormLine": "ta parole est vivante mon dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Elle est vivante mon Dieu", "textNormLine": "elle est vivante mon dieu", "orderLine": 1, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "SoloAss",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Solo Au commencement était la Parole", "textNormLine": "au commencement était la Parole", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Ass Elle est vivante. mon Dieu.", "textNormLine": "elle est vivante mon dieu", "orderLine": 2, "repeatCountLine":1},
+           { "textLine": "2. Solo Dieu dit: faisons l'homme à notre image", "textNormLine": "dieu dit faisons l homme a notre image", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Ass Elle est vivante. mon Dieu.", "textNormLine": "elle est vivante mon dieu", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Solo De génération en génération", "textNormLine": "de generation en generation", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Ass Elle est vivante. mon Dieu.", "textNormLine": "elle est vivante mon dieu", "orderLine": 2, "repeatCountLine":1},
+           { "textLine": "4. S'enfonce au plus profond de ce monde", "textNormLine": "s enfonce au plus profond de ce monde", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Ass Elle est vivante. mon Dieu.", "textNormLine": "elle est vivante mon dieu", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "5. Solo Elle rassemble toutes créatures", "textNormLine": "elle rassemble toutes creatures ", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Ass Elle est vivante. mon Dieu.", "textNormLine": "elle est vivante mon dieu", "orderLine": 2, "repeatCountLine":1},
+           { "textLine": "6. Solo Elle console dans le malheur", "textNormLine": "elle console dans le malheur ", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Ass Elle est vivante. mon Dieu.", "textNormLine": "elle est vivante mon dieu", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "4. Solo Vient éclairer l'homme dans les ténèbres", "textNormLine": "vient eclairer l homme dans les tenebres ", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Ass Elle est vivante. mon Dieu.", "textNormLine": "elle est vivante mon dieu", "orderLine": 2, "repeatCountLine":1},
+           { "textLine": "8. Et lui dit : l'Eternel est ton Père", "textNormLine": "et lui dit l eternel est ton pere ", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Ass Elle est vivante. mon Dieu.", "textNormLine": "elle est vivante mon dieu", "orderLine": 4, "repeatCountLine":1}
+        ]
+      }
+    ]
   },
   {
     "number": 25,
-    "title": "Louons Yahvé bénissons son nom",
+    "title": "LOUONS YAHVÉ, BÉNISSONS SON NOM",
     "titleNorm": "louons yahve benissons son nom",
     "actor": "",
     "audioPath": "sound/Alleluia 25.mp3",
@@ -1535,17 +1983,84 @@
     "number": 40,
     "title": "DE MA VOIX JE CRIE À DIEU",
     "titleNorm": "de ma voix je crie a dieu",
-    "actor": "",
+    "actor": "A. NKWINJI",
     "audioPath": "sound/Alleluia 40.mp3",
     "language": "fr",
     "liturgicalTimes": ["Prière de repentance"],
     "periods": ["Ordinaire"],
     "beats": ["1+3 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. De ma voix je crie à Dieu", "textNormLine": "de ma voix je crie a Dieu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Je t'implore dans ce lieu", "textNormLine": "je t'implore dans ce lieu", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Je te confie mon souci", "textNormLine": "je te confie mon souci", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Ecoute-moi ô mon Dieu.", "textNormLine": "ecoute moi o mon Dieu", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Mon esprit est abattu", "textNormLine": "mon esprit est abattu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Toi tu connais mon souci", "textNormLine": "toi tu connais mon souci", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Sur la route où je m'en vais", "textNormLine": "sur la route ou je m'en vais", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Ils ont tendu leurs filets.", "textNormLine": "ils ont tendu leurs filets", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Aucun ne me reconnaît", "textNormLine": "3. aucun ne me reconnait", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "De tous ceux qui m'entouraient", "textNormLine": "de tous ceux qui m'entouraient", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Nul ne se soucie de moi", "textNormLine": "nul ne se soucie de moi", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Reste ma part ô mon Dieu.", "textNormLine": "reste ma part o mon Dieu", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "4. A Toi seul Seigneur, je crie", "textNormLine": "a toi seul seigneur, je crie", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Toi, mon seul refuge ici", "textNormLine": "toi mon seul refuge ici", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Mon partage sur la terre", "textNormLine": "mon partage sur la terre", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Sois attentif à mes cris.", "textNormLine": "sois attentif a mes cris", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "5. Vois je suis bien malheureux", "textNormLine": "vois je suis bien malheureux", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Viens vite me délivrer", "textNormLine": "viens vite me délivrer", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Car ils sont, plus forts que moi", "textNormLine": "car ils sont plus forts que moi", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Mais Tu es plus fort que tous.", "textNormLine": "mais tu es plus fort que tous", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "6. Tire-moi de ma prison", "textNormLine": "tire moi de ma prison", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Que je célèbre ton nom", "textNormLine": "que je celebre ton nom", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Les justes m'entoureront", "textNormLine": "les justes m'entoureront", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Quand tu m'auras fait du bien.", "textNormLine": "quand tu m auras fait du bien", "orderLine": 4, "repeatCountLine":1}
+        ]
+      }
+    ]
   },
   {
     "number": 41,
-    "title": "L'ETERNEL A VU LES SOUFFANCES",
+    "title": "L'ÉTERNEL A VU LES SOUFFRANCES",
     "titleNorm": "l eternel a vu les souffances",
     "actor": "",
     "audioPath": "sound/Alleluia 41.mp3",
@@ -1553,31 +2068,270 @@
     "liturgicalTimes": ["Prière de repentance"],
     "periods": ["Avent"],
     "beats": ["3 temps lent"],
-    "sections": []
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. L'Éternel a vu les souffrances", "textNormLine": "l'eternel a vu les souffrances", "orderLine": 1, "repeatCountLine":2},
+          { "textLine": "De son peuple en Égypte", "textNormLine": "de son peuple en egypte", "orderLine": 2, "repeatCountLine":2}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Moïse a été envoyé", "textNormLine": "moise a ete envoye", "orderLine": 1, "repeatCountLine":2},
+          { "textLine": "Pour libérer son peuple. ", "textNormLine": "pour liberer son peuple. ", "orderLine": 2, "repeatCountLine":2}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Moïse se sentit faible", "textNormLine": "moise se sentit faible", "orderLine": 1, "repeatCountLine":2},
+          { "textLine": "Qui suis-je pour les libérer ? ", "textNormLine": "qui suis je pour les libérer", "orderLine": 2, "repeatCountLine":2}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "4. Mais vas-y, je serai avec toi ", "textNormLine": "mais vas y je serai avec toi", "orderLine": 1, "repeatCountLine":2},
+          { "textLine": "Lui dit le Dieu Libérateur.", "textNormLine": "lui dit le dieu Liberateur", "orderLine": 2, "repeatCountLine":2}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "5. Ainsi le peuple fut libéré", "textNormLine": "ainsi le peuple fut libére", "orderLine": 1, "repeatCountLine":2},
+          { "textLine": "Par Moïse de l'Égypte.", "textNormLine": "par moise de l egypte.  ", "orderLine": 2, "repeatCountLine":2}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "6. Libérons toujours notre prochain", "textNormLine": "liberons toujours notre prochain", "orderLine": 1, "repeatCountLine":2},
+          { "textLine": "Qui souvent souffre parmi nous.", "textNormLine": "qui souvent souffre parmi nous", "orderLine": 2, "repeatCountLine":2}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 7,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "7. Jésus-Christ Nous a délivrés", "textNormLine": "jesus christ nous a delivres", "orderLine": 1, "repeatCountLine":2},
+          { "textLine": "De l'esclavage du péché.", "textNormLine": "de l esclavage du peche", "orderLine": 2, "repeatCountLine":2}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 8,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "8. Aujourd'hui le Seigneur nous invite", "textNormLine": "aujourd'hui le seigneur nous invite", "orderLine": 1, "repeatCountLine":2},
+          { "textLine": "À libérer notre prochain.", "textNormLine": "a liberer notre prochain", "orderLine": 2, "repeatCountLine":2}
+        ]
+      }
+    ]
   },
   {
     "number": 42,
-    "title": "SAMARITAINE",
-    "titleNorm": "samaritaine",
-    "actor": "",
+    "title": "CONSECRATION\n(Angone mane Boulou)",
+    "titleNorm": "consecration",
+    "actor": "MBELE Philémnon",
     "audioPath": "sound/Alleluia 42.mp3",
     "language": "fr",
-    "liturgicalTimes": ["Prière de repentance"],
-    "periods": ["Noël"],
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Ordinaire"],
     "beats": ["4 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Solo",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "1. Jésus mon Sauveur, je ne veux être", "textNormLine": "jesus mon sauveur je ne veux être", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Qu'a toi seul, à toi mon Sauveur.", "textNormLine": "qu'a toi seul a toi mon sauveur", "orderLine": 2, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Ref",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Seigneur Jésus", "textNormLine": "seigneur jesus", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Prends mon corps, mon âme,", "textNormLine": "prends mon corps mon ame,", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Mon coeur et mon esprit", "textNormLine": "mon coeur et mon esprit", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Pour toujours.", "textNormLine": "pour toujours.", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "2. Jésus mon Sauveur, ta voix m'appelle", "textNormLine": "jesus mon sauveur ta voix m'appelle", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "A toi seul, à toi mon Sauveur.", "textNormLine": "a toi seul a toi mon sauveur", "orderLine": 2, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "3. Jésus mon Sauveur, ta voix m'appelle", "textNormLine": "jesus mon sauveur ta voix m appelle", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Par mon nom, par mon nom Seigneur.", "textNormLine": "par mon nom par mon nom seigneur", "orderLine": 2, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "4. Jésus mon Sauveur, tu me veux entier", "textNormLine": "jesus mon sauveur tu me veux entier", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "A jamais, tout entier Seigneur.", "textNormLine": "a jamais, tout entier seigneur", "orderLine": 2, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "5. Me voici Seigneur, je viens à Toi", "textNormLine": "me voici seigneur je viens a toi", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Seul prends ma vie, à jamais Seigneur.", "textNormLine": "seul prends ma vie a jamais Seigneur", "orderLine": 2, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 7,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "6. Je veux te suivre, mais je suis faible", "textNormLine": "je veux te suivre mais je suis faible", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "En moi seul, tiens ma main Seigneur.", "textNormLine": "en moi seul, tiens ma main seigneur", "orderLine": 2, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 8,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "7. Je veux te servir, publier ton Nom", "textNormLine": "je veux te servir publier ton nom", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Et ton règne, Seigneur pour toujours.", "textNormLine": "et ton regne, seigneur pour toujours", "orderLine": 2, "repeatCountLine":1}
+        ]
+      }  
+    ]
   },
   {
     "number": 43,
-    "title": "SAMARITAINE",
-    "titleNorm": "samaritaine",
-    "actor": "",
+    "title": "QUI PEUT GRAVIR LA MONTAGNE DE DIEU",
+    "titleNorm": "Qui peut gravir la montagne de DIEU",
+    "actor": "FOKOUA Robert",
     "audioPath": "sound/Alleluia 43.mp3",
     "language": "fr",
-    "liturgicalTimes": ["Prière de repentance"],
-    "periods": ["Noël"],
+    "liturgicalTimes": ["Confession de foi"],
+    "periods": ["Réformation", "Noël"],
     "beats": ["4 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Solo",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "1. Qui peut gravir la montagne de Dieu ?", "textNormLine": "qui peut gravir la montagne de dieu", "orderLine": 1, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Ass",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Celui dont les mains sont innocentes", "textNormLine": "celui dont les mains sont innocentes", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "c'est celui dont l'âme est pure,", "textNormLine": "c est celui dont l'ame est pure,", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Qui piétinera son saint lieu", "textNormLine": "qui pietinera son saint lieu", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "SoloAss",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Le seul aux mains propres", "textNormLine": "le seul aux mains propres", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Celui-là au cœur pur", "textNormLine": "celui la au cœeur pur", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Le Messie Emmanuel", "textNormLine": "le messie Emmanuel", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Le Messie, roi de gloire.", "textNormLine": "le messie, roi de gloire.", "orderLine": 4, "repeatCountLine":1}
+        
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "2. Ouvrez-vous donc largement vos portes", "textNormLine": "ouvrez vous donc largement vos portes", "orderLine": 1, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Ass",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Aussi vous les linteaux, haussez-vous", "textNormLine": "Aussi vous les linteaux haussez vous", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Et faites place au roi de gloire", "textNormLine": "et faites place au roi de gloire", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Car Lu seul le droit d'entrer.", "textNormLine": "car Lu seul le droit d entrer", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "SoloAss",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Le seul aux mains propres", "textNormLine": "le seul aux mains propres", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Celui-là au cœur pur", "textNormLine": "celui la au cœeur pur", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Le Messie Emmanuel", "textNormLine": "le messie Emmanuel", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Le Messie, roi de gloire.", "textNormLine": "le messie, roi de gloire.", "orderLine": 4, "repeatCountLine":1}
+        
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 7,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "3. Tous ceux qui voudront bien entrer", "textNormLine": "tous ceux qui voudront bien entrer", "orderLine": 1, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Ass",
+        "orderSection": 8,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Ne le pourons que par lui seul", "textNormLine": "Aussi vous les linteaux haussez vous", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "C'est le Messie qui peut entrer", "textNormLine": "et faites place au roi de gloire", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Et faire entrer les siens.", "textNormLine": "car Lu seul le droit d entrer", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "SoloAss",
+        "orderSection": 9,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "La terre est a Yahvé", "textNormLine": "la terre est a Yahve", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "L'atmosphere qui nous tient,", "textNormLine": "l'atmosphere qui nous tient", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "et ce qu'elle contient", "textNormLine": "et ce qu elle contient", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Oui tout est a Yahvé.", "textNormLine": "oui tout est a yahve", "orderLine": 4, "repeatCountLine":1}
+        
+        ]
+      }
+    ]
   },
   {
     "number": 44,
@@ -1587,21 +2341,225 @@
     "audioPath": "sound/Alleluia 44.mp3",
     "language": "fr",
     "liturgicalTimes": ["Prière de repentance"],
-    "periods": ["Noël"],
+    "periods": ["Avent"],
     "beats": ["4 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Solo",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "1. Samaritaine, veux-tu me donner", "textNormLine": "samaritaine, veux-tu me donner", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "de l'eau à boire ?", "textNormLine": "de l eau à boire", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "J'ai fait un long voyage", "textNormLine": "j ai fait un long voyage", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Et je suis vraiment très fatigué.", "textNormLine": "et je suis vraiment tres fatigue", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "2. Toi qui es Juif, pourquoi", "textNormLine": "toi qui es juif, pourquoi", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "me demandes-tu à boire ?", "textNormLine": "me demandes tu a boire", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Depuis quand Juifs et Samaritains", "textNormLine": "depuis quand juifs et samaritains", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "s'entendent-ils ?", "textNormLine": "s entendent ils", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Ass",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Moi, je suis l'eau vive, lui répond Jésus-Christ.", "textNormLine": "moi je suis l eau vive lui repond jesus christ", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Celui qui me boira n'aura Plus jamais soif.", "textNormLine": "celui qui me boira n aura plus jamais soif", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Alléluia ! Alléluia !", "textNormLine": "Alléluia Alléluia ", "orderLine": 3, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "3. Samaritaine, vous ignorez tout", "textNormLine": "samaritaine, vous ignorez tout", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "du Dieu vivant.", "textNormLine": "du Dieu vivant", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Nous, nous adorons celui que nous", "textNormLine": "nous, nous adorons celui que nous", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "connaissons vraiment.", "textNormLine": "connaissons vraiment", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "4. Nos pères aussi ont adoré", "textNormLine": "nos peres aussi ont adore", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "sur cette montagne,", "textNormLine": "sur cette montagne", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "et nous savons que", "textNormLine": "et nous savons que", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "le Messie doit venir bientôt.", "textNormLine": "le messie doit venir bientot", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Ass",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Je suis le Messie, répondit Jésus-Christ.", "textNormLine": "je suis le messie repondit jesus christ.", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Celui qui le croit est un homme nouveau.", "textNormLine": "celui qui le croit est un homme nouveau.", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Alléluia ! Alléluia !", "textNormLine": "Alléluia Alléluia ", "orderLine": 3, "repeatCountLine":1}
+        ]
+      }
+    ]
+  },
+  {
+    "number": 45,
+    "title": "CHRIST EST NE",
+    "titleNorm": "christ est ne",
+    "actor": "NZIMI Félix, LEOUE NJOMEN Benjamin.",
+    "audioPath": "sound/Alleluia 45.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration", "Louanges"],
+    "periods": ["Noël"],
+    "beats": ["3 temps lent"],
+    "sections": [
+      {
+        "type": "SoloAss",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Il est né le Messie", "textNormLine": "il est ne le messie", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Il est né Jésus-Christ", "textNormLine": "il est ne jesus christ", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Il est Emmanuel", "textNormLine": "il est emmanuel", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Les mages sont allés.", "textNormLine": "les mages sont alles", "orderLine": 4, "repeatCountLine":1}
+        ]
+      }
+    ]
   },
   {
     "number": 46,
     "title": "EYA EYA EYA EYA",
     "titleNorm": "eya eya eya eya",
-    "actor": "",
+    "actor": "B. LEOUE, Pr. SOPGUI",
     "audioPath": "sound/Alleluia 46.mp3",
     "language": "fr",
     "liturgicalTimes": ["Adoration"],
+    "periods": ["Avent"],
+    "beats": ["3 temps"],
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Eya ! Eya ! Eya ! Eya !", "textNormLine": "eya eya eya eya", "orderLine": 1, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "1. Adorons le Seigneur Jésus", "textNormLine": "adorons le seigneur jesus", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "notre Sauveur.", "textNormLine": "notre sauveur", "orderLine": 2, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "2. Louons le Seigneur Jésus-Christ", "textNormLine": "louons le seigneur jesus christ", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "notre Sauveur.", "textNormLine": "notre sauveur", "orderLine": 2, "repeatCountLine":1}
+        ]
+      }
+    ]
+  },
+  {
+    "number": 47,
+    "title": "ALLELUIA",
+    "titleNorm": "alleluia",
+    "actor": "",
+    "audioPath": "sound/Alleluia 47.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
     "periods": ["Noël"],
-    "beats": ["1 temps"],
-    "sections": []
+    "beats": ["4 temps lent"],
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 2,
+        "lines":[
+          { "textLine": "Solo  Alléluia", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Ass  Il est né", "textNormLine": "il est ne", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "Solo  Alléluia", "textNormLine": "alleluia", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "Ass  Jésus-Christ", "textNormLine": "jesus christ", "orderLine": 4, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "1. Venez tous pour l'adorer", "textNormLine": "venez tous pour l adorer", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Il est le Roi du monde.", "textNormLine": "il est le roi du monde", "orderLine": 2, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "2. Venez tous vous les enfants", "textNormLine": "venez tous vous les enfants", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Venez tous pour l'adorer.", "textNormLine": "venez tous pour l adorer", "orderLine": 2, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "3. Venez tous, vous les vieillards", "textNormLine": " enez tous,  ous les vieillards", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Venez tous, vous les anciens.", "textNormLine": "venez tous vous les anciens", "orderLine": 2, "repeatCountLine":1}
+        ]
+      }
+    ]
+  },
+  {
+    "number": 48,
+    "title": "IL EST NE AUJOURD'HUI",
+    "titleNorm": "Il est né aujourd'hui",
+    "actor": "",
+    "audioPath": "sound/Alleluia 48.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Adoration"],
+    "periods": ["Noël"],
+    "beats": ["3 temps"],
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "Il est né aujourd'hui", "textNormLine": "il est ne aujourd hui", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Le Roi du monde.", "textNormLine": "le roi du monde.", "orderLine": 2, "repeatCountLine":1}
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines":[
+          { "textLine": "1. Le Messie attendu", "textNormLine": "le messie attendu", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "2. La parole accomplie", "textNormLine": "la parole accomplie", "orderLine": 2, "repeatCountLine":1},
+          { "textLine": "3. Dieu qui se fait homme", "textNormLine": "dieu qui se fait homme", "orderLine": 3, "repeatCountLine":1},
+          { "textLine": "4. Emmanuel nous est né", "textNormLine": "emmanuel nous est ne", "orderLine": 4, "repeatCountLine":1},
+          { "textLine": "5. Le Sauveur des pécheurs", "textNormLine": "le sauveur des pecheurs", "orderLine": 5, "repeatCountLine":1},
+          { "textLine": "6. Seul ami des humbles", "textNormLine": "seul ami des humbles", "orderLine": 6, "repeatCountLine":1},
+          { "textLine": "7. L'ami véridique", "textNormLine": "l ami veridique", "orderLine": 7, "repeatCountLine":1},
+          { "textLine": "8. Seul ami des enfants.", "textNormLine": "seul ami des enfants", "orderLine": 8, "repeatCountLine":1}
+        ]
+      }
+    ]
   },
   {
     "number": 49,
@@ -1646,7 +2604,7 @@
     "actor": "",
     "audioPath": "sound/Alleluia 53.mp3",
     "language": "fr",
-    "liturgicalTimes": ["Louanges"],
+    "liturgicalTimes": ["ss"],
     "periods": ["Avent"],
     "beats": ["3 temps rapide"],
     "sections": []
@@ -1919,8 +2877,8 @@
         "orderSection": 1,
         "repeatCountSection": 1,
         "lines": [
-          { "textLine": "Allé. Alléluia! Allé. Alléluia!", "textNormLine": "alle alleluia alle alléluia", "orderLine": 1, "repeatCountLine":1},
-          { "textLine": "Allé. Alléluia! Christ est ressuscité", "textNormLine": "alle  alleluia christ est ressuscite", "orderLine": 2, "repeatCountLine":1}
+          { "textLine": "Allé. Alléluia ! Allé. Alléluia !", "textNormLine": "alle alleluia alle alléluia", "orderLine": 1, "repeatCountLine":1},
+          { "textLine": "Allé. Alléluia ! Christ est ressuscité", "textNormLine": "alle  alleluia christ est ressuscite", "orderLine": 2, "repeatCountLine":1}
         ]
       },
       {
@@ -2067,7 +3025,7 @@
         "orderSection": 1,
         "repeatCountSection": 1,
         "lines": [
-          { "textLine": "Alléluia", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine": 4 },
+          { "textLine": "1. Alléluia", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine": 4 },
           { "textLine": "Venez tous, chantons en choeur.", "textNormLine": "venez tous chantons en choeur", "orderLine": 2, "repeatCountLine": 1 },
           { "textLine": "Alléluia", "textNormLine": "alleluia", "orderLine": 3, "repeatCountLine": 4 },
           { "textLine": "Jésus-Chist est ressucité", "textNormLine": "jesus-christ est ressucite", "orderLine": 4, "repeatCountLine": 1 },
@@ -2075,11 +3033,11 @@
         ]
       },
       {
-        "type": "SoloAss",
+        "type": "nullable",
         "orderSection": 2,
         "repeatCountSection": 1,
         "lines": [
-          { "textLine": "Alléluia !", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine": 4 },
+          { "textLine": "2. Alléluia !", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine": 4 },
           { "textLine": "Balafons, tam-tam, sonnez", "textNormLine": "balafons tam-tam sonnez", "orderLine": 2, "repeatCountLine": 1 },
           { "textLine": "Alléluia !", "textNormLine": "alleluia", "orderLine": 3, "repeatCountLine": 4 },
           { "textLine": "Annoncez le ressuscité.", "textNormLine": "annoncez le ressuscite", "orderLine": 4, "repeatCountLine": 1 },
@@ -2087,11 +3045,11 @@
         ]
       },
       {
-        "type": "SoloAss",
+        "type": "nullable",
         "orderSection": 3,
         "repeatCountSection": 1,
         "lines": [
-          { "textLine": "Alléluia !", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine": 4 },
+          { "textLine": "3. Alléluia !", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine": 4 },
           { "textLine": "Oh mort où est ton pouvoir ?.", "textNormLine": "oh mort ou est ton pouvoir", "orderLine": 2, "repeatCountLine": 1 },
           { "textLine": "Alléluia !", "textNormLine": "alleluia", "orderLine": 3, "repeatCountLine": 4 },
           { "textLine": "Jésus est note victoire", "textNormLine": "jesus est note victoire", "orderLine": 4, "repeatCountLine": 1 },
@@ -2099,11 +3057,11 @@
         ]
       },
       {
-        "type": "SoloAss",
+        "type": "nullable",
         "orderSection": 4,
         "repeatCountSection": 1,
         "lines": [
-          { "textLine": "Alléluia !", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine": 4 },
+          { "textLine": "4. Alléluia !", "textNormLine": "alleluia", "orderLine": 1, "repeatCountLine": 4 },
           { "textLine": "C'est la joie, c'est notre vie.", "textNormLine": "c est la joie c est notre vie", "orderLine": 2, "repeatCountLine": 1 },
           { "textLine": "Alléluia !", "textNormLine": "alleluia", "orderLine": 3, "repeatCountLine": 4 },
           { "textLine": "Sur la croix nous avons la vie.", "textNormLine": "sur la croix nous avons la vie.", "orderLine": 4, "repeatCountLine": 1 },
@@ -3519,7 +4477,7 @@
           { "textLine": "Allons en Galilée ", "textNormLine": "allons en galilee ", "orderLine": 1, "repeatCountLine":1},
           { "textLine": "Nous y trouverons Jésus-Christ", "textNormLine": "nous y trouverons jesus christ", "orderLine": 2, "repeatCountLine":1},
           { "textLine": "Il est ressuscité", "textNormLine": "il est ressuscite", "orderLine": 3, "repeatCountLine":1},
-          { "textLine": "Alléluia il est vivant.", "textNormLine": "alleluia il est vivant", "orderLine": 4, "repeatCountLine":2}
+          { "textLine": "Alléluia il est vivant.", "textNormLine": "alleluia il est vivant", "orderLine": 4, "repeatCountLine":1}
         ]
       },
       {
@@ -3530,7 +4488,7 @@
           { "textLine": "1. Le Sauveur est ressuscité ", "textNormLine": "le Sauveur est ressuscite", "orderLine": 1, "repeatCountLine":1},
           { "textLine": "Alléluia l'enfer succombe ", "textNormLine": "alleluia l'enfer succombe", "orderLine": 2, "repeatCountLine":1},
           { "textLine": "Plein de joie et de majesté ", "textNormLine": "Plein de joie et de majeste", "orderLine": 3, "repeatCountLine":1},
-          { "textLine": "Jésus triompha de la mort.", "textNormLine": "jesus triompha de la mort", "orderLine": 4, "repeatCountLine":2}
+          { "textLine": "Jésus triompha de la mort.", "textNormLine": "jesus triompha de la mort", "orderLine": 4, "repeatCountLine":1}
         ]
       },
       {
@@ -3541,7 +4499,7 @@
           { "textLine": "2. Mort où donc est ton aiguillon ", "textNormLine": "mort ou donc est ton aiguillon", "orderLine": 1, "repeatCountLine":1},
           { "textLine": "Sépulcre où donc est ta victoire ", "textNormLine": "sepulcre ou donc est ta victoire", "orderLine": 2, "repeatCountLine":1},
           { "textLine": "Dans un rapide tourbillon ", "textNormLine": "dans un rapide tourbillon", "orderLine": 3, "repeatCountLine":1},
-          { "textLine": "Le temps nous entraîne à la joie", "textNormLine": "le temps nous entraine a la joie", "orderLine": 4, "repeatCountLine":2}
+          { "textLine": "Le temps nous entraîne à la joie", "textNormLine": "le temps nous entraine a la joie", "orderLine": 4, "repeatCountLine":1}
         ]
       },
       {
@@ -3552,7 +4510,7 @@
           { "textLine": "3. La mort est vaincue à jamais ", "textNormLine": "la mort est vaincue a jamais", "orderLine": 1, "repeatCountLine":1},
           { "textLine": "Jésus a libéré l'Eglise", "textNormLine": "jesus a libere l'eglise", "orderLine": 2, "repeatCountLine":1},
           { "textLine": "Elle est sauvée, elle est en paix ", "textNormLine": "elle est sauvee, elle est en paix", "orderLine": 3, "repeatCountLine":1},
-          { "textLine": "Par son sang il se l'est acquitté.", "textNormLine": "par son sang il se l'est acquitte", "orderLine": 4, "repeatCountLine":2}
+          { "textLine": "Par son sang il se l'est acquitté.", "textNormLine": "par son sang il se l'est acquitte", "orderLine": 4, "repeatCountLine":1}
         ]
       }
     ]
