@@ -68,17 +68,17 @@ flutter_native_splash:
   # Fond blanc pur (mode clair)
   color: "#7ABAEE"
   # Logo centré
-  image: assets/images/logoEEC.png
+  image: assets/images/logo_eec.png
   # Mode sombre
   color_dark: "#7ABAEE"
-  image_dark: assets/images/logoEEC.png
+  image_dark: assets/images/logo_eec.png
   # Plein écran
   fullscreen: true
   # Android 12+ : cercle blanc derrière le logo
   android_12:
-    image: assets/images/logoEEC.png
+    image: assets/images/logo_eec.png
     icon_background_color: "#FFFFFF"
-    image_dark: assets/images/logoEEC.png
+    image_dark: assets/images/logo_eec.png
     icon_background_color_dark: "#FFFFFF"
   web: false
 
