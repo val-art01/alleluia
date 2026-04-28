@@ -8,7 +8,6 @@ import 'package:alleluia_tome_1/core/providers/audio_provider.dart';
 import 'package:alleluia_tome_1/core/providers/favorites_provider.dart';
 import 'package:alleluia_tome_1/core/services/audio_player_service.dart';
 
-
 ///  PAGE PLAY DETAILS
 ///
 ///  Architecture :
@@ -58,7 +57,7 @@ class _PlayDetailsState extends ConsumerState<PlayDetails> {
     super.dispose();
   }
 
-  // ── Navigation avec animation 
+  // ── Navigation avec animation
   Future<void> _navigate({required bool previous}) async {
     final audio = ref.read(audioServiceProvider);
     final repo = ref.read(hymnsRepositoryProvider);
@@ -181,14 +180,17 @@ class _PlayDetailsState extends ConsumerState<PlayDetails> {
               icon: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 200),
                 child: Icon(
-                  isFav ? Icons.favorite_rounded : Icons.favorite_border_rounded,
+                  isFav
+                      ? Icons.favorite_rounded
+                      : Icons.favorite_border_rounded,
                   key: ValueKey(isFav),
                   color: isFav
                       ? Theme.of(context).extension<AppColors>()!.favoriteFill
                       : cs.onPrimary,
                 ),
               ),
-              onPressed: () => ref.read(favoritesProvider.notifier).toggle(hymn.number)
+              onPressed: () =>
+                  ref.read(favoritesProvider.notifier).toggle(hymn.number),
             );
           },
         ),
@@ -214,9 +216,7 @@ class _LyricsBody extends StatelessWidget {
       slivers: [
         SliverPadding(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
-          sliver: SliverToBoxAdapter(
-            child: HymnLyricsView(hymn: hymn),
-          ),
+          sliver: SliverToBoxAdapter(child: HymnLyricsView(hymn: hymn)),
         ),
         if ((hymn.actor ?? '').trim().isNotEmpty)
           SliverPadding(
@@ -261,12 +261,50 @@ class HymnLyricsView extends StatelessWidget {
       constraints: const BoxConstraints(maxWidth: 560),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          for (final s in hymn.sections) _SectionBlock(section: s),
-        ],
+        children: [for (final s in hymn.sections) _SectionBlock(section: s)],
       ),
     );
   }
+}
+
+//  PRÉFIXES INLINE (Solo / Ass dans le textLine)
+const _kInlinePrefixes = ['Solo', 'Ass', 'Ass.', 'Ref'];
+
+InlineSpan _buildLineSpan(String text, TextStyle baseStyle, ColorScheme cs) {
+  final prefixStyle = baseStyle.copyWith(
+    color: cs.primary,
+    fontWeight: FontWeight.w800,
+    fontSize: baseStyle.fontSize! - 1,
+  );
+
+  for (final prefix in _kInlinePrefixes) {
+    // Cas 1 : ligne commence directement par "Solo Texte" ou "Ass Texte"
+    if (text.startsWith('$prefix ') || text == prefix) {
+      final rest = text.substring(prefix.length);
+      return TextSpan(
+        children: [
+          TextSpan(text: prefix, style: prefixStyle),
+          TextSpan(text: rest, style: baseStyle),
+        ],
+      );
+    }
+
+    // Cas 2 : "1. Solo Texte" ou "2.Ass Texte"
+    final numbered = RegExp(r'^(\d+\.\s*)(' + prefix + r')(\s.+|$)');
+    final match = numbered.firstMatch(text);
+    if (match != null) {
+      return TextSpan(
+        children: [
+          TextSpan(text: match.group(1)!, style: baseStyle),
+          TextSpan(text: match.group(2)!, style: prefixStyle),
+          TextSpan(text: match.group(3)!, style: baseStyle),
+        ],
+      );
+    }
+  }
+
+  // Aucun préfixe → texte normal
+  return TextSpan(text: text, style: baseStyle);
 }
 
 class _SectionBlock extends StatelessWidget {
@@ -275,14 +313,23 @@ class _SectionBlock extends StatelessWidget {
 
   static String _label(Section s) {
     final base = switch (s.type) {
-      SectionType.Ref      => 'Ref',
-      SectionType.Solo     => 'Solo',
-      SectionType.Ass      => 'Ass',
-      SectionType.SoloAss  => 'Solo+Ass',
+      SectionType.Ref => 'Ref',
+      SectionType.Solo => 'Solo',
+      SectionType.Ass => 'Ass',
+      SectionType.SoloAss => 'Solo+Ass',
       SectionType.nullable => '',
     };
-    return s.repeatCountSection > 1 ? '$base ×${s.repeatCountSection}' : base;
+    return s.repeatCountSection > 1 ? '$base x ${s.repeatCountSection}' : base;
   }
+
+  /// Extrait le préfixe numéroté d'une ligne : "1. " "12. " etc.
+  /// Retourne null si la ligne ne commence pas par un numéro.
+  static String? _numberedPrefix(String text) {
+    final m = RegExp(r'^(\d+\.\s*)').firstMatch(text);
+    return m?.group(1);
+  }
+
+  static double _prefixWidth(String prefix) => prefix.length * 6;
 
   @override
   Widget build(BuildContext context) {
@@ -293,16 +340,24 @@ class _SectionBlock extends StatelessWidget {
     if (lines.isEmpty) return const SizedBox.shrink();
     final label = _label(section);
 
+    // Calcule l'indentation courante au fil des lignes.
+    // Elle change à chaque nouvelle ligne numérotée.
+    double currentIndent = 0;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 14),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Chip de section (Ref, Solo+Ass…)
           if (label.isNotEmpty)
             Padding(
               padding: const EdgeInsets.only(bottom: 8),
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
                 decoration: BoxDecoration(
                   color: cs.primaryContainer,
                   borderRadius: BorderRadius.circular(99),
@@ -317,18 +372,53 @@ class _SectionBlock extends StatelessWidget {
                 ),
               ),
             ),
+
+          // Lignes avec indentation hanging
           for (final line in lines)
-            _LyricLine(text: line.textLine.trim(),repeatCount: line.repeatCountLine),
+            Builder(
+              builder: (context) {
+                final text = line.textLine.trim();
+                final prefix = _numberedPrefix(text);
+
+                if (prefix != null) {
+                  // Nouvelle ligne numérotée → remet l'indentation à la largeur de ce préfixe pour les suivantes
+                  currentIndent = _prefixWidth(prefix);
+                  // Pas d'indent sur cette ligne
+                  return _LineWidget(
+                    text: text,
+                    indent: 0,
+                    repeatCount: line.repeatCountLine,
+                    cs: cs,
+                  );
+                }else{
+                  // Continuation de paragraphe → applique l'indent courant
+                  return _LineWidget(
+                    text: text,
+                    indent: currentIndent,
+                    repeatCount: line.repeatCountLine,
+                    cs: cs,
+                  );
+                }                
+              },
+            ),
         ],
       ),
     );
   }
 }
 
-class _LyricLine extends StatelessWidget {
-  const _LyricLine({required this.text, required this.repeatCount});
+class _LineWidget extends StatelessWidget {
+  const _LineWidget({
+    required this.text,
+    required this.indent,
+    required this.repeatCount,
+    required this.cs,
+  });
+
   final String text;
+  final double indent;
   final int repeatCount;
+  final ColorScheme cs;
 
   @override
   Widget build(BuildContext context) {
@@ -340,44 +430,49 @@ class _LyricLine extends StatelessWidget {
       fontWeight: FontWeight.w500,
     );
 
-    if (repeatCount <= 1) {
-      return Padding(
-        padding: const EdgeInsets.only(bottom: 4),
-        child: Text(text, style: style),
-      );
-    }
-
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 4),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(child: Text(text, style: style)),
-          const SizedBox(width: 6),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(99),
-              color: cs.primaryContainer,
-            ),
-            child: Text(
-              '×$repeatCount',
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w800,
-                color: cs.onPrimaryContainer,
-              ),
+    final span = _buildLineSpan(text, style, cs);
+    // Badge ×N si la ligne se répète
+    final badge = repeatCount > 1 
+      ? Container(
+          padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(99),
+            color: cs.primaryContainer,
+          ),
+          child: Text(
+            '×$repeatCount',
+            style: TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w800,
+              color: cs.onPrimaryContainer,
             ),
           ),
-        ],
-      ),
+        )
+      : null;
+
+    return Padding(
+      padding: EdgeInsets.only(left: indent, bottom: 4),
+      child: badge != null
+        ? Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+              Expanded(child: Text.rich(span)),
+              const SizedBox(width: 6),
+              badge,
+            ],
+          )
+        : Text.rich(span),
     );
   }
 }
 
 ///  LECTEUR EN BAS (FIXE)
 class _BottomPlayer extends ConsumerWidget {
-  const _BottomPlayer({ required this.hymn, required this.onPrevious, required this.onNext});
+  const _BottomPlayer({
+    required this.hymn,
+    required this.onPrevious,
+    required this.onNext,
+  });
 
   final Hymn hymn;
   final VoidCallback onPrevious;
@@ -413,7 +508,8 @@ class _BottomPlayer extends ConsumerWidget {
           children: [
             // Poignée
             Container(
-              width: 32, height: 3,
+              width: 32,
+              height: 3,
               margin: const EdgeInsets.only(bottom: 8),
               decoration: BoxDecoration(
                 color: cs.onPrimary.withOpacity(0.3),
@@ -432,7 +528,11 @@ class _BottomPlayer extends ConsumerWidget {
 
 ///  TRANSPORT
 class _TransportRow extends ConsumerWidget {
-  const _TransportRow({required this.hymn, required this.onPrevious, required this.onNext});
+  const _TransportRow({
+    required this.hymn,
+    required this.onPrevious,
+    required this.onNext,
+  });
 
   final Hymn hymn;
   final VoidCallback onPrevious;
@@ -449,7 +549,11 @@ class _TransportRow extends ConsumerWidget {
         // Précédent
         IconButton(
           tooltip: 'Précédent',
-          icon: Icon(Icons.skip_previous_rounded, size: 32, color: cs.onPrimary),
+          icon: Icon(
+            Icons.skip_previous_rounded,
+            size: 32,
+            color: cs.onPrimary,
+          ),
           onPressed: onPrevious,
         ),
 
@@ -459,7 +563,8 @@ class _TransportRow extends ConsumerWidget {
         GestureDetector(
           onTap: () => _togglePlay(context, ref),
           child: Container(
-            width: 56, height: 56,
+            width: 56,
+            height: 56,
             decoration: BoxDecoration(
               color: cs.onPrimary,
               shape: BoxShape.circle,
@@ -518,8 +623,10 @@ class _SeekRow extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cs = Theme.of(context).colorScheme;
-    final position = ref.watch(audioPositionProvider).valueOrNull ?? Duration.zero;
-    final duration = ref.watch(audioDurationProvider).valueOrNull ?? Duration.zero;
+    final position =
+        ref.watch(audioPositionProvider).valueOrNull ?? Duration.zero;
+    final duration =
+        ref.watch(audioDurationProvider).valueOrNull ?? Duration.zero;
 
     final totalSecs = duration.inSeconds;
     final currSecs = position.inSeconds.clamp(0, totalSecs > 0 ? totalSecs : 0);
@@ -534,7 +641,11 @@ class _SeekRow extends ConsumerWidget {
       children: [
         SizedBox(
           width: 44,
-          child: Text(fmt(position), textAlign: TextAlign.center, style: labelStyle),
+          child: Text(
+            fmt(position),
+            textAlign: TextAlign.center,
+            style: labelStyle,
+          ),
         ),
         Expanded(
           child: SliderTheme(
@@ -553,15 +664,19 @@ class _SeekRow extends ConsumerWidget {
               max: totalSecs > 0 ? totalSecs.toDouble() : 1,
               onChanged: totalSecs > 0
                   ? (v) => ref
-                      .read(audioServiceProvider)
-                      .seek(Duration(seconds: v.toInt()))
+                        .read(audioServiceProvider)
+                        .seek(Duration(seconds: v.toInt()))
                   : null,
             ),
           ),
         ),
         SizedBox(
           width: 44,
-          child: Text(fmt(duration), textAlign: TextAlign.center, style: labelStyle),
+          child: Text(
+            fmt(duration),
+            textAlign: TextAlign.center,
+            style: labelStyle,
+          ),
         ),
       ],
     );
