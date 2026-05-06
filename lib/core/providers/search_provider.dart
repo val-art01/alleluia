@@ -31,7 +31,7 @@ final searchResultsProvider = FutureProvider<List<SearchResult>>((ref) async {
   final query = ref.watch(searchQueryProvider).trim();
 
   // Pas de recherche si la query est trop courte
-  if (query.length < 1) return [];
+  if (query.isEmpty) return [];
 
   final repo = ref.watch(hymnsRepositoryProvider);
 
