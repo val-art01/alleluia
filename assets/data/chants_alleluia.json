@@ -5155,7 +5155,7 @@
     "audioPath": "sound/Alleluia 76.mp3",
     "language": "fr",
     "liturgicalTimes": ["Adoration"],
-    "periods": ["Résurrection"],
+    "periods": ["Pâques"],
     "beats": ["2 temps"],
     "sections": [
       {
@@ -7411,7 +7411,7 @@
     "audioPath": "sound/Alleluia 108.mp3",
     "language": "fr",
     "liturgicalTimes": ["Confession de foi"],
-    "periods": ["Résurrection"],
+    "periods": ["Pâques"],
     "beats": ["3 temps lent"],
     "sections": [
       {
@@ -9980,7 +9980,7 @@
         ]
       },
       {
-        "type": "nullable",
+        "type": "Solo",
         "orderSection": 3,
         "repeatCountSection": 1,
         "lines": [
@@ -9994,7 +9994,7 @@
         ]
       },
       {
-        "type": "nullable",
+        "type": "Solo",
         "orderSection": 3,
         "repeatCountSection": 1,
         "lines": [
@@ -10006,7 +10006,7 @@
         ]
       },
       {
-        "type": "nullable",
+        "type": "Solo",
         "orderSection": 3,
         "repeatCountSection": 1,
         "lines": [
@@ -10067,6 +10067,65 @@
     ]
   },
   {
+    "number": 160,
+    "title": "ESPÉRER CONTRE TOUTE ESPÉRANCE",
+    "titleNorm": "esperer contre toute esperance",
+    "actor": "NDEUMEN Salomon",
+    "audioPath": "sound/Alleluia 160.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": [],
+    "beats": ["1+3 temps"],
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Espérer, c'est vivre avec Dieu", "textNormLine": "esperer c'est vivre avec dieu", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "C'est l'arme pour nous tous chrétiens", "textNormLine": "c'est l'arme pour nous tous chretiens", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Une ancre solide", "textNormLine": "une ancre solide", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Et ferme pour notre âme.", "textNormLine": "et ferme pour notre ame", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Jette un regard dans le passé", "textNormLine": "jette un regard dans le passe", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Reconnais la puissance de Dieu.", "textNormLine": "reconnais la puissance de dieu", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Tout ce qu'il a fait dans ta vie", "textNormLine": "tout ce qu'il a fait dans ta vie", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Regarde en avant,", "textNormLine": "regarde en avant", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Espère contre toute espérance.", "textNormLine": "espere contre toute esperance", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Adonaï Jiré, tu pourvois,", "textNormLine": "adonai jire tu pourvois", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Adonaï Shama, tu entends", "textNormLine": "adonai shama tu entends", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Adonaï Shâlom, Dieu de paix", "textNormLine": "adonai shalom dieu de paix", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Adonaï Sebaôth, Éternel Dieu des armées.", "textNormLine": "adonai sebaoth eternel dieu des armees", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. J'ai cette assurance du salut", "textNormLine": "j'ai cette assurance du salut", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Qu'aucun ange dans les cieux", "textNormLine": "qu'aucun ange dans les cieux", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ni les hommes sur cette terre", "textNormLine": "ni les hommes sur cette terre", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Ne pourra me séparer", "textNormLine": "ne pourra me separer", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "De Jésus, mon Sauveur.", "textNormLine": "de jesus mon sauveur", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
     "number": 161,
     "title": "JE PASSERAI MA VIE",
     "titleNorm": "je passerai ma vie",
@@ -10076,9 +10135,66 @@
     "liturgicalTimes": ["Paroles de grâce", "Sortie"],
     "periods": ["Nouvel an"],
     "beats": ["1 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Je passerai ma vie", "textNormLine": "je passerai ma vie", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "À dire à tous mes frères", "textNormLine": "a dire a tous mes freres", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Que le Seigneur est bon", "textNormLine": "que le seigneur est bon", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Il est Dieu d'amour.", "textNormLine": "il est dieu d'amour", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Ô Seigneur, donne à mon cœur", "textNormLine": "o seigneur donne a mon coeur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Le rythme de la joie", "textNormLine": "le rythme de la joie", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Seigneur, viens à mon aide", "textNormLine": "seigneur viens a mon aide", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Ô Seigneur, prends pitié", "textNormLine": "o seigneur prends pitie", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Et pardonne-moi toutes mes fautes.", "textNormLine": "et pardonne moi toutes mes fautes", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Des cris de salut et de triomphe", "textNormLine": "des cris de salut et de triomphe", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "S'élèvent dans les tentes des justes.", "textNormLine": "s'elevent dans les tentes des justes", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Je ne mourrai pas, je vivrai,", "textNormLine": "je ne mourrai pas je vivrai", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Je raconterai les œuvres de l'Éternel.", "textNormLine": "je raconterai les oeuvres de l'eternel", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Ô Éternel, tu m'as châtié", "textNormLine": "o eternel tu m'as chatie", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Mais tu ne m'as pas livré à la mort", "textNormLine": "mais tu ne m'as pas livre a la mort", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ouvrez-moi les portes de la justice", "textNormLine": "ouvrez moi les portes de la justice", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "J'entrerai et je louerai mon Sauveur.", "textNormLine": "j'entrerai et je louerai mon sauveur", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "4. Voici la porte de l'Éternel", "textNormLine": "voici la porte de l'eternel", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "C'est par elle qu'entrent les justes", "textNormLine": "c'est par elle qu'entrent les justes", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Je te loue parce que tu m'as exaucé", "textNormLine": "je te loue parce que tu m'as exauce", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Et tu m'as purifié.", "textNormLine": "et tu m'as purifie", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
-   {
+  {
     "number": 162,
     "title": "NE ME LAISSE PAS PÉRIR",
     "titleNorm": "ne me laisse pas perir",
@@ -10088,7 +10204,68 @@
     "liturgicalTimes": ["Prière de repentance"],
     "periods": ["Nouvel an"],
     "beats": ["1 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ne me laisse pas périr", "textNormLine": "ne me laisse pas perir", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Dans ce monde pécheur", "textNormLine": "dans ce monde pecheur", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ass",
+        "orderSection": 2,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Emmène-moi Seigneur", "textNormLine": "emmene moi seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Emmène-moi vers toi.", "textNormLine": "emmene moi vers toi", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Ne me laisse pas souffrir", "textNormLine": "ne me laisse pas souffrir", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Sur cette terre perdue", "textNormLine": "sur cette terre perdue", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Aie pitié de moi Jésus", "textNormLine": "aie pitie de moi jesus", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Car je suis pécheur", "textNormLine": "car je suis pecheur", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Je cherche mon salut", "textNormLine": "je cherche mon salut", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Dans ce monde obscur.", "textNormLine": "dans ce monde obscur", "orderLine": 6, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ass",
+        "orderSection": 4,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Emmène-moi Seigneur", "textNormLine": "emmene moi seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Emmène-moi vers toi", "textNormLine": "emmene moi vers toi", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Ne me laisse pas mourir", "textNormLine": "ne me laisse pas mourir", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Moi ton serviteur", "textNormLine": "moi ton serviteur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Seigneur Jésus j'implore ta paix", "textNormLine": "seigneur jesus j'implore ta paix", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Afin d'hériter la vie éternelle.", "textNormLine": "afin d'heriter la vie eternelle", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ass",
+        "orderSection": 6,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Emmène-moi Seigneur", "textNormLine": "emmene moi seigneur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Emmène-moi vers toi", "textNormLine": "emmene moi vers toi", "orderLine": 1, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 163,
@@ -10100,11 +10277,41 @@
     "liturgicalTimes": ["Leçon"],
     "periods": ["Avent"],
     "beats": ["4 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Solo Au commencement était la Parole,", "textNormLine": "au commencement etait la parole", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Et la Parole était avec Dieu", "textNormLine": "et la parole etait avec dieu", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Et la Parole était Dieu.", "textNormLine": "et la parole etait dieu", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Au commencement était la Parole.", "textNormLine": "au commencement etait la parole", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Ass. (Reprends le soliste et bis)", "textNormLine": "em em em em", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Em ! Em ! Em ! Em !", "textNormLine": "em em em em", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Alléluia, alléluia, alléluia", "textNormLine": "alleluia alleluia alleluia", "orderLine": 6, "repeatCountLine": 1 },
+          { "textLine": "Alléluia-a-a-a-a-a.", "textNormLine": "alleluia a a a a a", "orderLine": 7, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Solo Il y eut un homme envoyé de Dieu,", "textNormLine": "il y eut un homme envoye de dieu", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Son nom était Jean,", "textNormLine": "son nom etait jean", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Et il vint pour servir de témoignage à la lumière,", "textNormLine": "et il vint pour servir de temoignage a la lumiere", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Cette lumière venue pour nous sauver.", "textNormLine": "cette lumiere venue pour nous sauver", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Ass. Em ! Em ! Em ! Em !", "textNormLine": "em em em em", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Alléluia, alléluia, alléluia,", "textNormLine": "alleluia alleluia alleluia", "orderLine": 6, "repeatCountLine": 1 },
+          { "textLine": "Alléluia-a-a-a-a-a.", "textNormLine": "alleluia a a a a a", "orderLine": 7, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 164,
-    "title": "RIEN NE PEUT M’ARRACHER",
+    "title": "RIEN NE PEUT M'ARRACHER",
     "titleNorm": "rien ne peut m arracher",
     "actor": "",
     "audioPath": "sound/Alleluia 164.mp3",
@@ -10112,7 +10319,32 @@
     "liturgicalTimes": ["Confession de foi"],
     "periods": ["Ordinaire"],
     "beats": ["3 temps lent"],
-    "sections": []
+    "sections": [
+      {
+        "type": "SoloAss",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Rien ne peut m'arracher", "textNormLine": "rien ne peut m'arracher", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "De la main de mon Dieu", "textNormLine": "de la main de mon dieu", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Rien ne peut m'arracher", "textNormLine": "rien ne peut m'arracher", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "De la main de mon Dieu.", "textNormLine": "de la main de mon dieu", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Alléluia.", "textNormLine": "alleluia", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ce n'est ni ton beau tricot", "textNormLine": "ce n'est ni ton beau tricot", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Ce n'est ni ton beau pantalon", "textNormLine": "ce n'est ni ton beau pantalon", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ce n'est ni ta belle chemise", "textNormLine": "ce n'est ni ta belle chemise", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Ce n'est ni ta belle chaussure.", "textNormLine": "ce n'est ni ta belle chaussure", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Alléluia.", "textNormLine": "alleluia", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 165,
@@ -10124,89 +10356,388 @@
     "liturgicalTimes": ["Confession de foi"],
     "periods": ["Ordinaire"],
     "beats": ["3 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Oh ! Vous qui êtes en Christ", "textNormLine": "oh vous qui etes en christ", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Les enfants du Dieu saint", "textNormLine": "les enfants du dieu saint", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Unissez-vous dans la foi", "textNormLine": "unissez vous dans la foi", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Pour la grâce et le salut.", "textNormLine": "pour la grace et le salut", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Solo Luttez, luttez, luttez pour le Dieu Père.", "textNormLine": "luttez luttez luttez pour le dieu pere", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Ass. Luttez pour le Dieu Père.", "textNormLine": "luttez pour le dieu pere", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Solo Luttez, luttez, luttez pour le Dieu Fils.", "textNormLine": "luttez luttez luttez pour le dieu fils", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Ass. Luttez pour le Dieu Fils.", "textNormLine": "luttez pour le dieu fils", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Solo Luttez, luttez, luttez pour le Saint-Esprit.", "textNormLine": "luttez luttez luttez pour le saint esprit", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Ass. Luttez pour le Saint-Esprit.", "textNormLine": "luttez pour le saint esprit", "orderLine": 6, "repeatCountLine": 1 },
+          { "textLine": "Solo Luttez, luttez, pour la grâce et le salut.", "textNormLine": "luttez luttez pour la grace et le salut", "orderLine": 7, "repeatCountLine": 1 },
+          { "textLine": "Ass. Pour la grâce et le salut.", "textNormLine": "pour la grace et le salut", "orderLine": 8, "repeatCountLine": 1 },
+          { "textLine": "Solo Luttez…", "textNormLine": "luttez", "orderLine": 9, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 166,
+    "title": "PLUS LOIN DE TOI, Ô MON DIEU",
+    "titleNorm": "plus loin de toi o mon dieu",
+    "actor": "",
+    "audioPath": "sound/Alleluia 166.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Plus loin de toi ô mon Dieu", "textNormLine": "plus loin de toi o mon dieu", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Plus loin de toi mon Seigneur", "textNormLine": "plus loin de toi mon seigneur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Je souffre de ton absence, viens habiter en moi", "textNormLine": "je souffre de ton absence viens habiter en moi", "orderLine": 3, "repeatCountLine": 2 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Je veux m'engager mon Dieu", "textNormLine": "je veux m'engager mon dieu", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Je veux te servir Seigneur", "textNormLine": "je veux te servir seigneur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Donne-moi ta puissance, viens habiter en moi", "textNormLine": "donne moi ta puissance viens habiter en moi", "orderLine": 3, "repeatCountLine": 2 }
+        ]
+      }
+    ]
   },
   {
     "number": 167,
-    "title": "SEIGNEUR NOUS T’OFFRONS TOUT NOTRE DON",
-    "titleNorm": "seigneur nous t offrons tout notre don",
-    "actor": "",
+    "title": "SEIGNEUR NOUS T'OFFRONS TOUT NOTRE DON",
+    "titleNorm": "seigneur nous t'offrons tout notre don",
+    "actor": "NDACHIGAM Joseph",
     "audioPath": "sound/Alleluia 167.mp3",
     "language": "fr",
     "liturgicalTimes": ["Offrandes"],
-    "periods": ["Ordinaire /Spécial"],
+    "periods": ["Ordinaire"],
     "beats": ["4 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Seigneur nous t'offrons", "textNormLine": "seigneur nous t'offrons", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Tout notre don", "textNormLine": "tout notre don", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Avec la joie ô Dieu notre Père", "textNormLine": "avec la joie o dieu notre pere", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "La façon de donner vaut mieux", "textNormLine": "la facon de donner vaut mieux", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Que ce que l'on donne", "textNormLine": "que ce que l'on donne", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Seigneur nous t'offrons", "textNormLine": "seigneur nous t'offrons", "orderLine": 6, "repeatCountLine": 1 },
+          { "textLine": "Tout notre don", "textNormLine": "tout notre don", "orderLine": 7, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ô Créateur", "textNormLine": "o createur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Ô mon Sauveur", "textNormLine": "o mon sauveur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ô Dieu très haut", "textNormLine": "o dieu tres haut", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Ô Dieu d'amour.", "textNormLine": "o dieu d'amour", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 168,
-    "title": "IL VIT, IL VIT",
-    "titleNorm": "il vit il vit",
-    "actor": "",
+    "title": "IL VIT, IL VIT, IL VIT",
+    "titleNorm": "il vit il vit il vit",
+    "actor": "NGBIPIT Lydie-Isabelle",
     "audioPath": "sound/Alleluia 168.mp3",
     "language": "fr",
-    "liturgicalTimes": ["Sortie"],
+    "liturgicalTimes": ["Louanges", "Sortie"],
     "periods": ["Pâques"],
     "beats": ["4 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Solo Il vit, il vit, il vit", "textNormLine": "il vit il vit il vit", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Il vit oui, il vit, il vit.", "textNormLine": "il vit oui il vit il vit", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Comment ça ?", "textNormLine": "comment ca", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ref",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ass. Il vit…", "textNormLine": "il vit", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Solo Who… Comment ça ?", "textNormLine": "who comment ca", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ass. Il vit…", "textNormLine": "il vit", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Solo Comment ça ?", "textNormLine": "comment ca", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Ass. Il vit…", "textNormLine": "il vit", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Solo Who, who, who, who", "textNormLine": "who who who who", "orderLine": 6, "repeatCountLine": 1 },
+          { "textLine": "Ass. Il vit oui, il vit oui, il vit", "textNormLine": "il vit oui il vit oui il vit", "orderLine": 7, "repeatCountLine": 1 },
+          { "textLine": "Solo Comment ça ?", "textNormLine": "comment ca", "orderLine": 8, "repeatCountLine": 3 },
+          { "textLine": "Ass. Il vit…", "textNormLine": "il vit", "orderLine": 9, "repeatCountLine": 3 },
+          { "textLine": "Solo Woh, who, who, who.", "textNormLine": "woh who who who", "orderLine": 10, "repeatCountLine": 1 },
+          { "textLine": "Ass. Il vit oui, il vit oui, il vit", "textNormLine": "il vit oui il vit oui il vit", "orderLine": 11, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Ô Seigneur Jésus-Christ", "textNormLine": "o seigneur jesus christ", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Le Sauveur du monde.", "textNormLine": "le sauveur du monde", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ass. Tu vis, tu vis, tu vis.", "textNormLine": "tu vis tu vis tu vis", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Solo Comment ça ?", "textNormLine": "comment ca", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Solo Ô Seigneur Jésus-Christ", "textNormLine": "o seigneur jesus christ", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Tu nous as sauvés", "textNormLine": "tu nous as sauves", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ass. Tu vis, tu vis, tu vis", "textNormLine": "tu vis tu vis tu vis", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Solo Comment ça ?", "textNormLine": "comment ca", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "4. Solo Ô Seigneur Jésus-Christ", "textNormLine": "o seigneur jesus christ", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Tu es le Fils de Dieu.", "textNormLine": "tu es le fils de dieu", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ass. Tu vis, tu vis, tu vis", "textNormLine": "tu vis tu vis tu vis", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Solo Comment ça ?", "textNormLine": "comment ca", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "5. Solo Ô Seigneur Jésus-Christ", "textNormLine": "o seigneur jesus christ", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Tu nous as aimés.", "textNormLine": "tu nous as aimes", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ass. Tu vis, tu vis, tu vis", "textNormLine": "tu vis tu vis tu vis", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Solo Comment ça ?", "textNormLine": "comment ca", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 169,
+    "title": "JÉSUS-CHRIST NOUS T'IMPLORONS",
+    "titleNorm": "jesus christ nous t'implorons",
+    "actor": "NYINYIKOUA Jacques-Moïse",
+    "audioPath": "sound/Alleluia 169.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ascension"],
+    "beats": [],
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Solo Jésus-Christ nous t'implorons", "textNormLine": "jesus christ nous t'implorons", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Ass. Sauve-nous Seigneur.", "textNormLine": "sauve nous seigneur", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ref",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Seigneur reviens, descends", "textNormLine": "seigneur reviens descends", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Sur cette terre, de la paix", "textNormLine": "sur cette terre de la paix", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "De cette joie", "textNormLine": "de cette joie", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Sauve-nous Seigneur", "textNormLine": "sauve nous seigneur", "orderLine": 4, "repeatCountLine": 2 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Solo Jésus-Christ nous t'adorons", "textNormLine": "jesus christ nous t'adorons", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Ass. Délie-nous Seigneur.", "textNormLine": "delie nous seigneur", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 170,
     "title": "VENEZ VENEZ VENEZ",
     "titleNorm": "venez venez venez",
-    "actor": "",
+    "actor": "LOUMFE Valéry",
     "audioPath": "sound/Alleluia 170.mp3",
     "language": "fr",
     "liturgicalTimes": ["Adoration"],
     "periods": ["Rameaux"],
     "beats": ["3 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "SoloAss",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Venez, venez, venez", "textNormLine": "venez venez venez", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Venez adorons le Seigneur", "textNormLine": "venez adorons le seigneur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Venez, venez, venez", "textNormLine": "venez venez venez", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Venez adorons Jésus-Christ.", "textNormLine": "venez adorons jesus christ", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Venez tous les moniteurs...", "textNormLine": "venez tous les moniteurs", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "3. Venez-vous tous les parents...", "textNormLine": "venez vous tous les parents", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "4. Venez-vous tous les pasteurs...", "textNormLine": "venez vous tous les pasteurs", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "5. Venez-vous tous les chrétiens...", "textNormLine": "venez vous tous les chretiens", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "6. Venez-vous tous les enfants...", "textNormLine": "venez vous tous les enfants", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 171,
-    "title": "JE SUIS LE CHEMIN",
+    "title": "JE SUIS LE CHEMIN\n(Rythme Moté Moya)",
     "titleNorm": "je suis le chemin",
-    "actor": "",
+    "actor": "Siméon Blaise TANTCHOU",
     "audioPath": "sound/Alleluia 171.mp3",
     "language": "fr",
     "liturgicalTimes": ["Adoration"],
     "periods": ["Réformation"],
     "beats": ["2 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "SoloAss",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Solo Je suis le chemin.", "textNormLine": "je suis le chemin", "orderLine": 1, "repeatCountLine": 3 },
+          { "textLine": "Ass. La vérité, la vie.", "textNormLine": "la verite la vie", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Nul ne vient au Père", "textNormLine": "nul ne vient au pere", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Que par moi.", "textNormLine": "que par moi", "orderLine": 4, "repeatCountLine": 2 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Dit le Seigneur.", "textNormLine": "dit le seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "2. À ses enfants.", "textNormLine": "a ses enfants", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "3. Soyez en paix.", "textNormLine": "soyez en paix", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "4. Dans le Seigneur.", "textNormLine": "dans le seigneur", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "5. Venez à moi.", "textNormLine": "venez a moi", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 172,
     "title": "MOI ET MA MAISON NOUS SERVIRONS L'ÉTERNEL",
-    "titleNorm": "moi et ma maison",
-    "actor": "",
+    "titleNorm": "moi et ma maison nous servirons l'eternel",
+    "actor": "Siméon Blaise ANICHOU",
     "audioPath": "sound/Alleluia 172.mp3",
     "language": "fr",
     "liturgicalTimes": ["Confession de foi"],
     "periods": ["Réformation"],
     "beats": ["2 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Moi et ma maison, nous servirons l'Éternel.", "textNormLine": "moi et ma maison nous servirons l'eternel", "orderLine": 1, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Josué assembla toutes les tribus d'Israël.", "textNormLine": "josue assembla toutes les tribus d'israel", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "2. Maintenant craignez l'Éternel et servez-le.", "textNormLine": "maintenant craignez l'eternel et servez le", "orderLine": 2, "repeatCountLine": 2 },
+          { "textLine": "3. Et pour le servir nous devons être fidèles.", "textNormLine": "et pour le servir nous devons etre fideles", "orderLine": 3, "repeatCountLine": 2 },
+          { "textLine": "4. Choisissez ce jour qui vous voulez servir.", "textNormLine": "choisissez ce jour qui vous voulez servir", "orderLine": 4, "repeatCountLine": 2 },
+          { "textLine": "5. Servons l'Éternel car il est notre secours.", "textNormLine": "servons l'eternel car il est notre secours", "orderLine": 5, "repeatCountLine": 2 },
+          { "textLine": "6. Nous au Cameroun nous servirons l'Éternel.", "textNormLine": "nous au cameroun nous servirons l'eternel", "orderLine": 6, "repeatCountLine": 2 }
+        ]
+      }
+    ]
   },
   {
     "number": 173,
     "title": "DIEU EST AMOUR",
     "titleNorm": "dieu est amour",
-    "actor": "",
+    "actor": "Pasteur KETCHATANG Jean",
     "audioPath": "sound/Alleluia 173.mp3",
     "language": "fr",
     "liturgicalTimes": ["Paroles de grâce"],
     "periods": ["Ordinaire"],
     "beats": ["2 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Dieu est amour, il nous aime,", "textNormLine": "dieu est amour il nous aime", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Dieu nous aime par son Fils", "textNormLine": "dieu nous aime par son fils", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Jésus-Christ.", "textNormLine": "jesus christ", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Aimons nos frères comme Dieu nous aime.", "textNormLine": "aimons nos freres comme dieu nous aime", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "2. Dieu nous a donné son Fils Jésus-Christ.", "textNormLine": "dieu nous a donne son fils jesus christ", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "3. Pour nous libérer des mains de l'impie.", "textNormLine": "pour nous liberer des mains de l'impie", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "4. Rendons tous grâce à notre Dieu d'amour.", "textNormLine": "rendons tous grace a notre dieu d'amour", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "5. Concrétisons cet amour devant tous.", "textNormLine": "concretisons cet amour devant tous", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "6. Par les œuvres de la reconnaissance.", "textNormLine": "par les oeuvres de la reconnaissance", "orderLine": 6, "repeatCountLine": 1 },
+          { "textLine": "7. Afin que tous puissent reconnaître.", "textNormLine": "afin que tous puissent reconnaitre", "orderLine": 7, "repeatCountLine": 1 },
+          { "textLine": "8. Que nous sommes ses enfants libérés.", "textNormLine": "que nous sommes ses enfants liberes", "orderLine": 8, "repeatCountLine": 1 },
+          { "textLine": "9. Par le précieux sang de son Fils Jésus.", "textNormLine": "par le precieux sang de son fils jesus", "orderLine": 9, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 174,
-    "title": "ACCLAMONS LE CHRIST",
+    "title": "ACCLAMONS LE CHRIST\n(Rythme Kebwo-Ngyemboon)",
     "titleNorm": "acclamons le christ",
     "actor": "Jean NGUEGUIM, Pâques 1991",
     "audioPath": "sound/Alleluia 174.mp3",
     "language": "fr",
     "liturgicalTimes": ["Paroles de grâce"],
-    "periods": ["Résurrection"],
+    "periods": ["Pâques"],
     "beats": ["2 temps"],
     "sections": [
       {
@@ -10241,208 +10772,1490 @@
     ]
   },
   {
+    "number": 175,
+    "title": "PARLE, SEIGNEUR \n(Rythme Ngalé-Bamiliké)",
+    "titleNorm": "parle seigneur",
+    "actor": "FOKOUA Robert",
+    "audioPath": "sound/Alleluia 175.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Après la leçon"],
+    "periods": ["Avent"],
+    "beats": ["4 temps rapide"],
+    "sections": [
+      {
+        "type": "Solo",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Samuel, Samuel, dit Yahvé", "textNormLine": "samuel samuel dit yahve", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Samuel répond de son chevet", "textNormLine": "samuel repond de son chevet", "orderLine": 2, "repeatCountLine": 2 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Dans ce monde perverti", "textNormLine": "dans ce monde perverti", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Lui cependant reste averti", "textNormLine": "lui cependant reste averti", "orderLine": 2, "repeatCountLine": 2 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Fais-moi voir en ton labeur", "textNormLine": "fais moi voir en ton labeur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Ton souci patient pour mon bonheur", "textNormLine": "ton souci patient pour mon bonheur", "orderLine": 2, "repeatCountLine": 2 }
+        ]
+      },
+      {
+        "type": "Ref",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Seigneur parle, je suis attentif", "textNormLine": "seigneur parle je suis attentif", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Donne-moi, Seigneur, d'écouter ta voix", "textNormLine": "donne moi seigneur d'ecouter ta voix", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Seigneur parle, je suis attentif", "textNormLine": "seigneur parle je suis attentif", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Donne-moi, Seigneur, d'écouter ta voix.", "textNormLine": "donne moi seigneur d'ecouter ta voix", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
     "number": 176,
     "title": "TOUT POUR LE SEIGNEUR",
     "titleNorm": "tout pour le seigneur",
     "actor": "",
     "audioPath": "sound/Alleluia 176.mp3",
     "language": "fr",
-    "liturgicalTimes": ["Prière de repentance /L/Leçon"],
+    "liturgicalTimes": ["Offrandes", "Après la leçon"],
     "periods": ["Réformation"],
     "beats": ["2 temps"],
-    "sections": []
-  },
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Mes deux petits yeux verront le Seigneur", "textNormLine": "mes deux petits yeux verront le seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Mes deux oreilles entendront sa parole", "textNormLine": "mes deux oreilles entendront sa parole", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ma petite bouche louera le Seigneur", "textNormLine": "ma petite bouche louera le seigneur", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Mes deux mains œuvreront pour lui.", "textNormLine": "mes deux mains oeuvreront pour lui", "orderLine": 4, "repeatCountLine": 2 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Je veux tous les jours louer mon Seigneur,", "textNormLine": "je veux tous les jours louer mon seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Je veux tous les jours écouter sa voix,", "textNormLine": "je veux tous les jours ecouter sa voix", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Mon intelligence est pour mon Seigneur,", "textNormLine": "mon intelligence est pour mon seigneur", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Travailler pour lui est ma joie", "textNormLine": "travailler pour lui est ma joie", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+      ]
+    },
   {
     "number": 177,
     "title": "SOYONS SAINTS MES FRÈRES",
     "titleNorm": "soyons saints mes freres",
-    "actor": "",
+    "actor": "Jean Hémon NGUEGUIM, Ndoungué 1973",
     "audioPath": "sound/Alleluia 177.mp3",
     "language": "fr",
     "liturgicalTimes": ["Prière de repentance"],
     "periods": ["Avent"],
     "beats": ["2 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ass Soyons saints mes frères", "textNormLine": "soyons saints mes freres", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Solo Le Seigneur est saint.", "textNormLine": "le seigneur est saint", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ass Soyons saints mes frères.", "textNormLine": "soyons saints mes freres", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Nous n'aurons pas d'autres dieux que toi.", "textNormLine": "nous n'aurons pas d'autres dieux que toi", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "2. Nous ne fabriquerons point d'idoles.", "textNormLine": "nous ne fabriquerons point d'idoles", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "3. Nous n'abuserons point de ton nom.", "textNormLine": "nous n'abuserons point de ton nom", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "4. Nous rendrons saint le jour du Seigneur.", "textNormLine": "nous rendrons saint le jour du seigneur", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "5. Nous rendrons célèbres nos parents.", "textNormLine": "nous rendrons celebres nos parents", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "6. Nous ne tuerons point nos prochains.", "textNormLine": "nous ne tuerons point nos prochains", "orderLine": 6, "repeatCountLine": 1 },
+          { "textLine": "7. Nous ne commettrons point d'adultère.", "textNormLine": "nous ne commettrons point d'adultere", "orderLine": 7, "repeatCountLine": 1 },
+          { "textLine": "8. Nous ne chiperons point nos prochains.", "textNormLine": "nous ne chiperons point nos prochains", "orderLine": 8, "repeatCountLine": 1 },
+          { "textLine": "9. Nous ne mentirons point sur autrui.", "textNormLine": "nous ne mentirons point sur autrui", "orderLine": 9, "repeatCountLine": 1 },
+          { "textLine": "10. Nous n'envierons point les biens d'autrui.", "textNormLine": "nous n'envierons point les biens d'autrui", "orderLine": 10, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ass Dieu, tu nous pardonnes", "textNormLine": "dieu tu nous pardonnes", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Solo Par le sang du Christ", "textNormLine": "par le sang du christ", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ass Dieu, tu nous pardonnes.", "textNormLine": "dieu tu nous pardonnes", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "11. Solo Dieu nous aime, aimons nos prochains.", "textNormLine": "dieu nous aime aimons nos prochains", "orderLine": 1, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 178,
     "title": "LES MURS DE JÉRICHO SONT TOMBÉS",
     "titleNorm": "les murs de jericho sont tombes",
-    "actor": "",
+    "actor": "U.F.C./E.E.C.",
     "audioPath": "sound/Alleluia 178.mp3",
     "language": "fr",
     "liturgicalTimes": ["Louanges", "Paroles de grâce", "Sortie"],
     "periods": ["Réformation"],
     "beats": ["3 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Les murs de Jéricho sont tombés", "textNormLine": "les murs de jericho sont tombes", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Lorsque les enfants d'Israël louaient Dieu", "textNormLine": "lorsque les enfants d'israel louaient dieu", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Les murs de Jéricho sont tombés.", "textNormLine": "les murs de jericho sont tombes", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ref Ils sont tombés", "textNormLine": "ils sont tombes", "orderLine": 1, "repeatCountLine": 4 },
+          { "textLine": "Lorsque les enfants d'Israël louaient Dieu", "textNormLine": "lorsque les enfants d'israel louaient dieu", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Les murs de Jéricho sont tombés", "textNormLine": "les murs de jericho sont tombes", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Les murs de mes péchés sont tombés", "textNormLine": "les murs de mes peches sont tombes", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Lorsque j'ai accepté Jésus comme Sauveur", "textNormLine": "lorsque j'ai accepte jesus comme sauveur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Les murs de mes péchés sont tombés.", "textNormLine": "les murs de mes peches sont tombes", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ref Ils sont tombés", "textNormLine": "ils sont tombes", "orderLine": 1, "repeatCountLine": 4 },
+          { "textLine": "Lorsque j'ai accepté Jésus comme Sauveur", "textNormLine": "lorsque j'ai accepte jesus comme sauveur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Les murs de mes péchés sont tombés.", "textNormLine": "les murs de mes peches sont tombes", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Les murs de tes péchés peuvent tomber", "textNormLine": "les murs de tes peches peuvent tomber", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Si tu reçois Jésus-Christ comme ton Sauveur", "textNormLine": "si tu recois jesus christ comme ton sauveur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Les murs de tes péchés peuvent tomber.", "textNormLine": "les murs de tes peches peuvent tomber", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ref Ils sont tombés", "textNormLine": "ils sont tombes", "orderLine": 1, "repeatCountLine": 4 },
+          { "textLine": "Si tu reçois Jésus-Christ comme ton Sauveur", "textNormLine": "si tu recois jesus christ comme ton sauveur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Les murs de tes péchés peuvent tomber.", "textNormLine": "les murs de tes peches peuvent tomber", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 179,
-    "title": "C’EST VRAI JÉSUS DONNE LA PAIX",
-    "titleNorm": "c est vrai jesus donne la paix",
-    "actor": "",
+    "title": "C'EST VRAI JÉSUS DONNE LA PAIX",
+    "titleNorm": "c'est vrai jesus donne la paix",
+    "actor": "Hymne camp national 1989, le Prince Henriques TENKU",
     "audioPath": "sound/Alleluia 179.mp3",
     "language": "fr",
     "liturgicalTimes": ["Paroles de grâce"],
     "periods": ["Noël"],
     "beats": ["3 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Solo Jésus est la source de paix", "textNormLine": "jesus est la source de paix", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Jésus est le soleil de la paix", "textNormLine": "jesus est le soleil de la paix", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Jésus est le moteur de la paix", "textNormLine": "jesus est le moteur de la paix", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "C'est bien lui qui donne la paix.", "textNormLine": "c'est bien lui qui donne la paix", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ref C'est vrai Jésus donne la paix", "textNormLine": "c'est vrai jesus donne la paix", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Solo À Bafoussam", "textNormLine": "a bafoussam", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ass. C'est vrai Jésus donne la paix", "textNormLine": "c'est vrai jesus donne la paix", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Solo À Yaoundé", "textNormLine": "a yaounde", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Ass. C'est vrai Jésus donne la paix", "textNormLine": "c'est vrai jesus donne la paix", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "À tous ceux qui croient en lui.", "textNormLine": "a tous ceux qui croient en lui", "orderLine": 6, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Solo Depuis que je suis à Christ", "textNormLine": "depuis que je suis a christ", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "J'ai la paix, la paix dans mon cœur", "textNormLine": "j'ai la paix la paix dans mon coeur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "La paix oui la paix comme un fleuve", "textNormLine": "la paix oui la paix comme un fleuve", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "La seule paix qui vient de Dieu", "textNormLine": "la seule paix qui vient de dieu", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Amen amen amen.", "textNormLine": "amen amen amen", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ref C'est vrai Jésus…", "textNormLine": "c'est vrai jesus", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "(Au Mozambique - En Angola - En Namibie)", "textNormLine": "au mozambique en angola en namibie", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Solo Si vous œuvrez pour la paix", "textNormLine": "si vous oeuvrez pour la paix", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Travaillez sans crainte ni faiblesse", "textNormLine": "travaillez sans crainte ni faiblesse", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Car l'Esprit de Dieu est avec vous", "textNormLine": "car l'esprit de dieu est avec vous", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "C'est bien lui qui donne la paix.", "textNormLine": "c'est bien lui qui donne la paix", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Amen amen amen.", "textNormLine": "amen amen amen", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ref C'est vrai Jésus donne la paix", "textNormLine": "c'est vrai jesus donne la paix", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "(Au Cameroun - Au Nigéria - Au Sénégal)", "textNormLine": "au cameroun au nigeria au senegal", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 7,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "4. Solo Venez au prince de la paix", "textNormLine": "venez au prince de la paix", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Venez au Seigneur de la paix", "textNormLine": "venez au seigneur de la paix", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Il donne la force d'œuvrer pour lui", "textNormLine": "il donne la force d'oeuvrer pour lui", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Pour la paix dans ce monde", "textNormLine": "pour la paix dans ce monde", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Amen amen amen amen.", "textNormLine": "amen amen amen amen", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 8,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ref C'est vrai Jésus donne la paix", "textNormLine": "c'est vrai jesus donne la paix", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "(En Ethiopie - En Iran - En Irak)", "textNormLine": "en ethiopie en iran en irak", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 9,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "5. Solo Venez allons et proclamons", "textNormLine": "venez allons et proclamons", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Allons le dire à tout le monde", "textNormLine": "allons le dire a tout le monde", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "De travailler", "textNormLine": "de travailler", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Pour la paix dans le monde", "textNormLine": "pour la paix dans le monde", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Avec celui qui donne la paix", "textNormLine": "avec celui qui donne la paix", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Amen amen amen.", "textNormLine": "amen amen amen", "orderLine": 6, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 10,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ref C'est vrai Jésus donne la paix", "textNormLine": "c'est vrai jesus donne la paix", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Solo À Garoua", "textNormLine": "a garoua", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Ass C'est vrai Jésus donne la paix", "textNormLine": "c'est vrai jesus donne la paix", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Solo À Nkongsamba", "textNormLine": "a nkongsamba", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Ass C'est vrai Jésus donne la paix", "textNormLine": "c'est vrai jesus donne la paix", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "À tous ceux qui croient en lui.", "textNormLine": "a tous ceux qui croient en lui", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 180,
-    "title": "MONITEUR TRAVAILLONS",
-    "titleNorm": "moniteur travaillons",
-    "actor": "",
+    "title": "MONITEURS TRAVAILLONS",
+    "titleNorm": "moniteurs travaillons",
+    "actor": "Blaise Flaurent MARHENG",
     "audioPath": "sound/Alleluia 180.mp3",
     "language": "fr",
     "liturgicalTimes": ["Confession de foi"],
-    "periods": ["Ordinaire /Réformation"],
+    "periods": ["Réformation"],
     "beats": ["3 temps lent"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Moniteurs travaillons", "textNormLine": "moniteurs travaillons", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Nous avons un ministère,", "textNormLine": "nous avons un ministere", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Particulier, travaillons.", "textNormLine": "particulier travaillons", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Le salut est en Jésus-Christ,", "textNormLine": "le salut est en jesus christ", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Moniteurs travaillons.", "textNormLine": "moniteurs travaillons", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Engageons-nous pour le service", "textNormLine": "engageons nous pour le service", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "De Jésus-Christ le Seigneur.", "textNormLine": "de jesus christ le seigneur", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Jésus-Christ aime les enfants,", "textNormLine": "jesus christ aime les enfants", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Moniteurs travaillons.", "textNormLine": "moniteurs travaillons", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Aidons nos frères à grandir", "textNormLine": "aidons nos freres a grandir", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Dans le Seigneur Jésus-Christ.", "textNormLine": "dans le seigneur jesus christ", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Serviteurs venez au Seigneur,", "textNormLine": "serviteurs venez au seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Moniteurs travaillons", "textNormLine": "moniteurs travaillons", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Montrons au Seigneur notre zèle", "textNormLine": "montrons au seigneur notre zele", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Et le courage de le servir.", "textNormLine": "et le courage de le servir", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 181,
+    "title": "QUI EST L'HOMME DE PAIX ?",
+    "titleNorm": "qui est l'homme de paix",
+    "actor": "WANDA ZOUEBETH Jean de Dieu Yaoundé",
+    "audioPath": "sound/Alleluia 181.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Réformation"],
+    "beats": [],
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Mon frère, dis-moi", "textNormLine": "mon frere dis moi", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Qui est l'homme de paix", "textNormLine": "qui est l'homme de paix", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ma sœur, dis-moi", "textNormLine": "ma soeur dis moi", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Qui est l'homme de paix", "textNormLine": "qui est l'homme de paix", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Chrétien, dis-moi", "textNormLine": "chretien dis moi", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Qui est l'homme de paix", "textNormLine": "qui est l'homme de paix", "orderLine": 6, "repeatCountLine": 1 },
+          { "textLine": "Pasteur, dis-moi", "textNormLine": "pasteur dis moi", "orderLine": 7, "repeatCountLine": 1 },
+          { "textLine": "Qui est l'homme de paix", "textNormLine": "qui est l'homme de paix", "orderLine": 8, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. C'est Jésus qui est l'homme ", "textNormLine": "c'est jesus qui est l'homme", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "De paix (BIS) mon frère", "textNormLine": "de paix mon frere", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Les artisans de la paix", "textNormLine": "les artisans de la paix", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Sont toujours avec Jésus (BIS) ma sœur", "textNormLine": "sont toujours avec jesus ma soeur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Pour un monde de paix Jésus", "textNormLine": "pour un monde de paix jesus", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Le veut toujours (BIS) pasteur", "textNormLine": "veut toujours pasteur", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Pour la vie en paix Jésus-Christ", "textNormLine": "le veut toujours mon frere", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Le veut toujours (BIS) mon frère.", "textNormLine": "le veut toujours mon frere", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Les tout-petits aiment", "textNormLine": "les tout petits aiment", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "La paix (BIS) ma sœur", "textNormLine": "la paix ma soeur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Les enfants aiment la paix (BIS) pasteur", "textNormLine": "les enfants aiment la paix pasteur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ils sont l'image de Dieu (BIS) mon frère", "textNormLine": "ils sont l'image de dieu mon frere", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Le royaume des cieux leur", "textNormLine": "le royaume des cieux leur", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Appartient (BIS) chrétien.", "textNormLine": "appartient chretien", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 182,
     "title": "RECHERCHE LA PAIX",
     "titleNorm": "recherche la paix",
-    "actor": "",
+    "actor": "TEPAKBONG TEMATIO KING Luther",
     "audioPath": "sound/Alleluia 182.mp3",
     "language": "fr",
     "liturgicalTimes": ["Paroles de grâce"],
     "periods": ["Réformation"],
     "beats": ["2 temps"],
-    "sections": []
-  },
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Recherche la paix autant", "textNormLine": "recherche la paix autant", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Que cela dépend de toi.", "textNormLine": "que cela depend de toi", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Recherche la paix chaque fois", "textNormLine": "recherche la paix chaque fois", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Autour de toi.", "textNormLine": "autour de toi", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Solo Un conseil", "textNormLine": "un conseil", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Ass. Que Jésus donne", "textNormLine": "que jesus donne", "orderLine": 6, "repeatCountLine": 1 },
+          { "textLine": "Solo Pour que tu", "textNormLine": "pour que tu", "orderLine": 7, "repeatCountLine": 1 },
+          { "textLine": "Ass. Sois un digne homme.", "textNormLine": "sois un digne homme", "orderLine": 8, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "En Jésus tu trouves un guide infaillible.", "textNormLine": "en jesus tu trouves un guide infaillible", "orderLine": 1, "repeatCountLine": 2 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Yahvé notre Dieu crée", "textNormLine": "yahve notre dieu cree", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "L'homme à son image", "textNormLine": "l'homme a son image", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Mais l'homme se détourne", "textNormLine": "mais l'homme se detourne", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Pèche et choisit son chemin.", "textNormLine": "peche et choisit son chemin", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Solo Oh oh oh !", "textNormLine": "oh oh oh", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Ass. Le mal s'installe.", "textNormLine": "le mal s'installe", "orderLine": 6, "repeatCountLine": 1 },
+          { "textLine": "Solo Oh oh oh !", "textNormLine": "oh oh oh", "orderLine": 7, "repeatCountLine": 1 },
+          { "textLine": "Ass. La paix s'en va", "textNormLine": "la paix s'en va", "orderLine": 8, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "En bon père Yahvé châtie", "textNormLine": "en bon pere yahve chatie", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Pour le salut opte pour un messie.", "textNormLine": "pour le salut opte pour un messie", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Jésus sur la terre,", "textNormLine": "jesus sur la terre", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Trace pour nous la voie", "textNormLine": "trace pour nous la voie", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Jésus sur la terre,", "textNormLine": "jesus sur la terre", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Prototype de la bonté.", "textNormLine": "prototype de la bonte", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Solo Jésus-Christ !", "textNormLine": "jesus christ", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Ass. Mort sur la croix !", "textNormLine": "mort sur la croix", "orderLine": 6, "repeatCountLine": 1 },
+          { "textLine": "Solo Jésus-Christ !", "textNormLine": "jesus christ", "orderLine": 7, "repeatCountLine": 1 },
+          { "textLine": "Ass. Ressuscité !", "textNormLine": "ressuscite", "orderLine": 8, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 6,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Oui chantons car avec lui", "textNormLine": "oui chantons car avec lui", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "La paix tombe comme de la pluie.", "textNormLine": "la paix tombe comme de la pluie", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 7,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "4. La paix mon ami", "textNormLine": "la paix mon ami", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "C'est l'interpénétration", "textNormLine": "c'est l'interpenetration", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "L'entente entre hommes,", "textNormLine": "l'entente entre hommes", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "L'amour vrai qui vient du cœur,", "textNormLine": "l'amour vrai qui vient du coeur", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Solo Chacun a", "textNormLine": "chacun a", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Ass. L'invitation", "textNormLine": "l'invitation", "orderLine": 6, "repeatCountLine": 1 },
+          { "textLine": "Solo De laisser", "textNormLine": "de laisser", "orderLine": 7, "repeatCountLine": 1 },
+          { "textLine": "Ass. Toute forme de guerre.", "textNormLine": "toute forme de guerre", "orderLine": 8, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 8,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Plus de Blancs, plus de Noirs", "textNormLine": "plus de blancs plus de noirs", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Plus de grands, plus de petits", "textNormLine": "plus de grands plus de petits", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Plus de jaunes, plus de couleurs", "textNormLine": "plus de jaunes plus de couleurs", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Égalité des trois parties.", "textNormLine": "egalite des trois parties", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Recherche la paix autant", "textNormLine": "recherche la paix autant", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Que cela dépend de toi.", "textNormLine": "que cela depend de toi", "orderLine": 6, "repeatCountLine": 1 }
+        ]
+      }
+      ]
+    },
   {
     "number": 183,
     "title": "LEVONS-NOUS SUIVONS TOUS JÉSUS",
     "titleNorm": "levons nous suivons tous jesus",
-    "actor": "",
+    "actor": "TSEPOU Dieudonné",
     "audioPath": "sound/Alleluia 183.mp3",
     "language": "fr",
     "liturgicalTimes": ["Louanges", "Sortie"],
     "periods": ["Ordinaire"],
     "beats": ["1 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "SoloAss",
+        "orderSection": 1,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "1. Levons-nous suivons tous Jésus", "textNormLine": "levons nous suivons tous jesus", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Tous Jésus", "textNormLine": "tous jesus", "orderLine": 2, "repeatCountLine": 2 },
+          { "textLine": "Levons-nous suivons tous Jésus", "textNormLine": "levons nous suivons tous jesus", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Jusqu'au dernier jour.", "textNormLine": "jusqu'au dernier jour", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "2. Jésus est notre vraie paix", "textNormLine": "jesus est notre vraie paix", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Vraie paix", "textNormLine": "vraie paix", "orderLine": 2, "repeatCountLine": 2 },
+          { "textLine": "Jésus est notre vraie paix", "textNormLine": "jesus est notre vraie paix", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Suivons-le toujours.", "textNormLine": "suivons le toujours", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "3. Jésus est notre vrai chemin", "textNormLine": "jesus est notre vrai chemin", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Vrai chemin", "textNormLine": "vrai chemin", "orderLine": 2, "repeatCountLine": 2 },
+          { "textLine": "Jésus est notre vrai chemin", "textNormLine": "jesus est notre vrai chemin", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Jusqu'au dernier jour.", "textNormLine": "jusqu'au dernier jour", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "4. Jésus donne la vraie vie", "textNormLine": "jesus donne la vraie vie", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Vraie vie", "textNormLine": "vraie vie", "orderLine": 2, "repeatCountLine": 2 },
+          { "textLine": "Jésus donne la vraie vie", "textNormLine": "jesus donne la vraie vie", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Jusqu'au dernier jour.", "textNormLine": "jusqu'au dernier jour", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 184,
     "title": "JÉSUS LE PACIFICATEUR",
     "titleNorm": "jesus le pacificateur",
-    "actor": "",
+    "actor": "GHOMSI Robert",
     "audioPath": "sound/Alleluia 184.mp3",
     "language": "fr",
     "liturgicalTimes": ["Prière de repentance"],
     "periods": ["Ordinaire", "Avent"],
     "beats": ["4 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Solo",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Le monde est troublé", "textNormLine": "le monde est trouble", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Il a besoin d'un pacificateur.", "textNormLine": "il a besoin d'un pacificateur", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ass",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "L'humanité entière a besoin", "textNormLine": "l'humanite entiere a besoin", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "D'un homme de paix", "textNormLine": "d'un homme de paix", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Pour lutter contre la confusion,", "textNormLine": "pour lutter contre la confusion", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "L'injustice, le sous-développement", "textNormLine": "l'injustice le sous developpement", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "La nausée morale, le vide spirituel", "textNormLine": "la nausee morale le vide spirituel", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Qui la rongent littéralement.", "textNormLine": "qui la rongent litteralement", "orderLine": 6, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Ils sont nombreux Seigneur", "textNormLine": "ils sont nombreux seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Ceux qui attendent de toi la vraie paix.", "textNormLine": "ceux qui attendent de toi la vraie paix", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+       {
+        "type": "Ass",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Les artisans de la paix", "textNormLine": "les artisans de la paix", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Ont besoin d'une puissance", "textNormLine": "ont besoin d'une puissance", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Pour les soutenir dans ce monde,", "textNormLine": "pour les soutenir dans ce monde", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Jésus-Christ est là, il nous écoute", "textNormLine": "jesus christ est la il nous ecoute", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Sa mort sur la croix nous donne la paix", "textNormLine": "sa mort sur la croix nous donne la paix", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Engageons-nous à préserver cette paix.", "textNormLine": "engageons nous a preserver cette paix", "orderLine": 6, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Nous avons la paix", "textNormLine": "nous avons la paix", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Comment devons-nous", "textNormLine": "comment devons nous", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Préserver cette paix.", "textNormLine": "preserver cette paix", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ass",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Pour préserver cette paix", "textNormLine": "pour preserver cette paix", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Aimons-nous les uns, les autres", "textNormLine": "aimons nous les uns les autres", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Car nous sommes les brebis d'un seul berger,", "textNormLine": "car nous sommes les brebis d'un seul berger", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Évitons les divisions entre nous.", "textNormLine": "evitons les divisions entre nous", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "L'Esprit-Saint est là, il nous aidera", "textNormLine": "l'esprit saint est la il nous aidera", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Grâce à lui nous recevrons la paix.", "textNormLine": "grace a lui nous recevrons la paix", "orderLine": 6, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 185,
-    "title": "TOUTE MA VIE JE CHANTERAI TON NOM",
+    "title": "TOUTE MA VIE, JE CHANTERAI TON NOM",
     "titleNorm": "toute ma vie je chanterai ton nom",
-    "actor": "",
+    "actor": "POKAKOUMCHE NSOUFON Job",
     "audioPath": "sound/Alleluia 185.mp3",
     "language": "fr",
     "liturgicalTimes": ["Confession de foi"],
     "periods": ["Ordinaire"],
     "beats": ["2 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Toute ma vie, je chanterai ton nom", "textNormLine": "toute ma vie je chanterai ton nom", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "J'annoncerai le nom de Jésus-Christ", "textNormLine": "j'annoncerai le nom de jesus christ", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Toute ma vie…", "textNormLine": "toute ma vie", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Enfants venez chantons l'amour de Dieu", "textNormLine": "enfants venez chantons l'amour de dieu", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Et proclamons son saint nom à jamais", "textNormLine": "et proclamons son saint nom a jamais", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Enfants venez…", "textNormLine": "enfants venez", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Annonce aux rois, aux princes, aux gouverneurs", "textNormLine": "annonce aux rois aux princes aux gouverneurs", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Que Jésus-Christ est le Maître de tous", "textNormLine": "que jesus christ est le maitre de tous", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Annonce aux rois…", "textNormLine": "annonce aux rois", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "4. Au Nigéria, au Gabon, au Mali", "textNormLine": "au nigeria au gabon au mali", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Annonce à tous la paix de Jésus-Christ", "textNormLine": "annonce a tous la paix de jesus christ", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Au Nigéria…", "textNormLine": "au nigeria", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "5. Aux Haoussa, aux Bandjoun, aux Bamoun", "textNormLine": "aux haoussa aux bandjoun aux bamoun", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Annonce-leur que Jésus donne la paix.", "textNormLine": "annonce leur que jesus donne la paix", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 186,
+    "title": "JE CHANTE L'AMOUR DE MON DIEU",
+    "titleNorm": "je chante l'amour de mon dieu",
+    "actor": "PRISO MOUNGOLE Richard, présenté par POKAKOUMCHE Job",
+    "audioPath": "sound/Alleluia 186.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges", "Paroles de grâce", "Après la leçon"],
+    "periods": ["Ascension"],
+    "beats": ["1+3 temps"],
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "1. Je chante l'amour de mon Dieu", "textNormLine": "je chante l'amour de mon dieu", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Je chante l'amour de mon Dieu", "textNormLine": "je chante l'amour de mon dieu", "orderLine": 1, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Il me garde dans toute sa puissance", "textNormLine": "il me garde dans toute sa puissance", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Il me garde, je chante l'amour de mon Dieu.", "textNormLine": "il me garde je chante l'amour de mon dieu", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "2. Je parle de l'amour de mon Dieu", "textNormLine": "je parle de l'amour de mon dieu", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Je parle de l'amour de mon Dieu", "textNormLine": "je parle de l'amour de mon dieu", "orderLine": 1, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Il me garde dans toute sa puissance", "textNormLine": "il me garde dans toute sa puissance", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Il me garde, je parle de l'amour de mon Dieu.", "textNormLine": "il me garde je parle de l'amour de mon dieu", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "3. Je prêche l'amour de mon Dieu", "textNormLine": "je preche l'amour de mon dieu", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Je prêche l'amour de mon Dieu", "textNormLine": "je preche l'amour de mon dieu", "orderLine": 1, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 6,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Il me garde dans toute sa puissance", "textNormLine": "il me garde dans toute sa puissance", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Il me garde, je prêche l'amour de mon Dieu.", "textNormLine": "il me garde je preche l'amour de mon dieu", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 7,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "4. J'implore l'amour de mon Dieu", "textNormLine": "j'implore l'amour de mon dieu", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "J'implore l'amour de mon Dieu", "textNormLine": "j'implore l'amour de mon dieu", "orderLine": 1, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 8,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Il me garde dans toute sa puissance", "textNormLine": "il me garde dans toute sa puissance", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Il me garde, j'implore l'amour de mon Dieu", "textNormLine": "il me garde j'implore l'amour de mon dieu", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 187,
     "title": "DONNE-NOUS SEIGNEUR",
     "titleNorm": "donne nous seigneur",
-    "actor": "",
+    "actor": "Mélodie de la NACAM",
     "audioPath": "sound/Alleluia 187.mp3",
     "language": "fr",
     "liturgicalTimes": ["Paroles de grâce"],
     "periods": ["Ordinaire", "Pâques"],
     "beats": ["1 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Donne-nous Seigneur", "textNormLine": "donne nous seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Donne-nous ce don", "textNormLine": "donne nous ce don", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Donne-nous Seigneur", "textNormLine": "donne nous seigneur", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "De t'aimer", "textNormLine": "de t'aimer", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Donne-nous. Tu nous as aimés", "textNormLine": "donne nous tu nous as aimes", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Tu nous as bénis par ton nom.", "textNormLine": "tu nous as benis par ton nom", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Donne-nous. Jésus Fils de Dieu", "textNormLine": "donne nous jesus fils de dieu", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Tu es mort pour tous les pécheurs.", "textNormLine": "tu es mort pour tous les pecheurs", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Donne-nous. Au troisième jour", "textNormLine": "donne nous au troisieme jour", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Tu es ressuscité des morts", "textNormLine": "tu es ressuscite des morts", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 188,
-    "title": "TU M’AS VOULU COMME PARTENAIRE",
+    "title": "TU M'AS VOULU COMME PARTENAIRE",
     "titleNorm": "tu m as voulu comme partenaire",
-    "actor": "",
+    "actor": "MALAKE Etienne Bosco",
     "audioPath": "sound/Alleluia 188.mp3",
     "language": "fr",
     "liturgicalTimes": ["Prière de repentance"],
     "periods": ["Réformation"],
     "beats": ["4 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Tu m'as voulu comme partenaire", "textNormLine": "tu m'as voulu comme partenaire", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "En me créant à ton image", "textNormLine": "en me creant a ton image", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "J'ai reçu tous les pouvoirs", "textNormLine": "j'ai recu tous les pouvoirs", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "De domination", "textNormLine": "de domination", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Tu m'as placé dans le jardin", "textNormLine": "tu m'as place dans le jardin", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "J'ai chuté.", "textNormLine": "j'ai chute", "orderLine": 6, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "J'ai accusé un animal", "textNormLine": "j'ai accuse un animal", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "L'animal ne réfléchit pas", "textNormLine": "l'animal ne reflechit pas", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Tu m'as dit de dominer", "textNormLine": "tu m'as dit de dominer", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Sur les animaux", "textNormLine": "sur les animaux", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "J'ai voulu embrasser", "textNormLine": "j'ai voulu embrasser", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Le bonheur du monde.", "textNormLine": "le bonheur du monde", "orderLine": 6, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Après la chute je tourne en rond", "textNormLine": "apres la chute je tourne en rond", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Et je me fais le Tout-Puissant", "textNormLine": "et je me fais le tout puissant", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Et pourtant je ne suis", "textNormLine": "et pourtant je ne suis", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Rien devant toi mon Père", "textNormLine": "rien devant toi mon pere", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Toi tu es l'infini,", "textNormLine": "toi tu es l'infini", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Moi je suis fini.", "textNormLine": "moi je suis fini", "orderLine": 6, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Je continuais à m'égarer", "textNormLine": "je continuais a m'egarer", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Par ton amour tu m'as cherché", "textNormLine": "par ton amour tu m'as cherche", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Tu ne m'as pas laissé souffrir", "textNormLine": "tu ne m'as pas laisse souffrir", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "De toutes mes peines", "textNormLine": "de toutes mes peines", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Mais tu m'as repris", "textNormLine": "mais tu m'as repris", "orderLine": 5, "repeatCountLine": 1 },
+          { "textLine": "Dans tes bras paternels.", "textNormLine": "dans tes bras paternels", "orderLine": 6, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 5,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "J'ai la joie dans mon cœur", "textNormLine": "j'ai la joie dans mon coeur", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Une joie qui me fait couler", "textNormLine": "une joie qui me fait couler", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Les larmes de tendresse,", "textNormLine": "les larmes de tendresse", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "La joie est dans mon cœur", "textNormLine": "la joie est dans mon coeur", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 189,
     "title": "JÉSUS-CHRIST EST LE SEIGNEUR",
     "titleNorm": "jesus christ est le seigneur",
-    "actor": "",
+    "actor": "Blaise Flaurent MATHENG",
     "audioPath": "sound/Alleluia 189.mp3",
     "language": "fr",
     "liturgicalTimes": ["Adoration"],
     "periods": ["Pâques"],
     "beats": ["3 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Jésus-Christ est le Seigneur", "textNormLine": "jesus christ est le seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Il est le chemin", "textNormLine": "il est le chemin", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Il est la vérité et la vie", "textNormLine": "il est la verite et la vie", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Louons-le de tout cœur.", "textNormLine": "louons le de tout coeur", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Jésus-Christ est le Seigneur", "textNormLine": "jesus christ est le seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Le berger des brebis", "textNormLine": "le berger des brebis", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Nul ne vient au Père que par lui", "textNormLine": "nul ne vient au pere que par lui", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Louons-le de tout cœur.", "textNormLine": "louons le de tout coeur", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Jésus-Christ est le Seigneur", "textNormLine": "jesus christ est le seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Notre Sauveur et notre Roi", "textNormLine": "notre sauveur et notre roi", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Nos joies et nos peines sont à lui", "textNormLine": "nos joies et nos peines sont a lui", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Louons-le de tout cœur.", "textNormLine": "louons le de tout coeur", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 190,
     "title": "LE SEIGNEUR NOUS APPELLE",
     "titleNorm": "le seigneur nous appelle",
-    "actor": "",
+    "actor": "Camp national 1991",
     "audioPath": "sound/Alleluia 190.mp3",
     "language": "fr",
     "liturgicalTimes": ["Louanges", "Paroles de grâce"],
     "periods": ["Ordinaire"],
     "beats": ["3 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Le Seigneur nous appelle", "textNormLine": "le seigneur nous appelle", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Le Seigneur nous invite.", "textNormLine": "le seigneur nous invite", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Il nous tend sa main de bonté", "textNormLine": "il nous tend sa main de bonte", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Le Seigneur nous appelle.", "textNormLine": "le seigneur nous appelle", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Enfants", "textNormLine": "enfants", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "2. Moniteurs", "textNormLine": "moniteurs", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "3. Enfants", "textNormLine": "enfants", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "4. Mes frères", "textNormLine": "mes freres", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "5. Mes sœurs", "textNormLine": "mes soeurs", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 191,
     "title": "ENSEIGNE-NOUS À PRIER",
     "titleNorm": "enseigne nous a prier",
-    "actor": "",
+    "actor": "Hymne Camp National 1991, MIKANO Lambert",
     "audioPath": "sound/Alleluia 191.mp3",
     "language": "fr",
     "liturgicalTimes": ["Prière de repentance"],
     "periods": ["Ordinaire"],
     "beats": ["2 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Enseigne-nous à prier", "textNormLine": "enseigne nous a prier", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Enseigne-nous à prier", "textNormLine": "enseigne nous a prier", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Pour prier Seigneur", "textNormLine": "pour prier seigneur", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Nous sommes très faibles", "textNormLine": "nous sommes tres faibles", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Montre-nous comment prier.", "textNormLine": "montre nous comment prier", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ref",
+        "orderSection": 2,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Seigneur, Seigneur, enseigne-nous à prier", "textNormLine": "seigneur seigneur enseigne nous a prier", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Pour prier Seigneur nous sommes très faibles", "textNormLine": "pour prier seigneur nous sommes tres faibles", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Montre-nous comment prier,", "textNormLine": "montre nous comment prier", "orderLine": 3, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Nous sommes accaparés", "textNormLine": "nous sommes accapares", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Par la sensualité.", "textNormLine": "par la sensualite", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Le péché a caché", "textNormLine": "le peche a cache", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Toutes nos idées.", "textNormLine": "toutes nos idees", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Montre-nous comment prier.", "textNormLine": "montre nous comment prier", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Fais-nous rapprocher de toi", "textNormLine": "fais nous rapprocher de toi", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Pour vivre ton salut", "textNormLine": "pour vivre ton salut", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Que tu as préparé", "textNormLine": "que tu as prepare", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Pour le monde", "textNormLine": "pour le monde", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "En ton Fils Jésus-Christ.", "textNormLine": "en ton fils jesus christ", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 192,
-    "title": "C’EST BON DE LOUER DIEU",
+    "title": "C'EST BON DE LOUER DIEU",
     "titleNorm": "cest bon de louer dieu",
-    "actor": "",
+    "actor": "HEUMI Joseph l'Orléans (Camp National 1991)",
     "audioPath": "sound/Alleluia 192.mp3",
     "language": "fr",
     "liturgicalTimes": ["Louanges"],
     "periods": ["Ordinaire"],
     "beats": ["3 temps rapide"],
-    "sections": []
+    "sections": [
+      {
+        "type": "nullable",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. C'est bon de louer Dieu Alléluia", "textNormLine": "c'est bon de louer dieu alleluia", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "C'est bon de louer Dieu", "textNormLine": "c'est bon de louer dieu", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Alléluia louer Dieu", "textNormLine": "alleluia louer dieu", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Alléluia louer Dieu Alléluia.", "textNormLine": "alleluia louer dieu alleluia", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. C'est bon de prier Dieu Alléluia", "textNormLine": "c'est bon de prier dieu alleluia", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "C'est bon de prier Dieu", "textNormLine": "c'est bon de prier dieu", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Alléluia prier Dieu", "textNormLine": "alleluia louer dieu", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Alléluia prier Dieu Alléluia.", "textNormLine": "alleluia louer dieu alleluia", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Dansons pour louer Dieu Alléluia", "textNormLine": "dansons pour louer dieu alleluia", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Dansons pour louer Dieu", "textNormLine": "c'est bon de prier dieu", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Alléluia louer Dieu", "textNormLine": "alleluia louer dieu", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Alléluia louer Dieu Alléluia.", "textNormLine": "alleluia louer dieu alleluia", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 193,
+    "title": "TOUS ONT PÉCHÉ",
+    "titleNorm": "tous ont peche",
+    "actor": "Camp National 1991",
+    "audioPath": "sound/Alleluia 193.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Rameaux"],
+    "beats": ["4 temps rapide"],
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Tous ont péché, et sont privés", "textNormLine": "tous ont peche et sont prives", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "De la gloire de Dieu.", "textNormLine": "de la gloire de dieu", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ils ne verront pas", "textNormLine": "ils ne verront pas", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Le royaume de Dieu", "textNormLine": "le royaume de dieu", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "S'ils ne changent pas de conduite.", "textNormLine": "s'ils ne changent pas de conduite", "orderLine": 5, "repeatCountLine": 2 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "1. Le Seigneur a dit : qui croit en lui", "textNormLine": "le seigneur a dit qui croit en lui", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Aura la vie éternelle.", "textNormLine": "aura la vie eternelle", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "2. Il est au seuil de ta porte", "textNormLine": "il est au seuil de ta porte", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Ouvre-lui ton cœur mon frère.", "textNormLine": "ouvre lui ton coeur mon frere", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 194,
+    "title": "NOUS SOMMES DES PETITS ENFANTS",
+    "titleNorm": "nous sommes des petits enfants",
+    "actor": "CHOUTOU Julliot (Camp national 1991)",
+    "audioPath": "sound/Alleluia 194.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Louanges"],
+    "periods": ["Pentecôte", "Noël"],
+    "beats": ["1+3 temps"],
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Nous sommes des petits enfants", "textNormLine": "nous sommes des petits enfants", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Tous issus de la foi en Christ", "textNormLine": "tous issus de la foi en christ", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Nous voulons rencontrer Jésus", "textNormLine": "nous voulons rencontrer jesus", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Qui nous a donné la priorité.", "textNormLine": "qui nous a donne la priorite", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Jésus-Christ, notre Seigneur", "textNormLine": "jesus christ notre seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Fais de nous de bons chrétiens.", "textNormLine": "fais de nous de bons chretiens", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Dès demain, sanctifie-nous", "textNormLine": "des demain sanctifie nous", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Bénis-nous et conduis-nous toujours.", "textNormLine": "benis nous et conduis nous toujours", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Jésus-Christ, notre Seigneur", "textNormLine": "jesus christ notre seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "À ton Église de demain", "textNormLine": "a ton eglise de demain", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Donne la paix et l'esprit", "textNormLine": "donne la paix et l'esprit", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "De discernement en toutes choses.", "textNormLine": "de discernement en toutes choses", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 195,
+    "title": "JE SUIS PÉCHEUR",
+    "titleNorm": "je suis pecheur",
+    "actor": "CHOUTOU Julliot (Camp national 1991)",
+    "audioPath": "sound/Alleluia 195.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire"],
+    "beats": ["3 temps rapide"],
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Je suis pécheur, aie pitié de moi", "textNormLine": "je suis pecheur aie pitie de moi", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Je voudrais vivre auprès de toi", "textNormLine": "je voudrais vivre aupres de toi", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Je suis pécheur, aie pitié de moi", "textNormLine": "je suis pecheur aie pitie de moi", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Prends-moi tel que je suis oh Seigneur.", "textNormLine": "prends moi tel que je suis o seigneur", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Ne m'abandonne pas, ô mon Seigneur", "textNormLine": "ne m'abandonne pas o mon seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Car je suis aussi l'un de tes enfants.", "textNormLine": "car je suis aussi l'un de tes enfants", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Je reconnais que je suis pécheur", "textNormLine": "je reconnais que je suis pecheur", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Prends-moi tel que je suis, oh Seigneur.", "textNormLine": "prends moi tel que je suis oh seigneur", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "2. Selon ta grande miséricorde,", "textNormLine": "selon ta grande misericorde", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Efface donc toutes mes transgressions.", "textNormLine": "efface donc toutes mes transgressions", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Je reconnais que je suis pécheur.", "textNormLine": "je reconnais que je suis pecheur", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Prends-moi tel que je suis, oh Seigneur.", "textNormLine": "prends moi tel que je suis oh seigneur", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 4,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Apprends-moi à éviter les péchés", "textNormLine": "apprends moi a eviter les peches", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Afin que je sois ton vrai serviteur.", "textNormLine": "afin que je sois ton vrai serviteur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Je reconnais que je suis pécheur", "textNormLine": "je reconnais que je suis pecheur", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Prends-moi tel que je suis, oh Seigneur.", "textNormLine": "prends moi tel que je suis oh seigneur", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 196,
-    "title": "SAINT DES SAINTS EST L’ÉTERNEL",
-    "titleNorm": "saint des saints est leternel",
-    "actor": "",
+    "title": "SAINT DES SAINTS EST L'ÉTERNEL",
+    "titleNorm": "saint des saints est l'eternel",
+    "actor": "Camp National 1991",
     "audioPath": "sound/Alleluia 196.mp3",
     "language": "fr",
     "liturgicalTimes": ["Adoration"],
     "periods": ["Ordinaire"],
     "beats": ["2 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "SoloAss",
+        "orderSection": 1,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "1. Saint des saints est l'Éternel Dieu,", "textNormLine": "saint des saints est l'eternel dieu", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Notre Créateur.", "textNormLine": "notre createur", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 2,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "2. Lui qui nous aime en Jésus-Christ,", "textNormLine": "lui qui nous aime en jesus christ", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Notre Rédempteur.", "textNormLine": "notre redempteur", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "3. Par son amour nous sommes sauvés,", "textNormLine": "par son amour nous sommes sauves", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Chantons Hosanna.", "textNormLine": "chantons hosanna", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Solo Hosanna.", "textNormLine": "hosanna", "orderLine": 3, "repeatCountLine": 2 },
+          { "textLine": "Ass. Hosanna-oh, hosanna-oh", "textNormLine": "hosanna oh hosanna oh", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "Chantons Hosanna.", "textNormLine": "chantons hosanna", "orderLine": 5, "repeatCountLine": 2 }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 197,
+    "title": "Ô SEIGNEUR, EXAUCE-NOUS",
+    "titleNorm": "o seigneur exauce nous",
+    "actor": "MOUNGUEN Isaac (Camp National 1991)",
+    "audioPath": "sound/Alleluia 197.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Ordinaire", "Vendredi Saint"],
+    "beats": ["1+3 temps"],
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Ass. Ô Seigneur, exauce-nous.", "textNormLine": "o seigneur exauce nous", "orderLine": 1, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "1. Seigneur, nous te prions.", "textNormLine": "seigneur nous te prions", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "2. Seigneur, nous t'invoquons.", "textNormLine": "seigneur nous t'invoquons", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "3. Seigneur, nous t'adorons.", "textNormLine": "seigneur nous t'adorons", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "4. Seigneur, nous t'implorons.", "textNormLine": "seigneur nous t'implorons", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "5. Amen, Alléluia.", "textNormLine": "amen alleluia", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "nullable",
+        "orderSection": 3,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "[REFRAIN POUR LE 5 : Amen, Alléluia.]", "textNormLine": "", "orderLine": 1, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 198,
     "title": "JE VEUX ALLER AU CIEL",
     "titleNorm": "je veux aller au ciel",
-    "actor": "",
+    "actor": "MOUNGUEN Isaac (Camp National 1991)",
     "audioPath": "sound/Alleluia 198.mp3",
     "language": "fr",
     "liturgicalTimes": ["Louanges", "Sortie"],
     "periods": ["Ordinaire"],
     "beats": ["1 temps"],
-    "sections": []
+    "sections": [
+      {
+        "type": "Ref",
+        "orderSection": 1,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Je veux aller au ciel", "textNormLine": "je veux aller au ciel", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Je veux louer mon Seigneur", "textNormLine": "je veux louer mon seigneur", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Je veux chanter sa gloire", "textNormLine": "je veux chanter sa gloire", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "À l'éternité.", "textNormLine": "a l'eternite", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 2,
+        "repeatCountSection": 1,
+        "lines": [
+          { "textLine": "Alléluia, je veux aller au ciel", "textNormLine": "alleluia je veux aller au ciel", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Alléluia, je veux louer mon Dieu", "textNormLine": "alleluia je veux louer mon dieu", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Alléluia, je veux aller au ciel", "textNormLine": "alleluia je veux aller au ciel", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Je veux chanter sa gloire", "textNormLine": "je veux chanter sa gloire", "orderLine": 4, "repeatCountLine": 1 },
+          { "textLine": "À l'éternité.", "textNormLine": "a l'eternite", "orderLine": 5, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "SoloAss",
+        "orderSection": 3,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Je veux", "textNormLine": "je veux", "orderLine": 1, "repeatCountLine": 2 },
+          { "textLine": "Je veux aller au ciel.", "textNormLine": "je veux aller au ciel", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Je veux", "textNormLine": "je veux", "orderLine": 3, "repeatCountLine": 2 },
+          { "textLine": "Je veux louer mon Dieu.", "textNormLine": "je veux louer mon dieu", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
+  },
+  {
+    "number": 199,
+    "title": "Ô ÉTERNEL, DE LA PITIÉ",
+    "titleNorm": "o eternel de la pitie",
+    "actor": "Pr MOUNGOLE PRISO Richard (Camp National 1991)",
+    "audioPath": "sound/Alleluia 199.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Prière de repentance"],
+    "periods": ["Vendredi Saint", "Ordinaire"],
+    "beats": ["1+3 temps"],
+    "sections": [
+      {
+        "type": "Solo",
+        "orderSection": 1,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "1. Ô Éternel de la pitié", "textNormLine": "o eternel de la pitie", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Pardonne-nous nos péchés", "textNormLine": "pardonne nous nos peches", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Ô Seigneur du grand amour", "textNormLine": "o seigneur du grand amour", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Pardonne-nous nos péchés.", "textNormLine": "pardonne nous nos peches", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Ref",
+        "orderSection": 2,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "Oh Seigneur, oh Seigneur,", "textNormLine": "oh seigneur oh seigneur", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Pardonne-nous nos péchés.", "textNormLine": "pardonne nous nos peches", "orderLine": 2, "repeatCountLine": 1 }
+        ]
+      },
+      {
+        "type": "Solo",
+        "orderSection": 3,
+        "repeatCountSection": 2,
+        "lines": [
+          { "textLine": "2. Nous reconnaissons, notre Dieu", "textNormLine": "nous reconnaissons notre dieu", "orderLine": 1, "repeatCountLine": 1 },
+          { "textLine": "Que nous t'avons offensé", "textNormLine": "que nous t'avons offense", "orderLine": 2, "repeatCountLine": 1 },
+          { "textLine": "Mais par ton amour éternel", "textNormLine": "mais par ton amour eternel", "orderLine": 3, "repeatCountLine": 1 },
+          { "textLine": "Nous sommes sûrs d'être pardonnés.", "textNormLine": "nous sommes surs d'etre pardonnes", "orderLine": 4, "repeatCountLine": 1 }
+        ]
+      }
+    ]
   },
   {
     "number": 200,
@@ -10518,6 +12331,18 @@
   },
   {
     "number": 206,
+    "title": "LE DOCTEUR DE MON CŒUR",
+    "titleNorm": "le docteur de mon coeur",
+    "actor": "",
+    "audioPath": "sound/Alleluia 206.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["1 temps"],
+    "sections": []
+  },
+  {
+    "number": 207,
     "title": "LE DOCTEUR DE MON CŒUR",
     "titleNorm": "le docteur de mon coeur",
     "actor": "",
@@ -10671,6 +12496,42 @@
   },
   {
     "number": 216,
+    "title": "JE CONNAIS LE BON CHEMIN",
+    "titleNorm": "je connais le bon chemin",
+    "actor": "",
+    "audioPath": "sound/Alleluia 216.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 217,
+    "title": "JE CONNAIS LE BON CHEMIN",
+    "titleNorm": "je connais le bon chemin",
+    "actor": "",
+    "audioPath": "sound/Alleluia 216.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 218,
+    "title": "JE CONNAIS LE BON CHEMIN",
+    "titleNorm": "je connais le bon chemin",
+    "actor": "",
+    "audioPath": "sound/Alleluia 216.mp3",
+    "language": "fr",
+    "liturgicalTimes": ["Paroles de grâce"],
+    "periods": ["Ordinaire"],
+    "beats": ["4 temps rapide"],
+    "sections": []
+  },
+  {
+    "number": 219,
     "title": "JE CONNAIS LE BON CHEMIN",
     "titleNorm": "je connais le bon chemin",
     "actor": "",
