@@ -61,6 +61,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/new_logo_ce/
     - assets/data/chants_alleluia.json
     - assets/sound/
 
@@ -68,17 +69,17 @@ flutter_native_splash:
   # Fond blanc pur (mode clair)
   color: "#7ABAEE"
   # Logo centré
-  image: assets/images/logo_eec.png
+  image: assets/images/new_logo_ce/playstore.png
   # Mode sombre
   color_dark: "#7ABAEE"
-  image_dark: assets/images/logo_eec.png
+  image_dark: assets/images/new_logo_ce/playstore.png
   # Plein écran
   fullscreen: true
   # Android 12+ : cercle blanc derrière le logo
   android_12:
-    image: assets/images/logo_eec.png
+    image: assets/images/new_logo_ce/playstore.png
     icon_background_color: "#FFFFFF"
-    image_dark: assets/images/logo_eec.png
+    image_dark: assets/images/new_logo_ce/playstore.png
     icon_background_color_dark: "#FFFFFF"
   web: false
 

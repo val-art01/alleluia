@@ -41,7 +41,7 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
  
       // Logo
       leading: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.only(left: 10, top: 5, right: 5, bottom: 5),
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -54,9 +54,8 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
               ),
             ],
           ),
-          padding: const EdgeInsets.all(4),
           child: Image.asset(
-            'assets/images/logoCE.png',
+            'assets/images/new_logo_ce/logo_192.png',
             fit: BoxFit.contain,
           ),
         ),
