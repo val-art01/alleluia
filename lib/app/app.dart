@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:alleluia_tome_1/app/themes/app_theme.dart';
 import 'package:alleluia_tome_1/core/routes/app_router.dart';
+import 'package:alleluia_tome_1/core/providers/theme_provider.dart';
 
 /// Point d'entrée de l'application.
 /// ConsumerWidget permet d'accéder aux providers Riverpod
@@ -13,7 +14,7 @@ class App extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final GoRouter router = ref.watch(appRouterProvider);
-    final themeMode = ref.watch(themeModeProvider);
+    final themeMode = ref.watch(themeModeProvider).valueOrNull ?? ThemeMode.light;
 
     return MaterialApp.router(
       title: 'Alleluia',
@@ -28,9 +29,3 @@ class App extends ConsumerWidget {
     );
   }
 }
-
-//  Permet à l'utilisateur de choisir son thème.
-final themeModeProvider = StateProvider<ThemeMode>(
-  (ref) => ThemeMode.light,
-);
-
