@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:alleluia_tome_1/app/themes/app_theme.dart';
 import 'package:alleluia_tome_1/features/data/models/hymn.dart';
+import 'package:alleluia_tome_1/core/services/share_service.dart';
 import 'package:alleluia_tome_1/core/providers/hymns_provider.dart';
 import 'package:alleluia_tome_1/core/providers/audio_provider.dart';
 import 'package:alleluia_tome_1/core/providers/favorites_provider.dart';
@@ -172,6 +173,12 @@ class _PlayDetailsState extends ConsumerState<PlayDetails> {
         ),
       ),
       actions: [
+        IconButton(
+          tooltip: 'Partager ce chant',
+          icon: Icon(Icons.share_rounded, color: cs.onPrimary),
+          onPressed: () => ShareService.shareHymn(context, hymn),
+        ),
+
         Consumer(
           builder: (context, ref, _) {
             final isFav = ref.watch(isFavoriteProvider(hymn.number));
